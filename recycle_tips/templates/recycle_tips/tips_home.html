@@ -6,6 +6,15 @@
 <body>
     <h1>Welcome to Recycling Tips</h1>
     <p>Tips to help you manage waste better.</p>
-    <a href="{% url 'tip_detail' %}">See a detailed tip</a>
+    <a href="{% url 'add_tip' %}">Add a new tip</a>
+    <ul>
+        {% for tip in tips %}
+            <li>
+                <a href="{% url 'tip_detail_id' tip.id %}">{{ tip.title }}</a> - {{ tip.category }} ({{ tip.date_posted }})
+            </li>
+        {% empty %}
+            <li>No tips available.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>

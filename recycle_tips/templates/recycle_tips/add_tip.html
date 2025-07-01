@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add a New Tip</title>
+</head>
+<body>
+    <h1>Add a New Recycling Tip</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Tip</button>
+    </form>
+    <a href="{% url 'tips_home' %}">Back to tips home</a>
+</body>
+</html>

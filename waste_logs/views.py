@@ -1,12 +1,23 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from .models import WasteLog
+from .forms import WasteLogForm
 
 def index(request):
-    return render(request, 'waste_logs/home.html')
+    logs = WasteLog.objects.filter(user=request.user).order_by('-date_logged') if request.user.is_authenticated else []
+    return render(request, 'waste_logs/home.html', {'logs': logs})
 
+@login_required
 def report(request):
-    return render(request, 'waste_logs/report.html')
+    if request.method == 'POST':
+        form = WasteLogForm(request.POST)
+        if form.is_valid():
+            waste_log = form.save(commit=False)
+            waste_log.user = request.user
+            waste_log.save()
+            return redirect('waste_logs_home')
+    else:
+        form = WasteLogForm()
+    return render(request, 'waste_logs/report.html', {'form': form})
 
 

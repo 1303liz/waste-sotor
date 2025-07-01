@@ -6,6 +6,14 @@
 <body>
     <h1>Welcome to Waste Logs</h1>
     <p>This is the homepage for tracking your waste.</p>
-    <a href="{% url 'waste_report' %}">View Waste Report</a>
+    <a href="{% url 'waste_report' %}">Report New Waste</a>
+    <h2>Your Waste Logs</h2>
+    <ul>
+        {% for log in logs %}
+            <li>{{ log.date_logged }}: {{ log.category.name }} - {{ log.quantity_kg }} kg</li>
+        {% empty %}
+            <li>No waste logs available.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
