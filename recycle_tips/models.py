@@ -1,6 +1,6 @@
 from django.db import models
 
-class Tip(models.Model):
+class BaseTip(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     category = models.CharField(
@@ -14,6 +14,10 @@ class Tip(models.Model):
     )
     date_posted = models.DateField(auto_now_add=True)
 
+    class Meta:
+        abstract = True
+
+class Tip(BaseTip):
     def __str__(self):
         return self.title
 
