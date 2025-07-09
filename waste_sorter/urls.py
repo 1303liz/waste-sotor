@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('recycle/',include('recycle_tips.urls')),
     path('waste/', include('waste_logs.urls')),
-    # Redirect root URL to admin
+    path('', include('accounts.urls')),
 ]

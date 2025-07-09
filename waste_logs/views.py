@@ -3,8 +3,9 @@ from django.contrib.auth.decorators import login_required
 from .models import WasteLog
 from .forms import WasteLogForm
 
+@login_required
 def index(request):
-    logs = WasteLog.objects.filter(user=request.user).order_by('-date_logged') if request.user.is_authenticated else []
+    logs = WasteLog.objects.filter(user=request.user).order_by('-date_logged')
     return render(request, 'waste_logs/home.html', {'logs': logs})
 
 @login_required
