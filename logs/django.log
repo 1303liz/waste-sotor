@@ -891,3 +891,12 @@ ERROR 2025-07-15 17:22:02,381 basehttp "GET /recycle/ HTTP/1.1" 500 139561
 WARNING 2025-07-15 17:23:45,212 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
 WARNING 2025-07-15 17:23:45,678 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5827
 INFO 2025-07-15 17:26:16,945 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-15 17:26:22,843 log Not Found: /
+WARNING 2025-07-15 17:26:24,976 basehttp "GET / HTTP/1.1" 404 5665
+INFO 2025-07-15 17:26:37,678 basehttp "GET /recycle/ HTTP/1.1" 200 11158
+INFO 2025-07-15 17:28:34,234 basehttp "GET /recycle/?type=tutorial HTTP/1.1" 200 5473
+INFO 2025-07-15 17:29:02,326 basehttp "GET /recycle/?type=visual HTTP/1.1" 200 5473
+INFO 2025-07-15 17:29:03,829 basehttp "GET /recycle/?type=visual HTTP/1.1" 200 5473
+INFO 2025-07-15 17:29:07,059 basehttp "GET /recycle/?type=practice HTTP/1.1" 200 5473
+INFO 2025-07-15 17:29:10,408 basehttp "GET /recycle/ HTTP/1.1" 200 11158
+INFO 2025-07-15 17:29:28,722 basehttp "GET /recycle/category/recyclables/ HTTP/1.1" 200 2856
