@@ -1,0 +1,36 @@
+WARNING 2025-07-14 14:03:44,517 user_utils Found 2 users with the same email: mwaranganga@gmail.com
+INFO 2025-07-14 14:03:44,672 utils Attempting to send password reset email to mwaranganga@gmail.com
+WARNING 2025-07-14 14:03:45,911 user_utils Found 2 users with the same email: mwaranganga@gmail.com
+INFO 2025-07-14 14:03:45,926 utils Attempting to send password reset email to mwaranganga@gmail.com
+INFO 2025-07-14 14:03:50,222 utils Successfully sent password reset email to mwaranganga@gmail.com in 4.30 seconds
+INFO 2025-07-14 14:03:50,224 views Password reset email sent for primary user: eliza (mwaranganga@gmail.com)
+INFO 2025-07-14 14:03:52,598 utils Successfully sent password reset email to mwaranganga@gmail.com in 8.07 seconds
+INFO 2025-07-14 14:03:52,621 views Password reset email sent for primary user: eliza (mwaranganga@gmail.com)
+INFO 2025-07-14 14:14:24,188 utils Attempting to send verification email to m0664040@gmail.com
+INFO 2025-07-14 14:14:27,902 utils Successfully sent verification email to m0664040@gmail.com in 3.71 seconds
+INFO 2025-07-14 14:15:12,766 utils Attempting to send verification email to m0664040@gmail.com
+INFO 2025-07-14 14:15:13,523 utils Attempting to send verification email to m0664040@gmail.com
+INFO 2025-07-14 14:15:15,583 utils Successfully sent verification email to m0664040@gmail.com in 2.82 seconds
+INFO 2025-07-14 14:15:16,603 utils Successfully sent verification email to m0664040@gmail.com in 3.08 seconds
+INFO 2025-07-14 15:17:01,007 utils Email m0664040@gmail.com appears to be deliverable
+INFO 2025-07-14 15:17:01,357 utils Attempting to send verification email to m0664040@gmail.com
+INFO 2025-07-14 15:17:10,527 utils Successfully sent verification email to m0664040@gmail.com in 9.18 seconds
+WARNING 2025-07-15 10:33:39,090 user_utils Found 2 users with the same email: mwaranganga@gmail.com
+INFO 2025-07-15 10:33:39,916 utils Attempting to send password reset email to mwaranganga@gmail.com
+INFO 2025-07-15 10:33:44,469 utils Successfully sent password reset email to mwaranganga@gmail.com in 5.35 seconds
+INFO 2025-07-15 10:33:44,482 views Password reset email sent for primary user: eliza (mwaranganga@gmail.com)
+INFO 2025-07-15 10:41:31,614 utils Email tkiromo@gmail.com appears to be deliverable
+INFO 2025-07-15 10:41:31,629 views New user registration attempt: tkiromo@gmail.com
+INFO 2025-07-15 10:41:31,646 utils Email tkiromo@gmail.com appears to be deliverable
+INFO 2025-07-15 10:41:34,104 views Created new user: username=alice, email=tkiromo@gmail.com
+INFO 2025-07-15 10:41:34,418 utils Attempting to send verification email to tkiromo@gmail.com
+INFO 2025-07-15 10:41:37,447 utils Successfully sent verification email to tkiromo@gmail.com in 3.05 seconds
+INFO 2025-07-15 10:41:37,454 views Registration completed successfully for alice (tkiromo@gmail.com)
+WARNING 2025-07-15 10:43:01,038 user_utils Found 2 users with the same email: mwaranganga@gmail.com
+INFO 2025-07-15 10:43:01,051 utils Attempting to send password reset email to mwaranganga@gmail.com
+INFO 2025-07-15 10:43:03,650 utils Successfully sent password reset email to mwaranganga@gmail.com in 2.61 seconds
+INFO 2025-07-15 10:43:03,673 views Password reset email sent for primary user: eliza (mwaranganga@gmail.com)
+WARNING 2025-07-15 10:45:50,028 user_utils Found 2 users with the same email: mwaranganga@gmail.com
+INFO 2025-07-15 10:45:50,042 utils Attempting to send password reset email to mwaranganga@gmail.com
+INFO 2025-07-15 10:45:53,691 utils Successfully sent password reset email to mwaranganga@gmail.com in 3.65 seconds
+INFO 2025-07-15 10:45:53,698 views Password reset email sent for primary user: eliza (mwaranganga@gmail.com)

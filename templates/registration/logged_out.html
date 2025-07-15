@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h2>Logged Out</h2>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <i class="fa fa-check-circle fa-4x text-success mb-3" aria-hidden="true"></i>
+                        <h4 class="mb-3">You have been successfully logged out</h4>
+                        <p class="lead">Thank you for using Waste Sorter!</p>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <p>Your session has ended and you have been securely logged out of your account.</p>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="{% url 'login' %}" class="btn btn-primary">
+                            <i class="fa fa-sign-in-alt me-1"></i> Log In Again
+                        </a>
+                        <a href="/" class="btn btn-outline-secondary ms-2">
+                            <i class="fa fa-home me-1"></i> Return to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick links card -->
+            <div class="card shadow mt-4">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0">Quick Links</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6 text-center">
+                            <a href="{% url 'tips_home' %}" class="text-decoration-none">
+                                <i class="fa fa-leaf fa-2x text-success mb-2"></i>
+                                <p>Recycle Tips</p>
+                            </a>
+                        </div>
+                        <div class="col-6 text-center">
+                            <a href="{% url 'waste_logs_home' %}" class="text-decoration-none">
+                                <i class="fa fa-list-alt fa-2x text-primary mb-2"></i>
+                                <p>Waste Logs</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add a timer for auto-redirect to home page -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Redirect to home page after 15 seconds
+        setTimeout(function() {
+            window.location.href = '/';
+        }, 15000);  // 15 seconds
+    
+        // Display countdown in a more attractive way
+        var secondsLeft = 15;
+        var countdownElement = document.createElement('div');
+        countdownElement.className = 'alert alert-light text-center mt-4';
+        countdownElement.innerHTML = 'Redirecting to homepage in <span id="countdown" class="badge bg-primary">15</span> seconds...';
+        document.querySelector('.card-body').appendChild(countdownElement);
+        
+        // Add a progress bar
+        var progressContainer = document.createElement('div');
+        progressContainer.className = 'progress mt-2';
+        progressContainer.innerHTML = '<div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"></div>';
+        countdownElement.appendChild(progressContainer);
+        
+        var progressBar = progressContainer.querySelector('.progress-bar');
+        
+        // Update countdown and progress bar
+        var interval = setInterval(function() {
+            secondsLeft--;
+            document.getElementById('countdown').textContent = secondsLeft;
+            
+            // Update progress bar
+            var percentage = (secondsLeft / 15) * 100;
+            progressBar.style.width = percentage + '%';
+            
+            if (secondsLeft <= 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+        
+        // Add a cancel redirect button
+        var cancelButton = document.createElement('button');
+        cancelButton.className = 'btn btn-sm btn-link mt-2';
+        cancelButton.textContent = 'Stay on this page';
+        cancelButton.addEventListener('click', function() {
+            clearInterval(interval);
+            clearTimeout(redirectTimeout);
+            countdownElement.remove();
+            
+            var stayMessage = document.createElement('div');
+            stayMessage.className = 'alert alert-success mt-3';
+            stayMessage.textContent = 'Auto-redirect canceled. You can still use the buttons above to navigate.';
+            document.querySelector('.card-body').appendChild(stayMessage);
+        });
+        countdownElement.appendChild(cancelButton);
+    });
+</script>
+{% endblock %}

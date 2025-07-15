@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container d-flex align-items-center justify-content-center min-vh-100" style="background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);">
-    <div class="row w-100 justify-content-center">
-        <div class="col-md-6 col-lg-5">
-            <div class="card shadow-lg border-0 rounded-4">
-                <div class="card-header bg-primary text-white rounded-top-4">
-                    <h2 class="text-center mb-0">Login</h2>
+<div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 p-0" style="background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);">
+    <div class="row w-100 justify-content-center align-items-center">
+        <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
+            <img src="https://undraw.co/api/illustrations/clean_up.svg" alt="Login Illustration" class="img-fluid" style="max-height: 400px;">
+        </div>
+        <div class="col-md-8 col-lg-4">
+            <div class="card shadow-lg border-0 rounded-4 animate__animated animate__fadeInUp" style="background: rgba(255,255,255,0.95);">
+                <div class="card-header bg-success text-white rounded-top-4 text-center">
+                    <h2 class="mb-0 fw-bold">Welcome Back!</h2>
+                    <p class="mb-0 small">Sign in to continue to Waste Sorter</p>
                 </div>
                 <div class="card-body p-4">
                     <form method="post" autocomplete="off">
@@ -25,10 +29,10 @@
                             </div>
                         {% endif %}
                         <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                            <button type="submit" class="btn btn-success btn-lg">Login</button>
                         </div>
                         <div class="text-center mt-3">
-                            <a href="{% url 'register' %}" class="link-primary">Don't have an account? Register here</a>
+                            <a href="{% url 'register' %}" class="link-success">Don't have an account? Register here</a>
                             <br>
                             <a href="{% url 'password_reset' %}" class="link-secondary">Forgot password?</a>
                         </div>
@@ -38,4 +42,6 @@
         </div>
     </div>
 </div>
+<!-- Animate.css for fade-in effect -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 {% endblock %}

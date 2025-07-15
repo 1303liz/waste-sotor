@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                    <h2 class="text-center mb-0">Resend Verification Email</h2>
+                    <p class="text-center mb-0 small mt-1">Join the Waste Sorter community for sustainable waste management</p>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {% if 'error' in message.tags %}alert-danger{% elif 'success' in message.tags %}alert-success{% elif 'warning' in message.tags %}alert-warning{% else %}alert-info{% endif %} alert-dismissible fade show mb-4">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <div class="alert alert-info mb-4">
+                        <strong>Note:</strong> Please enter the email address you used during registration. We'll send a new verification link if your account is pending verification.
+                    </div>
+                    
+                    <div class="alert alert-warning mb-4">
+                        <strong>Important:</strong> If you haven't registered yet, please <a href="{% url 'register' %}" class="alert-link">click here to create an account</a> first. You need to register before requesting verification emails.
+                    </div>
+
+                    <form method="post" class="border p-4 rounded bg-light">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope me-2 text-muted"></i>Email address
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fas fa-at"></i>
+                                </span>
+                                <input type="email" name="email" id="email" class="form-control" 
+                                       required placeholder="Enter your email"
+                                       autocomplete="email">
+                            </div>
+                            <div class="form-text">Enter the same email you used during registration.</div>
+                        </div>
+                        <div class="d-grid gap-2 mt-4 mb-3">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Resend Verification Email
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="card mt-4 border-info">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-question-circle me-2"></i>
+                                Email Delivery Troubleshooting
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <p>If you're having trouble receiving our verification emails:</p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <div class="bg-info text-white rounded-circle p-2 me-3">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Check your spam/junk folder</strong>
+                                            <p class="small text-muted">Verification emails are sometimes filtered as spam.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-start mb-3">
+                                        <div class="bg-info text-white rounded-circle p-2 me-3">
+                                            <i class="fas fa-address-book"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Add us to your contacts</strong>
+                                            <p class="small text-muted">Add <strong>mwaraa6@gmail.com</strong> to your address book.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <div class="bg-info text-white rounded-circle p-2 me-3">
+                                            <i class="fas fa-filter"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Check email filters</strong>
+                                            <p class="small text-muted">You may have filters that block our messages.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex align-items-start mb-3">
+                                        <div class="bg-info text-white rounded-circle p-2 me-3">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <strong>Check mailbox capacity</strong>
+                                            <p class="small text-muted">Make sure your mailbox isn't full.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-info mt-3">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>Still having issues?</strong> Try using a different email address when registering a new account.
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <button type="button" class="btn btn-outline-info" 
+                                        data-bs-toggle="modal" data-bs-target="#emailHelpModal">
+                                    <i class="fas fa-life-ring me-2"></i>Get More Help
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Email Help Modal -->
+                    <div class="modal fade" id="emailHelpModal" tabindex="-1" aria-labelledby="emailHelpModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg-info text-white">
+                                    <h5 class="modal-title" id="emailHelpModalLabel">
+                                        <i class="fas fa-envelope me-2"></i>Email Delivery Help
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <h6>Common Email Providers:</h6>
+                                    
+                                    <div class="accordion mt-3" id="emailHelpAccordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="gmailHeading">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                                        data-bs-target="#gmailCollapse" aria-expanded="false" aria-controls="gmailCollapse">
+                                                    Gmail Help
+                                                </button>
+                                            </h2>
+                                            <div id="gmailCollapse" class="accordion-collapse collapse" aria-labelledby="gmailHeading" data-bs-parent="#emailHelpAccordion">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Check the <strong>Promotions</strong> and <strong>Updates</strong> tabs</li>
+                                                        <li>Look in <strong>Spam</strong> folder</li>
+                                                        <li>Add our email to your contacts</li>
+                                                        <li>Create a filter to mark emails from our domain as important</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="outlookHeading">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                                        data-bs-target="#outlookCollapse" aria-expanded="false" aria-controls="outlookCollapse">
+                                                    Outlook/Hotmail Help
+                                                </button>
+                                            </h2>
+                                            <div id="outlookCollapse" class="accordion-collapse collapse" aria-labelledby="outlookHeading" data-bs-parent="#emailHelpAccordion">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Check the <strong>Junk Email</strong> folder</li>
+                                                        <li>Look in <strong>Focused/Other</strong> tabs</li>
+                                                        <li>Add our address to your safe senders list</li>
+                                                        <li>Check if any rules are filtering our emails</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="yahooHeading">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                                        data-bs-target="#yahooCollapse" aria-expanded="false" aria-controls="yahooCollapse">
+                                                    Yahoo Mail Help
+                                                </button>
+                                            </h2>
+                                            <div id="yahooCollapse" class="accordion-collapse collapse" aria-labelledby="yahooHeading" data-bs-parent="#emailHelpAccordion">
+                                                <div class="accordion-body">
+                                                    <ol>
+                                                        <li>Check <strong>Spam</strong> folder</li>
+                                                        <li>Look in <strong>Bulk Mail</strong> folder</li>
+                                                        <li>Add our email to your contacts</li>
+                                                        <li>Create a filter to ensure our emails arrive in your inbox</li>
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="alert alert-warning mt-4">
+                                        <p class="mb-0">If you continue to have issues receiving verification emails, please contact our support team at <strong>support@wastesorter.com</strong></p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="{% url 'login' %}" class="btn btn-outline-secondary">Back to Login</a>
+                        <a href="/" class="btn btn-outline-success ms-2">Explore Waste Sorter</a>
+                    </div>
+                    
+                    <!-- Project Overview Section -->
+                    <div class="card mt-4 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">About Waste Sorter</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">The Waste Sorter project is designed to promote effective waste separation and recycling habits within a community.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100 border-primary">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5><i class="fas fa-leaf me-2"></i>Recycle Tips Section</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>A dedicated learning area where facilitators can educate members on how to properly sort waste.</p>
+                                            <ul class="mt-3">
+                                                <li>Visual guides</li>
+                                                <li>Best practices</li>
+                                                <li>Tutorials for separating recyclables, compostables, and general waste</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card h-100 border-warning">
+                                        <div class="card-header bg-warning text-dark">
+                                            <h5><i class="fas fa-chart-line me-2"></i>Waste Logs Section</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>A tracking space where members can log their waste collection and separation activities.</p>
+                                            <ul class="mt-3">
+                                                <li>Monitor progress</li>
+                                                <li>Encourage accountability</li>
+                                                <li>Showcase community efforts in proper waste management</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-success mt-3">
+                                <strong>Our Goal:</strong> Support environmental education and real-world action in sustainable waste management.
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <a href="{% url 'register' %}" class="btn btn-success">
+                                    <i class="fas fa-user-plus me-2"></i>Join Our Community
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div class="card-footer bg-light text-center py-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <i class="fas fa-recycle fa-2x text-success mb-2"></i>
+                            <p class="mb-0 small">Promoting Sustainable Practices</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-users fa-2x text-primary mb-2"></i>
+                            <p class="mb-0 small">Building Community Awareness</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fas fa-globe-americas fa-2x text-info mb-2"></i>
+                            <p class="mb-0 small">Environmental Education</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright notice -->
+            <div class="text-center mt-3 text-muted small">
+                <p>© 2025 Waste Sorter - Promoting effective waste management within communities</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional page-specific scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Automatically focus the email input field
+        document.getElementById('email').focus();
+        
+        // Add subtle animation to the project overview cards
+        const cards = document.querySelectorAll('.card-body .card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.style.transition = 'all 0.5s ease';
+                card.classList.add('shadow-sm');
+            }, 300 * (index + 1));
+        });
+    });
+</script>
+{% endblock %}

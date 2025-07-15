@@ -1,20 +1,167 @@
+{% load recycle_tips_extras %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Recycling Tips</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .tip-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        .tip-card:hover {
+            transform: translateY(-5px);
+        }
+        .sidebar {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .section-header {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .badge-type {
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Recycling Tips</h1>
-    <p>Tips to help you manage waste better.</p>
-    <a href="{% url 'add_tip' %}">Add a new tip</a>
-    <ul>
-        {% for tip in tips %}
-            <li>
-                <a href="{% url 'tip_detail_id' tip.id %}">{{ tip.title }}</a> - {{ tip.category }} ({{ tip.date_posted }})
-            </li>
-        {% empty %}
-            <li>No tips available.</li>
-        {% endfor %}
-    </ul>
+    <div class="container my-4">
+        <div class="section-header">
+            <h1>Welcome to Recycling Tips</h1>
+            <p class="lead">{{ section_info.purpose }}</p>
+            <div class="d-flex justify-content-between">
+                <span><strong>Target Audience:</strong> {{ section_info.target_audience }}</span>
+                <span><strong>Goal:</strong> {{ section_info.goal }}</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Main Content -->
+            <div class="col-lg-8">
+                <div class="d-flex justify-content-between mb-3">
+                    <h2>All Tips</h2>
+                    <a href="{% url 'add_tip' %}" class="btn btn-success">Add a new tip</a>
+                </div>
+                
+                <!-- Filters -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5>Filter Tips</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>By Category:</h6>
+                                <div class="d-flex flex-wrap">
+                                    <a href="{% url 'tips_home' %}" class="btn btn-sm btn-outline-secondary m-1 {% if not selected_category %}active{% endif %}">All</a>
+                                    {% for cat, display in tips.first.get_category_choices %}
+                                        <a href="{% url 'category_tips' cat %}" class="btn btn-sm btn-outline-secondary m-1 {% if selected_category == cat %}active{% endif %}">
+                                            {{ display }} <span class="badge bg-secondary">{{ category_counts|get_item:cat }}</span>
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>By Type:</h6>
+                                <div class="d-flex flex-wrap">
+                                    <a href="{% url 'tips_home' %}" class="btn btn-sm btn-outline-secondary m-1 {% if not selected_type %}active{% endif %}">All</a>
+                                    <a href="{% url 'tips_home' %}?type=visual" class="btn btn-sm btn-outline-info m-1 {% if selected_type == 'visual' %}active{% endif %}">
+                                        Visual Guides <span class="badge bg-info">{{ type_counts.visual }}</span>
+                                    </a>
+                                    <a href="{% url 'tips_home' %}?type=practice" class="btn btn-sm btn-outline-success m-1 {% if selected_type == 'practice' %}active{% endif %}">
+                                        Best Practices <span class="badge bg-success">{{ type_counts.practice }}</span>
+                                    </a>
+                                    <a href="{% url 'tips_home' %}?type=tutorial" class="btn btn-sm btn-outline-warning m-1 {% if selected_type == 'tutorial' %}active{% endif %}">
+                                        Tutorials <span class="badge bg-warning">{{ type_counts.tutorial }}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if tips %}
+                    <div class="row">
+                        {% for tip in tips %}
+                            <div class="col-md-6">
+                                <div class="card tip-card h-100">
+                                    {% if tip.image %}
+                                        <img src="{{ tip.image.url }}" class="card-img-top" alt="{{ tip.title }}" style="height: 200px; object-fit: cover;">
+                                    {% else %}
+                                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                                            <span class="text-muted">No image available</span>
+                                        </div>
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ tip.title }}</h5>
+                                        <p class="card-text">{{ tip.content|truncatewords:20 }}</p>
+                                        <div class="mb-2">
+                                            {% if tip.is_visual_guide %}
+                                                <span class="badge bg-info badge-type">Visual Guide</span>
+                                            {% endif %}
+                                            {% if tip.is_best_practice %}
+                                                <span class="badge bg-success badge-type">Best Practice</span>
+                                            {% endif %}
+                                            {% if tip.is_tutorial %}
+                                                <span class="badge bg-warning badge-type">Tutorial</span>
+                                            {% endif %}
+                                        </div>
+                                        <p class="text-muted small">Posted: {{ tip.date_posted }} | For: {{ tip.audience }}</p>
+                                        <a href="{% url 'tip_detail_id' tip.id %}" class="btn btn-primary">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="alert alert-info">
+                        No tips available.
+                        <a href="{% url 'add_tip' %}" class="alert-link">Add the first one!</a>
+                    </div>
+                {% endif %}
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <h3>Categories</h3>
+                    <ul class="list-group mb-4">
+                        <a href="{% url 'tips_home' %}" class="list-group-item d-flex justify-content-between align-items-center {% if not selected_category %}active{% endif %}">
+                            All Categories
+                            <span class="badge bg-primary rounded-pill">{{ tips.count }}</span>
+                        </a>
+                        {% for cat, display in tips.first.get_category_choices %}
+                            <a href="{% url 'category_tips' cat %}" class="list-group-item d-flex justify-content-between align-items-center {% if selected_category == cat %}active{% endif %}">
+                                {{ display }}
+                                <span class="badge bg-primary rounded-pill">{{ category_counts|get_item:cat }}</span>
+                            </a>
+                        {% endfor %}
+                    </ul>
+                    
+                    <h3>Tip Types</h3>
+                    <ul class="list-group">
+                        <a href="{% url 'tips_home' %}?type=visual" class="list-group-item d-flex justify-content-between align-items-center {% if selected_type == 'visual' %}active{% endif %}">
+                            Visual Guides
+                            <span class="badge bg-info rounded-pill">{{ type_counts.visual }}</span>
+                        </a>
+                        <a href="{% url 'tips_home' %}?type=practice" class="list-group-item d-flex justify-content-between align-items-center {% if selected_type == 'practice' %}active{% endif %}">
+                            Best Practices
+                            <span class="badge bg-success rounded-pill">{{ type_counts.practice }}</span>
+                        </a>
+                        <a href="{% url 'tips_home' %}?type=tutorial" class="list-group-item d-flex justify-content-between align-items-center {% if selected_type == 'tutorial' %}active{% endif %}">
+                            Tutorials
+                            <span class="badge bg-warning rounded-pill">{{ type_counts.tutorial }}</span>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-white text-center">
+                    <h2>Activation Failed</h2>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <i class="fa fa-exclamation-circle fa-4x text-danger mb-3" aria-hidden="true"></i>
+                        <h4 class="mb-3">The activation link is invalid or has expired</h4>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <p class="mb-0"><strong>Possible reasons:</strong></p>
+                        <ul>
+                            <li>The verification link has expired (links expire after 24 hours)</li>
+                            <li>The link has already been used to activate your account</li>
+                            <li>The URL may have been copied incorrectly from your email</li>
+                            <li>Your account might have been deleted or suspended</li>
+                        </ul>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">What to do next</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>You can try the following options:</p>
+                            <ol>
+                                <li class="mb-2">Request a new verification email by clicking the button below</li>
+                                <li class="mb-2">Try logging in (your account might already be active)</li>
+                                <li class="mb-2">Register a new account if you're still having issues</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Resend Verification Email</h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="{% url 'resend_verification' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group mb-3">
+                                    <label for="email">Enter your email address:</label>
+                                    <input type="email" name="email" class="form-control" required placeholder="Email address used during registration">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Send New Verification Email</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <div class="mb-3">
+                            <a href="{% url 'login' %}" class="btn btn-outline-success me-2">Try Logging In</a>
+                            <a href="{% url 'register' %}" class="btn btn-outline-secondary">Register New Account</a>
+                        </div>
+                        <p class="text-muted mt-3">
+                            <small>Need help? <a href="#">Contact Support</a></small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

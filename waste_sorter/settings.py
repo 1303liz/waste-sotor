@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Load environment variables from .env file
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +30,8 @@ SECRET_KEY = 'django-insecure-*o!qsxi33jjjvvi9-&%xvv#3p#m91ce6p=h-9v0c=^^5z$tc4(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Allow all hosts for development, or specify your IP(s) as needed
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -50,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Custom middleware for session timeout handling
+    'accounts.middleware.SessionTimeoutMiddleware',
 ]
 
 ROOT_URLCONF = 'waste_sorter.urls'
@@ -118,21 +126,93 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Media files (User-uploaded files)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email Configuration (using console for development)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ''  # Add your email
-EMAIL_HOST_PASSWORD = ''  # Add your email password
+# Email Configuration (using values from .env file)
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '587'))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'mwaraa6@gmail.com')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'fjty ovfr rkna sdxe')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'Waste Sorter <mwaraa6@gmail.com>')
+EMAIL_TIMEOUT = int(os.environ.get('EMAIL_TIMEOUT', '30'))
+EMAIL_SUBJECT_PREFIX = os.environ.get('EMAIL_SUBJECT_PREFIX', '[Waste Sorter] ')
+
+
+# Password reset link validity period (in seconds) - 3 days
+PASSWORD_RESET_TIMEOUT = 60 * 60 * 24 * 3  # 3 days in seconds
+
+# Configure logging
+import logging.config
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'logs/django.log',
+            'formatter': 'verbose',
+        },
+        'email_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'logs/email.log',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'django.mail': {
+            'handlers': ['console', 'email_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'accounts.email': {
+            'handlers': ['console', 'email_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
 
 # Login Settings
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
+
+# Session settings for security
+SESSION_COOKIE_AGE = 7200  # 2 hours in seconds
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
+SESSION_SAVE_EVERY_REQUEST = True  # Update the session expiry time on each request

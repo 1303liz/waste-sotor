@@ -1,0 +1,893 @@
+INFO 2025-07-14 11:14:50,188 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:15:03,152 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:15:07,602 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:16:41,757 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:16:45,450 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:17:27,263 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:17:31,777 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:18:03,626 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:18:08,342 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:18:49,785 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:18:53,662 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:21:36,287 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:21:41,537 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:22:10,784 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:22:14,780 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:22:43,478 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-14 11:22:48,019 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:24:41,095 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 11:24:44,482 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:25:53,603 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 11:25:58,262 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:26:39,064 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 11:26:44,088 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:27:13,753 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:27:17,807 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:27:42,896 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:27:47,388 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:27:59,033 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-14 11:28:02,105 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:31:51,655 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-14 11:31:58,482 log Not Found: /
+WARNING 2025-07-14 11:31:58,486 basehttp "GET / HTTP/1.1" 404 5203
+INFO 2025-07-14 11:32:05,506 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-14 11:32:05,554 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4323
+INFO 2025-07-14 11:32:32,451 basehttp "GET /register/ HTTP/1.1" 200 4067
+INFO 2025-07-14 11:32:54,131 basehttp "POST /register/ HTTP/1.1" 200 4252
+INFO 2025-07-14 11:34:00,216 basehttp "POST /register/ HTTP/1.1" 200 4251
+INFO 2025-07-14 11:34:05,640 basehttp "GET /login/ HTTP/1.1" 200 4323
+INFO 2025-07-14 11:34:12,366 basehttp "POST /login/ HTTP/1.1" 200 4552
+INFO 2025-07-14 11:34:18,406 basehttp "GET /register/ HTTP/1.1" 200 4067
+INFO 2025-07-14 11:34:20,459 basehttp "GET /login/ HTTP/1.1" 200 4323
+INFO 2025-07-14 11:34:22,731 basehttp "GET /password-reset/ HTTP/1.1" 200 2917
+ERROR 2025-07-14 11:34:27,479 log Internal Server Error: /password-reset/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\contrib\auth\views.py", line 229, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\views\generic\edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\accounts\views.py", line 114, in form_valid
+    user = User.objects.get(email=email)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 636, in get
+    raise self.model.MultipleObjectsReturned(
+    ...<5 lines>...
+    )
+django.contrib.auth.models.User.MultipleObjectsReturned: get() returned more than one User -- it returned 2!
+ERROR 2025-07-14 11:34:27,552 basehttp "POST /password-reset/ HTTP/1.1" 500 118353
+INFO 2025-07-14 11:35:49,143 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:35:53,946 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:36:33,675 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-14 11:36:38,392 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:37:40,017 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:37:44,095 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:38:13,861 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 11:38:32,030 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 11:39:08,340 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\forms.py changed, reloading.
+INFO 2025-07-14 11:39:17,247 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 14:03:04,318 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-14 14:03:18,177 log Not Found: /
+WARNING 2025-07-14 14:03:18,181 basehttp "GET / HTTP/1.1" 404 5203
+INFO 2025-07-14 14:03:33,467 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-14 14:03:33,525 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4323
+INFO 2025-07-14 14:03:39,251 basehttp "GET /password-reset/ HTTP/1.1" 200 2917
+INFO 2025-07-14 14:03:50,226 basehttp "POST /password-reset/ HTTP/1.1" 302 0
+INFO 2025-07-14 14:03:50,248 basehttp "GET /password-reset/done/ HTTP/1.1" 200 2605
+INFO 2025-07-14 14:03:52,112 basehttp "GET /login/ HTTP/1.1" 200 4323
+INFO 2025-07-14 14:03:52,637 basehttp - Broken pipe from ('127.0.0.1', 60583)
+INFO 2025-07-14 14:12:02,319 basehttp "GET /reset/NA/csxoe8-1b3908690f7983054cfcb840b3488f19/ HTTP/1.1" 302 0
+INFO 2025-07-14 14:12:02,533 basehttp "GET /reset/NA/set-password/ HTTP/1.1" 200 3219
+INFO 2025-07-14 14:12:30,771 basehttp "POST /reset/NA/set-password/ HTTP/1.1" 302 0
+INFO 2025-07-14 14:12:31,003 basehttp "GET /reset/done/ HTTP/1.1" 200 2370
+WARNING 2025-07-14 14:12:32,796 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:33,004 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f6c9f8fd_9073_4119_b225_53320733bf09__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:12:33,302 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:33,736 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:33,754 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6ec72f73_0cfb_4eff_af8c_7d6b971d942a__1 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:12:33,833 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__8ff8595e_9800_46a3_ad1e_d49eda561526__2 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:12:33,868 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:34,072 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e326e96e_1bfb_405d_ac35_96a6c4bbe8a7__3 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:12:34,034 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:34,217 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:34,345 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__1ca47915_bf4e_4148_adb2_6f19ffd946ed__4 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:12:34,435 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f058d179_0151_44e5_9d7d_d1e4c8044064__5 HTTP/1.1" 404 5441
+INFO 2025-07-14 14:12:36,101 basehttp "GET /login/ HTTP/1.1" 200 4323
+WARNING 2025-07-14 14:12:38,928 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:40,258 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__bf069976_5dba_4d0c_ae8f_88d8d8345cef__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:12:38,995 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:38,957 log Not Found: /hybridaction/zybTrackerStatisticsAction
+INFO 2025-07-14 14:12:40,848 basehttp - Broken pipe from ('127.0.0.1', 61267)
+WARNING 2025-07-14 14:12:40,876 log Not Found: /hybridaction/zybTrackerStatisticsAction
+INFO 2025-07-14 14:12:41,041 basehttp - Broken pipe from ('127.0.0.1', 61268)
+WARNING 2025-07-14 14:12:41,492 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:12:42,771 log Not Found: /hybridaction/zybTrackerStatisticsAction
+INFO 2025-07-14 14:12:43,039 basehttp - Broken pipe from ('127.0.0.1', 61280)
+INFO 2025-07-14 14:12:43,721 basehttp - Broken pipe from ('127.0.0.1', 61281)
+INFO 2025-07-14 14:12:44,194 basehttp - Broken pipe from ('127.0.0.1', 61282)
+INFO 2025-07-14 14:13:00,544 basehttp "POST /login/ HTTP/1.1" 200 4552
+WARNING 2025-07-14 14:13:01,938 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:02,386 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__464f05c6_d133_4a07_b1a2_c4d9ded65006__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:02,960 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:03,287 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:03,289 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__9adb5365_cb70_4543_a3b8_fe5c1539d19d__1 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:03,689 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__8111da1d_3450_4e41_9c22_fc9d0070d2da__2 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:03,803 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:04,056 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__20bdaf37_5908_4547_a977_cfbe6b5f7845__3 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:04,069 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:04,173 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__8c87cb8d_7b35_4e06_a91d_7493cf5f821e__4 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:04,186 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:04,359 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6c22f290_8286_4de7_9d9d_f5dea2a77a24__5 HTTP/1.1" 404 5441
+INFO 2025-07-14 14:13:04,642 basehttp "GET /register/ HTTP/1.1" 200 4207
+WARNING 2025-07-14 14:13:05,154 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:05,623 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e6ee9d7b_e5a8_4310_9904_beb9f269cb70__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:05,206 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:05,636 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__bc86faa9_ae9c_4a5b_bbcf_39ab9f01e9e3__2 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:05,182 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:05,650 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__90c4e19b_26c0_4d38_865f_e3f0b45b5ee9__1 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:05,968 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:06,909 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__db327732_d6e1_4e06_ad6e_08b13fb05a84__3 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:06,015 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:05,986 log Not Found: /hybridaction/zybTrackerStatisticsAction
+INFO 2025-07-14 14:13:08,771 basehttp - Broken pipe from ('127.0.0.1', 61314)
+INFO 2025-07-14 14:13:09,313 basehttp - Broken pipe from ('127.0.0.1', 61315)
+INFO 2025-07-14 14:13:27,728 basehttp "POST /register/ HTTP/1.1" 200 4428
+WARNING 2025-07-14 14:13:28,518 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:28,740 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__29b8f070_69ff_4442_83ad_53aaddf22425__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:28,543 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:28,746 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e04b42d8_08e2_4391_a8f9_2e16e40a133f__1 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:28,985 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:29,381 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f495762f_6535_4fc1_ab27_204b355f0934__2 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:29,418 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:29,626 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:29,651 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__30ab241e_6769_4523_b277_042c108a7077__4 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:29,629 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6802e2cd_42f5_4e1c_a2b4_cafe423379e8__3 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:13:29,756 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:13:29,765 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__04f77d88_946e_4fef_802f_5887b304402f__5 HTTP/1.1" 404 5441
+INFO 2025-07-14 14:14:27,906 basehttp "POST /register/ HTTP/1.1" 302 0
+INFO 2025-07-14 14:14:27,931 basehttp "GET /verification-sent/ HTTP/1.1" 200 2753
+WARNING 2025-07-14 14:14:28,304 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:14:28,318 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c82b6001_83cb_4281_9f65_90fd036f7d57__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:14:28,357 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:14:28,575 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__50a12982_5e3c_4504_970a_656c33ad5e59__1 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:14:28,617 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:14:28,703 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:14:28,858 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__2460334d_4076_4fc7_b092_98e035f7dc70__2 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:14:28,889 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:14:29,123 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__986fa835_b882_4a87_abb1_fd7f362e2ae8__4 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:14:29,106 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e6d32f67_a5cf_40de_a6a4_2237888b834e__3 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:14:29,334 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:14:29,708 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__4e3364fc_e3d4_495d_bbcd_3b0a491f9488__5 HTTP/1.1" 404 5441
+INFO 2025-07-14 14:15:04,052 basehttp "GET /resend-verification/ HTTP/1.1" 200 2801
+WARNING 2025-07-14 14:15:04,339 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:04,629 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__8af3032c_20af_4e18_af3e_a56c62e960b5__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:04,355 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:04,634 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__55ce29d9_40a1_4d2c_9a5b_2fe811c8bff7__1 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:05,563 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:06,086 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ce25aee5_b9b2_4eac_ba0a_eb3e766c32a4__2 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:06,189 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:06,333 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:06,333 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__a0fc36ec_b301_4c40_a4bd_1028788223a0__3 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:06,348 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__b74eda0c_da86_4031_aa74_176bb5859b2b__4 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:06,389 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:06,405 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__2a0e74a5_62ec_4cf7_aa36_1dce7e66bcb8__5 HTTP/1.1" 404 5441
+INFO 2025-07-14 14:15:15,590 basehttp - Broken pipe from ('127.0.0.1', 61491)
+INFO 2025-07-14 14:15:16,617 basehttp "POST /resend-verification/ HTTP/1.1" 302 0
+INFO 2025-07-14 14:15:16,701 basehttp "GET /verification-sent/ HTTP/1.1" 200 2781
+WARNING 2025-07-14 14:15:17,919 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:18,027 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e0e15dcb_c2c2_43f9_b1be_86a9155301fc__0 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:18,207 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:18,907 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c47cb85a_e45e_43e8_99ea_fd2f81978cc1__1 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:19,074 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:19,722 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:19,858 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c1e3f259_52dd_4e33_8a68_f21b4ef023c8__2 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:19,890 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:19,938 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__017f1a2a_dfd9_4451_9e69_ca16f9443134__3 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:19,977 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d6031194_a4b3_4771_a5b1_0a014c1ce802__4 HTTP/1.1" 404 5441
+WARNING 2025-07-14 14:15:20,153 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 14:15:20,342 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ebc4293b_1c30_493d_8a81_c72d28d7bb9d__5 HTTP/1.1" 404 5441
+INFO 2025-07-14 14:23:30,312 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 14:23:47,290 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 14:24:33,345 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 14:24:39,027 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 14:25:31,657 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 14:25:48,738 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 14:30:05,385 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 14:30:34,732 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 14:31:19,476 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 14:31:35,888 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 14:31:59,905 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 14:32:09,104 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 14:32:28,179 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 14:32:38,135 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:00:10,013 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:00:17,828 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:00:31,923 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:00:35,511 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:01:04,005 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:01:07,449 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:01:43,203 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:02:19,277 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:02:46,235 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-14 15:02:51,331 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:13:35,540 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:13:45,890 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:14:53,695 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-14 15:16:02,032 log Not Found: /
+WARNING 2025-07-14 15:16:02,033 basehttp "GET / HTTP/1.1" 404 5496
+INFO 2025-07-14 15:16:13,344 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-14 15:16:13,962 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4323
+INFO 2025-07-14 15:16:20,172 basehttp "POST /login/?next=/recycle/ HTTP/1.1" 200 4552
+INFO 2025-07-14 15:16:26,991 basehttp "GET /register/ HTTP/1.1" 200 4207
+INFO 2025-07-14 15:16:34,192 basehttp "GET /verification-sent/ HTTP/1.1" 200 5058
+WARNING 2025-07-14 15:16:40,694 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:16:40,776 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:16:40,807 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__4695c310_4559_4fca_98b8_c0bb2c999a92__1 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:16:40,796 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__7a67e8ea_db6a_4ef0_bcae_d9bb89c9c9df__0 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:16:40,873 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:16:40,923 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3a958bdb_ac00_4ee8_8003_ca8d5cdbf2a1__2 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:16:40,943 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:16:41,007 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__47ed4a04_9e82_4d84_9b76_100ee560632c__3 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:16:41,037 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:16:41,070 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__64a63145_3ef6_4379_958a_53fe40175fc6__4 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:16:41,093 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:16:41,126 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__5561fb62_b7a3_4cab_b151_3d32aa94dbe9__5 HTTP/1.1" 404 5734
+INFO 2025-07-14 15:17:10,557 basehttp "POST /resend-verification/ HTTP/1.1" 302 0
+INFO 2025-07-14 15:17:10,606 basehttp "GET /verification-sent/ HTTP/1.1" 200 12562
+INFO 2025-07-14 15:17:10,854 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+WARNING 2025-07-14 15:17:11,363 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:17:11,478 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__cfd2e16b_7830_4e32_9924_0486edd8bb50__0 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:17:11,622 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:17:11,882 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3004cb55_fb77_4b74_b8a3_4f5bd8236a73__1 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:17:11,941 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:17:11,976 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6b3bd744_bd36_445b_94c4_1702f76cf221__2 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:17:12,091 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:17:12,193 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:17:12,208 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__5cb50446_b0b2_42de_bb54_ec75389b7f38__4 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:17:12,196 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f577d0e3_4a7f_46cf_8428_e0ea94c6b256__3 HTTP/1.1" 404 5734
+WARNING 2025-07-14 15:17:12,359 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-14 15:17:12,371 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__954b46d6_5779_4d39_8b7c_c109fce119e1__5 HTTP/1.1" 404 5734
+INFO 2025-07-14 15:17:35,151 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:17:41,331 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:18:11,317 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:18:41,494 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:19:11,306 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:19:41,326 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:20:11,350 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:20:44,401 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:21:44,345 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:22:18,138 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:22:18,344 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:22:25,800 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:22:25,957 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:22:45,520 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:23:44,347 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:23:53,450 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:23:54,568 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:23:59,475 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:23:59,575 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:24:34,163 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:24:34,202 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:24:39,589 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:24:40,001 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:24:45,470 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:25:09,025 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:25:09,072 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\utils.py changed, reloading.
+INFO 2025-07-14 15:25:13,712 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:25:13,777 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:25:44,344 basehttp "GET /check-verification-status/ HTTP/1.1" 200 171
+INFO 2025-07-14 15:26:44,307 basehttp "GET /check-verification-status/ HTTP/1.1" 200 172
+INFO 2025-07-14 15:27:45,403 basehttp "GET /check-verification-status/ HTTP/1.1" 200 217
+INFO 2025-07-14 15:28:45,129 basehttp "GET /check-verification-status/ HTTP/1.1" 200 217
+INFO 2025-07-14 15:29:44,420 basehttp "GET /check-verification-status/ HTTP/1.1" 200 217
+INFO 2025-07-14 15:30:06,441 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:30:06,565 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:30:12,758 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:30:13,758 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:30:30,337 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:30:31,449 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:30:36,712 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:30:36,729 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:30:44,330 basehttp "GET /check-verification-status/ HTTP/1.1" 200 217
+INFO 2025-07-14 15:30:59,790 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:31:00,036 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:31:05,784 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:31:05,857 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:31:17,628 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:31:17,780 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:31:23,788 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:31:24,031 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:31:43,419 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:31:43,484 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:31:51,248 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:31:51,277 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:32:09,809 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:32:10,186 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:32:15,347 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:32:15,463 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:32:39,508 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:32:39,517 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-14 15:32:45,556 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:32:45,609 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:49:08,744 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 15:50:26,496 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\templatetags\email_status.py changed, reloading.
+INFO 2025-07-14 15:51:19,944 autoreload Watching for file changes with StatReloader
+INFO 2025-07-14 17:45:43,743 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:12:03,333 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:14:25,868 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:14:36,260 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:15:01,182 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:15:05,462 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:15:15,618 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:15:20,395 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:15:41,271 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:15:46,565 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:16:31,858 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:16:38,075 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:17:00,278 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:17:05,808 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:17:18,825 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:17:23,694 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:17:50,181 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:17:54,864 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:19:01,458 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-15 10:19:06,803 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:20:31,356 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-15 10:20:37,600 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:24:34,448 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:24:42,115 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:29:58,520 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-15 10:30:20,086 log Not Found: /
+WARNING 2025-07-15 10:30:20,963 basehttp "GET / HTTP/1.1" 404 5496
+WARNING 2025-07-15 10:30:24,492 log Not Found: /
+WARNING 2025-07-15 10:30:25,013 basehttp "GET / HTTP/1.1" 404 5496
+WARNING 2025-07-15 10:30:27,321 log Not Found: /favicon.ico
+WARNING 2025-07-15 10:30:27,374 basehttp "GET /favicon.ico HTTP/1.1" 404 5547
+INFO 2025-07-15 10:30:36,788 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:30:36,918 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4323
+INFO 2025-07-15 10:30:52,084 basehttp "GET /register/ HTTP/1.1" 200 4207
+INFO 2025-07-15 10:31:14,394 basehttp "POST /register/ HTTP/1.1" 200 4425
+INFO 2025-07-15 10:33:30,851 basehttp "GET /login/ HTTP/1.1" 200 4323
+INFO 2025-07-15 10:33:34,554 basehttp "GET /password-reset/ HTTP/1.1" 200 2917
+INFO 2025-07-15 10:33:44,483 basehttp "POST /password-reset/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:33:44,507 basehttp "GET /password-reset/done/ HTTP/1.1" 200 2605
+INFO 2025-07-15 10:35:32,862 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:35:32,896 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:35:39,516 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:35:40,304 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:36:29,501 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:36:30,213 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:36:34,919 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:36:34,969 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:37:30,194 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\forms.py changed, reloading.
+INFO 2025-07-15 10:37:30,966 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\forms.py changed, reloading.
+INFO 2025-07-15 10:37:34,844 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:37:34,996 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:37:50,220 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:37:50,421 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:37:55,453 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:37:55,813 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-15 10:39:36,510 log Not Found: /
+WARNING 2025-07-15 10:39:36,805 basehttp "GET / HTTP/1.1" 404 5496
+INFO 2025-07-15 10:39:47,779 basehttp "GET /register/ HTTP/1.1" 200 5017
+INFO 2025-07-15 10:40:16,668 basehttp "POST /register/ HTTP/1.1" 200 5328
+INFO 2025-07-15 10:41:37,485 basehttp "POST /register/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:41:37,558 basehttp "GET /verification-sent/ HTTP/1.1" 200 19269
+INFO 2025-07-15 10:41:38,073 basehttp "GET /check-verification-status/ HTTP/1.1" 200 170
+INFO 2025-07-15 10:42:07,820 basehttp "GET /check-verification-status/ HTTP/1.1" 200 170
+INFO 2025-07-15 10:42:30,357 basehttp "GET /login/ HTTP/1.1" 200 4323
+INFO 2025-07-15 10:42:35,328 basehttp "POST /login/ HTTP/1.1" 200 4552
+INFO 2025-07-15 10:42:50,333 basehttp "POST /login/ HTTP/1.1" 200 4552
+INFO 2025-07-15 10:42:54,680 basehttp "GET /password-reset/ HTTP/1.1" 200 2917
+INFO 2025-07-15 10:43:03,736 basehttp "POST /password-reset/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:43:03,801 basehttp "GET /password-reset/done/ HTTP/1.1" 200 2605
+INFO 2025-07-15 10:43:34,631 basehttp "GET /reset/NA/csz9rp-62db37406d21c6515c1ebfddaf61c8d5/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:43:34,655 basehttp "GET /reset/NA/set-password/ HTTP/1.1" 200 3223
+WARNING 2025-07-15 10:43:37,703 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:37,722 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__1dedd0c1_9e0e_4f0d_be39_cde2039b8575__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:37,764 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:37,780 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__76b98557_c034_4553_9b78_76aadf50c86b__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:37,796 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:37,903 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:38,093 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__26df7fec_875d_494c_9c8d_4de087f67c0f__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:38,522 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d75bb739_7d22_463d_82d3_2dd7b33bcedf__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:38,544 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:38,633 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__4a19558b_952c_4b05_b2db_cfb6405cc5db__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:38,669 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:39,546 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__cd4af594_2121_4222_ad8b_fe0ea19610ea__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:40,312 log Not Found: /favicon.ico
+WARNING 2025-07-15 10:43:40,314 basehttp "GET /favicon.ico HTTP/1.1" 404 5547
+INFO 2025-07-15 10:43:53,737 basehttp "POST /reset/NA/set-password/ HTTP/1.1" 200 3556
+WARNING 2025-07-15 10:43:54,037 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:54,050 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:54,054 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3c0d947a_4eed_4408_ab54_404bcf1c6d97__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:54,055 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__68429038_428d_4955_b031_6bdb2d94f643__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:54,148 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:54,165 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__0e83149c_436a_4526_ac25_0a86f8c5d79f__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:54,183 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:54,196 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:54,246 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__458414de_78fb_421f_bcf8_3e040a97d421__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:54,220 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__557e63dd_9b68_40a4_addb_e1c33896b299__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:43:54,284 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:43:54,295 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6dc8fed0_c998_4a6b_a220_6e8ba01e3e1e__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:44:17,534 basehttp "POST /reset/NA/set-password/ HTTP/1.1" 200 3529
+WARNING 2025-07-15 10:44:17,816 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:17,832 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:17,847 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6c68bf23_963f_4aef_b22f_7f7f1afbde32__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:17,843 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ee62ee58_1d1b_4139_83b1_f8ef79db31d9__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:17,894 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:17,901 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c184eed0_1eae_4571_a8c2_6e1d12bb152e__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:17,970 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:18,074 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__1b9cbf70_19ec_457c_8bc9_c665445372b3__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:18,062 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:18,082 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__2f71e811_b434_485e_8d17_006d69f6feb8__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:17,982 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:18,100 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__18a5fd2e_9cae_4ac2_aa9e_39215a829887__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:44:39,509 basehttp "POST /reset/NA/set-password/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:44:39,530 basehttp "GET /reset/done/ HTTP/1.1" 200 2370
+WARNING 2025-07-15 10:44:39,941 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:40,048 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__66d55b3b_84bd_44eb_9cff_1577fb73b729__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:40,268 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:40,408 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__cde75c06_fc28_41db_8485_7859757e3767__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:40,423 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:40,541 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__5c60e0a4_033c_4d54_a9ce_a1ae4570fe00__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:40,587 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:40,640 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:40,682 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__203525ce_4f42_4e1a_b919_7dfbbe6cccae__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:40,686 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:40,711 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__65d54059_fa4b_449c_a8d7_96ae37783157__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:40,687 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__17ce7f5b_ba2c_44e7_91e3_f1af1d7f9a2c__2 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:44:44,160 basehttp "GET /login/ HTTP/1.1" 200 4323
+WARNING 2025-07-15 10:44:45,400 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:45,406 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__da4b0d8a_5c52_4484_969d_2eb38cab66be__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:45,429 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:45,439 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ca1f6526_1dcd_4474_8f9d_777b0c0775a4__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:45,468 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:45,483 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__be0d1cd5_bf7a_49e3_be57_960543310d28__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:45,707 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:45,848 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__089d43d5_cff0_44dd_8087_b47b95b6cfea__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:45,736 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:45,855 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d947e025_6a48_4e1a_a6a9_544c25f287bc__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:44:45,723 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:44:45,863 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__87ca9817_9d13_4cca_86c2_02d3e18a08be__4 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:45:14,700 basehttp "POST /login/ HTTP/1.1" 200 4552
+WARNING 2025-07-15 10:45:15,299 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:15,497 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ae1c3bf5_4b79_4604_95e3_3c1dd7a26f2b__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:15,320 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:15,507 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d2ab31d1_e5fd_4d21_a1b2_1a1610f202dc__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:15,769 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:15,948 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__9e68a6e1_c038_4903_be0a_b43c22c38adf__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:15,970 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:16,120 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:16,123 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f849a5e3_637e_4cc3_9328_b1e865991185__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:16,153 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:16,175 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__4d08e5f8_3e6a_4ed8_8dcc_d48058d2dac5__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:16,157 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ca2325da_d613_4eda_9c6c_32b1e2867795__4 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:45:33,293 basehttp "POST /login/ HTTP/1.1" 200 4552
+WARNING 2025-07-15 10:45:33,702 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:33,720 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:33,736 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6a952e0c_df73_48d7_a4e2_7b8056167d1b__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:33,735 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__27b67b4b_309b_4591_8190_a34f5b67191c__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:33,876 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:33,938 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:33,944 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:34,147 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ecb3aef9_c406_4804_9980_c46ca0b2238a__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:34,122 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6f3e87d7_8efa_44e3_9233_b533756280b0__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:34,137 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:34,158 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__5a2fb636_9e8e_4109_870d_ad06df6480c5__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:34,004 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__57f8a477_91e3_4ffa_9a36_e24be07bc716__2 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:45:46,470 basehttp "GET /password-reset/ HTTP/1.1" 200 2917
+WARNING 2025-07-15 10:45:46,659 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:46,722 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__86ac3e7c_c5f3_46fd_84ec_a894711e0256__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:46,709 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:46,730 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__2840af2d_dc73_47da_8349_e9c66672cb11__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:46,760 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:46,774 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__51c07ac6_bca2_4198_91b2_bc56eca0181b__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:46,937 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:47,026 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__eea8707b_f1f5_4382_b93b_95a6c8f6db0b__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:46,958 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:47,030 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__056f1bc0_ec18_48cf_a551_0a58af171b11__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:46,946 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:47,039 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__80ff7abf_cacc_4ee4_8c60_f6340520b5fa__3 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:45:53,702 basehttp "POST /password-reset/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:45:53,718 basehttp "GET /password-reset/done/ HTTP/1.1" 200 2605
+WARNING 2025-07-15 10:45:53,910 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:53,957 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ae2c1dcb_26cf_4c5c_ba12_19fd027dec65__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:53,928 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:54,240 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__26822f34_1f55_4a8a_8ce1_285398543094__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:54,252 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:54,373 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__96726eee_ed17_40fa_a83b_409a42319e1b__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:54,280 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:54,382 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__343289a3_cba9_4f6e_81c4_b2119716b866__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:54,403 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:54,428 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__44ff879d_86c0_4b33_b488_a62de4c69db1__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:45:54,447 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:45:54,457 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__56e68904_dea3_4d39_8d68_cf21af34745f__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:46:04,561 basehttp "GET /reset/NA/csz9we-44161bf38b64f488ae2481a43f98c210/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:46:04,587 basehttp "GET /reset/NA/set-password/ HTTP/1.1" 200 3223
+WARNING 2025-07-15 10:46:06,100 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:06,120 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__647328d0_cf18_41ca_8f72_a64b13ba4a3c__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:06,205 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:06,212 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__5f3d075b_d09f_4532_8d5e_93631e290f03__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:06,234 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:06,250 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__38abcd17_b77e_4da9_9332_2b6e0134b6f6__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:07,411 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:07,613 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__7cd3e1b2_88dc_4438_a13f_0a8145e4b387__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:07,437 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:07,622 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ed89ef25_eea3_49ba_83be_7cc2588d5d10__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:07,424 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:07,627 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__33e678a8_b570_4a81_84ed_eeb637f7920f__4 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:46:26,758 basehttp "POST /reset/NA/set-password/ HTTP/1.1" 302 0
+INFO 2025-07-15 10:46:26,781 basehttp "GET /reset/done/ HTTP/1.1" 200 2370
+WARNING 2025-07-15 10:46:27,019 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:27,048 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:27,073 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__10c35bfd_dad0_4693_be75_29fa395773f8__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:27,070 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__005c39ae_7eaf_4bc3_b87f_1f27ad923e64__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:27,100 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:27,104 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__a6e9db93_019a_4f04_a36a_70fa61f5c501__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:27,186 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:27,266 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__7d714a55_e516_46b6_8b1b_6f439700e15d__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:27,285 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:27,300 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:27,339 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__7f56dcd7_2b80_4d5b_9fe2_dbefe31654d0__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:27,319 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__a09c6d8c_b34a_4b0a_8628_759b2b2c1ab1__4 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:46:29,428 basehttp "GET /login/ HTTP/1.1" 200 4323
+WARNING 2025-07-15 10:46:30,265 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:30,379 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__0cb4a658_7c4c_45d9_bcf8_263850208a1c__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:30,395 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:30,414 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__7d41b7c3_2ba9_480a_8e3c_5ef3f1ddff43__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:30,439 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:30,450 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__5f6d36fd_f436_49cd_a71b_461e46e07348__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:30,478 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:30,500 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ba1decde_8bef_445f_b071_f9457b65ade9__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:30,619 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:30,829 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__02c449f0_69d2_43bc_be64_d015dfb9f57c__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:30,854 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:31,034 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c4505fb9_5e2a_44da_8cbc_01027f8f7a5f__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:46:48,010 basehttp "POST /login/ HTTP/1.1" 302 0
+WARNING 2025-07-15 10:46:48,028 log Not Found: /
+WARNING 2025-07-15 10:46:48,029 basehttp "GET / HTTP/1.1" 404 5496
+WARNING 2025-07-15 10:46:48,224 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:48,296 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c169acda_5f6f_48ed_bbdd_1c65f9d3f396__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:48,244 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:48,309 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__9b376d97_1258_48df_aeb7_3b763efd8aa8__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:48,345 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:48,359 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__940ad39b_5bd4_4c10_a20d_43bc7ab79ede__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:48,530 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:48,545 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:48,557 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:48,582 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f35e9d76_5ffa_4f15_a25e_b2ae04fccf7b__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:48,570 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__99a145fd_1d39_40c5_8cff_1d131c87d95c__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:48,561 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__791479a2_d23c_4fa8_89e9_7a4e69b469e0__3 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:46:56,296 basehttp "GET /login/ HTTP/1.1" 200 4319
+WARNING 2025-07-15 10:46:56,717 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:56,730 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:56,740 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__2e9f593f_1a4d_491c_ae3d_a90287735d02__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:56,743 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__a381a6af_634e_4f04_87d8_57e0a33783c1__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:56,792 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:56,834 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e1ede8ac_5fe0_4aa6_b657_7be3b9257b38__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:57,039 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:57,155 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__b344095c_6a15_41c3_b108_7a1f09e1c85d__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:57,054 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:57,164 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__b0eacd7b_45e5_4797_9511_47dbced09603__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:46:57,272 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:46:57,464 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__086c1adb_534b_4ef3_a7d1_a31c3608e7a9__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:47:10,055 basehttp "POST /login/ HTTP/1.1" 302 0
+WARNING 2025-07-15 10:47:10,074 log Not Found: /
+WARNING 2025-07-15 10:47:10,075 basehttp "GET / HTTP/1.1" 404 5496
+WARNING 2025-07-15 10:47:10,329 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:10,352 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f0665664_0e7f_453e_84ad_59a796daaefd__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:10,641 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:10,747 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:10,861 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__77f4be38_f692_406d_a701_9fb44f33538c__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:10,768 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:11,055 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__642b434a_699c_4552_88b8_139618ae7ea7__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:10,753 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__52dd13e2_ec5f_4e6c_9245_6377a7cedf56__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:11,170 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:11,313 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__df6808ca_6b71_463b_8568_aae0fdc772ca__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:11,336 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:11,346 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__7f8826ac_b84d_4c1e_8208_f27a3c911d9d__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:47:19,736 basehttp "GET /recycle HTTP/1.1" 301 0
+INFO 2025-07-15 10:47:19,768 basehttp "GET /recycle/ HTTP/1.1" 200 386
+WARNING 2025-07-15 10:47:19,898 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:19,949 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__8c78d77e_3104_4dac_942d_243e6e23ccec__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:20,159 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:20,289 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__f8a32387_6ce1_4b65_870b_c841e3157174__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:20,303 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:20,601 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3c195453_893b_45bd_9472_711ba3da6005__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:20,376 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:20,616 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c142c1cd_8c34_4722_81e0_9f9f4e2af9c0__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:20,650 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:20,665 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e07cd6a0_855d_4e1c_9339_937c8888a636__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:20,689 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:20,920 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__eeda68b9_ced1_43de_9594_d26f1dfa45cd__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:47:25,178 basehttp "GET /recycle/detail/1/ HTTP/1.1" 200 340
+WARNING 2025-07-15 10:47:25,384 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:25,450 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__57db13b2_be98_4d6b_a8fc_10dab65a67ed__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:25,399 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:25,459 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__b7c66fbf_6ef7_408b_a83f_56d1ea4d5bf9__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:25,747 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:25,969 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6d1f023b_3047_4031_b57c_868644a8ab45__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:25,991 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:26,011 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ea224c0e_e8b3_4d10_a424_3b03f5d78846__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:26,045 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:26,258 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__efd7dfba_efcd_4b29_91c5_86a3b39bbd17__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:26,273 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:26,383 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__1436506d_5616_4366_8801_605fc18e395b__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:47:28,095 basehttp "GET /recycle/ HTTP/1.1" 200 386
+WARNING 2025-07-15 10:47:28,270 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:28,345 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__67f63a9b_d343_48f2_8336_2af080b19ddc__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:28,340 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:28,361 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__58bb2510_cd88_490a_baba_a2d45bd9327f__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:28,291 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:28,379 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__b32c4250_e15c_4d01_ab6e_96b16782e3fa__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:28,557 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:28,623 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__05a613a3_6c51_44bf_b925_6565bbc2af5a__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:28,588 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:28,628 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3df5eebb_8856_4e1c_8e71_6438508077fd__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:28,577 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:28,638 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__cb58c54e_c78f_4905_ad6a_b8cb8bfeaf3e__4 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:47:40,360 basehttp "GET /waste/ HTTP/1.1" 200 345
+WARNING 2025-07-15 10:47:40,597 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:40,676 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__927d5d63_68b3_473c_9ef1_86ad4579d068__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:40,612 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:40,696 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c946851f_4f1f_49dc_ac05_31a9e5988a48__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:40,818 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:40,830 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3c4c33b4_e989_429c_9dea_49496e9c2f37__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:40,909 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:41,144 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__bfd84431_ea5a_481b_9480_bb7c3323c50e__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:41,167 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:41,225 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3b371b10_2d1b_4f65_b56b_8bf365631e95__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:41,273 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:41,278 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__ab95d92f_27f4_477f_925b_3cc040856122__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:47:43,556 basehttp "GET /waste/report/ HTTP/1.1" 200 752
+WARNING 2025-07-15 10:47:43,756 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:43,853 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:43,867 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:43,880 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__278692a0_7ed7_4a3e_814b_da6b6c0c799c__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:43,877 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__20902b13_dac1_431a_9ea3_1d5051f8f0fd__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:43,873 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d795c369_89fa_4095_9b18_d1dba82780e7__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:44,000 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:44,090 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__0b836788_1ffc_4d6d_be34_a123322660be__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:44,023 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:44,102 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c935e959_3486_4997_84dc_ddb5270827e8__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:44,012 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:44,111 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__0055d2dc_d375_4f5e_9b65_4daa8710661e__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:46,735 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:46,945 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__b68e203d_bf28_4f91_be0b_5b7fd446ceb1__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:46,967 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:47,405 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__72ce18ab_27c9_46bb_9d23_b37074582b13__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:47,492 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:47,514 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__9d3878e1_3a20_4aa1_927d_6f6fa6516dd8__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:47,579 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:47,587 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__966a4652_027f_4e81_ba80_c4a1d0c31693__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:47,607 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:47,611 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__e598ca12_5f03_47d4_8401_285fb52a8654__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:47:47,692 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:47:47,703 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6343baa9_07eb_4814_b6dd_a14f8f6b5557__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:52,464 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:52,481 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:52,491 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d9ca2cb5_5676_4a37_a770_82ec411182cd__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:52,494 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__dbd83409_e1f9_4038_b47c_07d5b9cb3521__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:52,543 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:52,714 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c17b0236_fbcd_405d_9ec9_dc604f770a1a__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:52,746 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:52,747 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:53,083 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:53,308 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__5471fc88_d94a_4687_946d_e7a16a5c83a2__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:53,430 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__2ea35ca6_f3b8_4c15_86b6_6f938720731a__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:53,447 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c3b9ae4e_2d61_43d3_bb2f_52ef2b945b85__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:54,541 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:54,557 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:54,575 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:54,592 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__0801adb3_bb17_4774_a782_1583c162978a__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:54,589 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__753d32b2_342f_4cf5_bd05_7a3ef3e22cfd__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:54,585 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__4b4d6908_5ec6_4839_8010_eb0e6bb7a9fb__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:54,799 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:54,901 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d8c04e80_b3fe_4864_95f0_b841e076246f__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:54,981 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:55,004 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__a28a096f_4376_468c_8088_759c397f683d__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:55,033 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:55,056 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__fad51aa9_84bb_40d0_a815_561e35e5c7ac__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:56,446 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:56,546 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__600569ea_f10f_432b_a494_dee4b6a14556__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:56,494 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:56,555 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__842a0f92_4813_48a9_b566_8f0471396fe9__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:56,468 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:56,562 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__d7dd9d97_d769_412d_9ee1_90dd8763b7b1__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:56,739 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:56,933 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3f82c765_57c7_492c_8a65_070fd2a439de__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:56,768 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:56,945 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__28d8383b_3b45_4c9f_9a96_6404d2196ddd__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:56,754 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:56,956 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__00ebe9f8_93a8_4a0f_ba60_a44d0390f103__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:57,767 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:57,794 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:57,813 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:57,832 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__531ae579_3270_443d_a74e_98535f59f8a5__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:57,828 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__850f926d_0238_44d5_999d_09f10117f392__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:57,826 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__19f6439e_bd52_4254_a0fb_b7fa94fb4a9e__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:58,123 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:58,200 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__32536df6_8415_4bae_9bdc_3764a62f7a14__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:58,154 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:58,206 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__6cd2f95d_8849_474d_aacd_edec046b0b8e__5 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:48:58,138 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:58,218 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__1df5cced_77bf_4506_9549_1d218940acb7__4 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:48:59,431 basehttp "GET /login/ HTTP/1.1" 200 4319
+WARNING 2025-07-15 10:48:59,982 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:48:59,992 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__7a0e8316_c9fa_4a01_bf2a_fac56d69539e__0 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:49:00,020 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:49:00,048 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__c8791a9c_51f4_4dd6_a6d1_9244751c7c55__2 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:49:00,220 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:49:00,303 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__3b432cd4_17be_4af8_ad13_6053e46c6902__1 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:49:00,331 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:49:00,372 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__753fec48_6ae9_4820_87ff_3b2b03bbda43__3 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:49:00,398 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:49:00,405 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__9994b290_8693_4407_95f6_7a7b95f00e9b__4 HTTP/1.1" 404 5734
+WARNING 2025-07-15 10:49:00,421 log Not Found: /hybridaction/zybTrackerStatisticsAction
+WARNING 2025-07-15 10:49:00,452 basehttp "GET /hybridaction/zybTrackerStatisticsAction?data=%7B%7D&__callback__=__cb__zybTrackerStatisticsAction__9f3df954_0395_49c4_ba1d_b1dfabce398a__5 HTTP/1.1" 404 5734
+INFO 2025-07-15 10:50:32,596 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-15 10:50:32,382 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-15 10:50:40,521 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:50:40,524 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:50:53,742 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:50:54,471 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:51:00,353 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:51:00,423 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:51:38,397 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:51:40,078 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:51:45,486 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:51:45,596 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:53:26,512 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:53:26,742 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-15 10:53:36,262 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:53:36,446 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:54:28,965 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-15 10:54:29,018 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-15 10:54:32,484 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:54:32,494 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:55:09,259 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-15 10:55:09,590 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-15 10:55:15,957 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:55:15,974 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 10:56:27,770 basehttp "GET /login/ HTTP/1.1" 200 4724
+INFO 2025-07-15 10:56:56,690 basehttp "POST /login/ HTTP/1.1" 302 0
+WARNING 2025-07-15 10:56:56,759 log Not Found: /
+WARNING 2025-07-15 10:56:56,763 basehttp "GET / HTTP/1.1" 404 5496
+INFO 2025-07-15 10:57:05,251 basehttp "GET /recycle/ HTTP/1.1" 200 386
+INFO 2025-07-15 15:11:56,154 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-15 15:12:04,126 log Not Found: /
+WARNING 2025-07-15 15:12:04,239 basehttp "GET / HTTP/1.1" 404 5496
+WARNING 2025-07-15 15:12:06,141 log Not Found: /
+WARNING 2025-07-15 15:12:07,519 basehttp "GET / HTTP/1.1" 404 5496
+WARNING 2025-07-15 15:12:08,802 log Not Found: /favicon.ico
+WARNING 2025-07-15 15:12:08,924 basehttp "GET /favicon.ico HTTP/1.1" 404 5547
+INFO 2025-07-15 15:12:32,800 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-15 15:12:32,854 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4724
+INFO 2025-07-15 15:12:43,172 basehttp "POST /login/?next=/recycle/ HTTP/1.1" 200 4953
+INFO 2025-07-15 15:13:08,591 basehttp "POST /login/?next=/recycle/ HTTP/1.1" 302 0
+INFO 2025-07-15 15:13:08,665 basehttp "GET /recycle/ HTTP/1.1" 200 386
+INFO 2025-07-15 15:13:31,706 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-07-15 15:13:31,763 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-07-15 15:13:32,130 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3687
+INFO 2025-07-15 15:13:33,463 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-07-15 15:13:33,525 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-07-15 15:13:33,538 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-07-15 15:13:33,548 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-07-15 15:13:33,968 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-07-15 15:13:34,544 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-07-15 15:13:34,547 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-07-15 15:13:41,880 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 3855
+INFO 2025-07-15 15:14:24,391 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-07-15 15:14:24,486 basehttp "GET /admin/ HTTP/1.1" 200 6097
+INFO 2025-07-15 15:14:24,548 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-07-15 15:14:24,797 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-07-15 15:14:24,808 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-07-15 16:15:52,951 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\models.py changed, reloading.
+INFO 2025-07-15 16:16:11,922 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 16:17:22,704 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\forms.py changed, reloading.
+INFO 2025-07-15 16:17:30,913 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 16:23:00,229 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py changed, reloading.
+INFO 2025-07-15 16:23:09,502 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 16:42:41,286 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\models.py changed, reloading.
+INFO 2025-07-15 16:42:48,710 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 16:43:40,691 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\urls.py changed, reloading.
+INFO 2025-07-15 16:43:44,500 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 17:03:05,401 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\admin.py changed, reloading.
+INFO 2025-07-15 17:03:09,185 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 17:13:13,899 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-15 17:13:26,441 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 17:13:35,115 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\urls.py changed, reloading.
+INFO 2025-07-15 17:13:40,790 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 17:15:16,023 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\models.py changed, reloading.
+INFO 2025-07-15 17:15:36,383 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 17:19:33,662 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 17:21:09,226 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-15 17:21:24,662 log Not Found: /
+WARNING 2025-07-15 17:21:25,082 basehttp "GET / HTTP/1.1" 404 5665
+WARNING 2025-07-15 17:21:30,009 log Not Found: /
+WARNING 2025-07-15 17:21:30,912 basehttp "GET / HTTP/1.1" 404 5665
+INFO 2025-07-15 17:21:42,578 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-15 17:21:42,648 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4724
+INFO 2025-07-15 17:21:59,688 basehttp "POST /login/?next=/recycle/ HTTP/1.1" 302 0
+ERROR 2025-07-15 17:22:02,169 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: recycle_tips_tip.is_visual_guide
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 40, in tips_home
+    'visual': Tip.objects.filter(is_visual_guide=True).count(),
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\sql\query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\sql\query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: recycle_tips_tip.is_visual_guide
+ERROR 2025-07-15 17:22:02,381 basehttp "GET /recycle/ HTTP/1.1" 500 139561
+WARNING 2025-07-15 17:23:45,212 log Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-07-15 17:23:45,678 basehttp "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 5827
+INFO 2025-07-15 17:26:16,945 autoreload Watching for file changes with StatReloader

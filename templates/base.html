@@ -24,18 +24,32 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <span class="nav-link">Welcome, {{ user.username }}</span>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-user-circle me-1"></i> {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><h6 class="dropdown-header">Account</h6></li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'waste_logs_home' %}">My Waste Logs</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                        <i class="fa fa-sign-out-alt me-1"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            <a class="nav-link" href="{% url 'login' %}">
+                                <i class="fa fa-sign-in-alt me-1"></i> Login
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}">Register</a>
+                            <a class="nav-link" href="{% url 'register' %}">
+                                <i class="fa fa-user-plus me-1"></i> Register
+                            </a>
                         </li>
                     {% endif %}
                 </ul>
@@ -46,8 +60,9 @@
     <div class="container mt-4">
         {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show">
                     {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             {% endfor %}
         {% endif %}
@@ -56,6 +71,155 @@
         {% endblock %}
     </div>
 
+    <!-- Logout Confirmation Modal -->
+    {% if user.is_authenticated %}
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to log out of your account?</p>
+                    <p class="text-muted">You will need to login again to access your account features.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form method="post" action="{% url 'logout' %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Yes, Log Out</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    {% if user.is_authenticated %}
+    <!-- Session timeout warning script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Session timeout settings from Django
+            const sessionTimeout = {{ request.session.get_expiry_age|default:7200 }}; // Get from Django or default to 2 hours
+            const warningTime = sessionTimeout * 0.8; // Show warning at 80% of timeout
+            
+            let inactivityTimer;
+            let lastActivity = new Date();
+            
+            // Function to reset the inactivity timer
+            function resetInactivityTimer() {
+                lastActivity = new Date();
+                clearTimeout(inactivityTimer);
+                // Set timer to show warning
+                inactivityTimer = setTimeout(showTimeoutWarning, warningTime * 1000);
+            }
+            
+            // Function to show the timeout warning
+            function showTimeoutWarning() {
+                const timeLeft = sessionTimeout - ((new Date() - lastActivity) / 1000);
+                const minutesLeft = Math.round(timeLeft / 60);
+                
+                if (minutesLeft <= 0) {
+                    // Session has expired, redirect to login
+                    window.location.href = "{% url 'login' %}";
+                    return;
+                }
+                
+                // Create or show the warning modal
+                let warningModal = document.getElementById('sessionTimeoutModal');
+                
+                if (!warningModal) {
+                    const modalHTML = `
+                        <div class="modal fade" id="sessionTimeoutModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-warning text-dark">
+                                        <h5 class="modal-title">
+                                            <i class="fas fa-exclamation-triangle me-2"></i>
+                                            Session Timeout Warning
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Your session is about to expire due to inactivity.</p>
+                                        <p>You will be automatically logged out in <span id="timeout-countdown">${minutesLeft}</span> minutes.</p>
+                                        <p>Do you want to stay logged in?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Logout Now
+                                        </button>
+                                        <button type="button" class="btn btn-primary" id="extendSessionBtn">
+                                            Stay Logged In
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.insertAdjacentHTML('beforeend', modalHTML);
+                    warningModal = document.getElementById('sessionTimeoutModal');
+                    
+                    // Add event listener to the extend session button
+                    document.getElementById('extendSessionBtn').addEventListener('click', function() {
+                        // Make an AJAX request to extend the session
+                        fetch(window.location.href, {
+                            method: 'HEAD',
+                            credentials: 'same-origin'
+                        }).then(() => {
+                            const bsModal = bootstrap.Modal.getInstance(warningModal);
+                            bsModal.hide();
+                            resetInactivityTimer();
+                        });
+                    });
+                    
+                    // If they dismiss without extending, log them out when time runs out
+                    warningModal.addEventListener('hidden.bs.modal', function () {
+                        const timeLeft = sessionTimeout - ((new Date() - lastActivity) / 1000);
+                        if (timeLeft > 0) {
+                            setTimeout(() => {
+                                window.location.href = "{% url 'logout' %}";
+                            }, timeLeft * 1000);
+                        }
+                    });
+                } else {
+                    // Update the countdown
+                    document.getElementById('timeout-countdown').textContent = minutesLeft;
+                }
+                
+                // Show the modal
+                const bsModal = new bootstrap.Modal(warningModal);
+                bsModal.show();
+                
+                // Set a timer to update the countdown
+                const countdownTimer = setInterval(() => {
+                    const newTimeLeft = sessionTimeout - ((new Date() - lastActivity) / 1000);
+                    const newMinutesLeft = Math.round(newTimeLeft / 60);
+                    
+                    if (newMinutesLeft <= 0) {
+                        clearInterval(countdownTimer);
+                        window.location.href = "{% url 'logout' %}";
+                    } else {
+                        document.getElementById('timeout-countdown').textContent = newMinutesLeft;
+                    }
+                }, 60000); // Update every minute
+            }
+            
+            // Track user activity
+            ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+                document.addEventListener(event, resetInactivityTimer, false);
+            });
+            
+            // Initial setup
+            resetInactivityTimer();
+        });
+    </script>
+    {% endif %}
 </body>
 </html>

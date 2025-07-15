@@ -4,16 +4,65 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
                     <h2 class="text-center">Register</h2>
                 </div>
                 <div class="card-body">
+                    {% if messages %}
+                    <div class="mb-4">
+                        {% for message in messages %}
+                            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="alert alert-info mb-4">
+                        <strong>Important:</strong> After registration, you'll need to verify your email address.
+                        A verification link will be sent to your email. Please make sure to provide a valid email address.
+                    </div>
+                    
                     <form method="post">
                         {% csrf_token %}
-                        {{ form.as_p }}
+                        <div class="mb-3">
+                            <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                            {{ form.username }}
+                            {% if form.username.errors %}
+                                <div class="text-danger">{{ form.username.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.email.id_for_label }}" class="form-label">Email Address</label>
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <div class="text-danger">{{ form.email.errors }}</div>
+                            {% endif %}
+                            <div class="form-text text-muted">
+                                Make sure this is a valid email where you can receive verification links
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+                            {{ form.password1 }}
+                            {% if form.password1.errors %}
+                                <div class="text-danger">{{ form.password1.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+                            {{ form.password2 }}
+                            {% if form.password2.errors %}
+                                <div class="text-danger">{{ form.password2.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
                         <div class="text-center mt-4">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary btn-lg">Register</button>
                         </div>
                         <div class="text-center mt-3">
                             <a href="{% url 'login' %}">Already have an account? Login here</a>

@@ -1,24 +1,380 @@
 {% extends "base.html" %}
+{% load email_status %}
 
 {% block content %}
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="text-center">Email Verification</h2>
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-success text-white text-center">
+                    <h2>Email Verification</h2>
                 </div>
                 <div class="card-body">
-                    <p class="text-center">
-                        We have sent you an email with a verification link. Please check your email and click on the link to verify your account.
-                    </p>
-                    <p class="text-center">
-                        If you haven't received the email, please check your spam folder or
-                        <a href="{% url 'resend_verification' %}">click here to resend</a>.
-                    </p>
+                    {% if messages %}
+                    <div class="alert 
+                        {% if 'error' in message.tags %}alert-danger
+                        {% elif 'success' in message.tags %}alert-success
+                        {% else %}alert-info{% endif %} mb-4">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="text-center mb-4">
+                        <i class="fa fa-envelope fa-4x text-success mb-3" aria-hidden="true"></i>
+                        <h4 class="mb-3">Verification Email Sent!</h4>
+                    </div>
+
+                    <div class="alert alert-info">
+                        <p>We have sent a verification link to your email address{% if email %} <strong>{{ email }}</strong>{% endif %}. Please check your inbox and click on the link to verify your account.</p>
+                        {% if sent_time %}<p><small>Email sent at: {{ sent_time }}</small></p>{% endif %}
+                    </div>
+                    
+                    <!-- Live verification status -->
+                    {% if email %}
+                    <div id="verification-status-container" class="card mb-4 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Verification Status <i class="fa fa-refresh fa-spin"></i></h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="verification-status-message" class="alert alert-info">
+                                <p>Checking verification status...</p>
+                            </div>
+                            <div class="text-center">
+                                <button id="check-status-button" class="btn btn-outline-primary">Refresh Status</button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Can't find the email?</h5>
+                        </div>
+                        <div class="card-body">
+                            <ol class="pl-3">
+                                <li class="mb-2">Check your <strong>spam/junk</strong> folder</li>
+                                <li class="mb-2">Make sure your email address was entered correctly</li>
+                                <li class="mb-2">Some email providers may delay delivery (allow up to 15 minutes)</li>
+                                <li class="mb-2">Check if your inbox is full</li>
+                                <li class="mb-2">Add our email address (<strong>mwaraa6@gmail.com</strong>) to your contacts</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Resend Verification Email</h5>
+                        </div>
+                        <div class="card-body">
+                            <form action="{% url 'resend_verification' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="email">Please confirm your email address:</label>
+                                    <input type="email" name="email" class="form-control" required placeholder="Enter your email address">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Resend Verification Email</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    {% if email %}
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Open Your Email Client</h5>
+                        </div>
+                        <div class="card-body">
+                            <p>Click one of the links below to open your email provider:</p>
+                            <div class="text-center">
+                                {% if "gmail" in email or "googlemail" in email %}
+                                <a href="https://mail.google.com" target="_blank" class="btn btn-primary m-1">Open Gmail</a>
+                                {% elif "yahoo" in email %}
+                                <a href="https://mail.yahoo.com" target="_blank" class="btn btn-primary m-1">Open Yahoo Mail</a>
+                                {% elif "outlook" in email or "hotmail" in email or "live" in email or "msn" in email %}
+                                <a href="https://outlook.live.com" target="_blank" class="btn btn-primary m-1">Open Outlook</a>
+                                {% elif "aol" in email %}
+                                <a href="https://mail.aol.com" target="_blank" class="btn btn-primary m-1">Open AOL Mail</a>
+                                {% elif "protonmail" in email or "proton.me" in email %}
+                                <a href="https://mail.proton.me" target="_blank" class="btn btn-primary m-1">Open ProtonMail</a>
+                                {% else %}
+                                <div class="text-center">
+                                    <a href="https://mail.google.com" target="_blank" class="btn btn-outline-secondary m-1">Gmail</a>
+                                    <a href="https://outlook.live.com" target="_blank" class="btn btn-outline-secondary m-1">Outlook</a>
+                                    <a href="https://mail.yahoo.com" target="_blank" class="btn btn-outline-secondary m-1">Yahoo Mail</a>
+                                    <a href="https://mail.proton.me" target="_blank" class="btn btn-outline-secondary m-1">ProtonMail</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Provider-specific help -->
+                    {% if "gmail" in email or "googlemail" in email %}
+                    <div class="card mb-4 border-info">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">Gmail-specific Help</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Check these Gmail locations:</strong></p>
+                            <ol>
+                                <li>Primary inbox</li>
+                                <li><strong>Promotions tab</strong> - verification emails are often filtered here</li>
+                                <li>Updates tab</li>
+                                <li>Spam folder - please mark as "not spam" if found there</li>
+                                <li>All Mail folder - check if the email was automatically archived</li>
+                            </ol>
+                            <p class="mb-0">Add <strong>mwaraa6@gmail.com</strong> to your contacts to ensure future emails arrive in your primary inbox.</p>
+                        </div>
+                    </div>
+                    {% elif "yahoo" in email %}
+                    <div class="card mb-4 border-info">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">Yahoo Mail-specific Help</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Check these Yahoo Mail locations:</strong></p>
+                            <ol>
+                                <li>Inbox</li>
+                                <li>Spam folder - Yahoo often filters verification emails as spam</li>
+                                <li>Bulk Mail folder</li>
+                                <li>All folders listed in the sidebar</li>
+                            </ol>
+                            <p class="mb-0">Add <strong>mwaraa6@gmail.com</strong> to your contacts to ensure future emails arrive in your inbox.</p>
+                        </div>
+                    </div>
+                    {% elif "outlook" in email or "hotmail" in email or "live" in email or "msn" in email %}
+                    <div class="card mb-4 border-info">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">Outlook/Hotmail-specific Help</h5>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Check these Outlook locations:</strong></p>
+                            <ol>
+                                <li>Inbox</li>
+                                <li>Junk Email folder</li>
+                                <li>Other/Focused tabs (if enabled)</li>
+                                <li>Clutter folder (older Outlook accounts)</li>
+                            </ol>
+                            <p class="mb-0">Add <strong>mwaraa6@gmail.com</strong> to your safe senders list in Outlook settings.</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                    
+                    <!-- Terminal-style logging display -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0">
+                                <i class="fa fa-terminal mr-2"></i> Email Verification Status
+                                <small class="float-right"><a href="#" id="refresh-log" class="text-white">Refresh</a></small>
+                            </h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div id="terminal-output" class="terminal-container bg-dark text-light p-3" style="font-family: monospace; height: 200px; overflow-y: auto; border-radius: 0;">
+                                {% terminal_status_message "Email verification system initialized" "info" %}
+                                {% if email %}
+                                {% terminal_status_message "Email verification parameters loaded" "info" %}
+                                {% terminal_status_message "Target email address: "|add:email "info" %}
+                                {% if sent_time %}
+                                {% terminal_status_message "Email sent at: "|add:sent_time "success" %}
+                                {% endif %}
+                                {% terminal_status_message "Checking verification status..." "info" %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <p>If you continue to have problems, please <a href="#" class="text-primary">contact support</a>.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+{% if email %}
+<style>
+    .terminal-container {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    .terminal-container .terminal-line {
+        margin-bottom: 5px;
+    }
+    .terminal-time {
+        color: #aaa;
+        margin-right: 8px;
+    }
+    .terminal-status {
+        font-weight: bold;
+        margin-right: 8px;
+    }
+    #terminal-output {
+        scrollbar-width: thin;
+        scrollbar-color: #666 #222;
+    }
+    #terminal-output::-webkit-scrollbar {
+        width: 8px;
+    }
+    #terminal-output::-webkit-scrollbar-track {
+        background: #222;
+    }
+    #terminal-output::-webkit-scrollbar-thumb {
+        background-color: #666;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Check verification status on page load
+        checkVerificationStatus();
+        
+        // Set up periodic checking
+        const statusInterval = setInterval(checkVerificationStatus, 30000); // Check every 30 seconds
+        
+        // Set up manual refresh button
+        const refreshButton = document.getElementById('check-status-button');
+        if (refreshButton) {
+            refreshButton.addEventListener('click', function() {
+                checkVerificationStatus();
+            });
+        }
+        
+        // Terminal logging function
+        function addTerminalLog(message, status = 'info') {
+            const terminal = document.getElementById('terminal-output');
+            if (!terminal) return;
+            
+            const now = new Date();
+            const timestamp = now.getHours().toString().padStart(2, '0') + ':' + 
+                              now.getMinutes().toString().padStart(2, '0') + ':' + 
+                              now.getSeconds().toString().padStart(2, '0');
+            
+            let prefix = 'ℹ️ INFO';
+            let color = '#17a2b8';
+            
+            if (status === 'success') {
+                prefix = '✅ SUCCESS';
+                color = '#28a745';
+            } else if (status === 'warning') {
+                prefix = '⚠️ WARNING';
+                color = '#ffc107';
+            } else if (status === 'error') {
+                prefix = '❌ ERROR';
+                color = '#dc3545';
+            }
+            
+            const logLine = document.createElement('div');
+            logLine.className = 'terminal-line';
+            logLine.innerHTML = `
+                <span class="terminal-time">[${timestamp}]</span>
+                <span class="terminal-status" style="color: ${color}">${prefix}:</span>
+                <span class="terminal-message">${message}</span>
+            `;
+            
+            terminal.appendChild(logLine);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+        
+        // Set up refresh log button
+        const refreshLogButton = document.getElementById('refresh-log');
+        if (refreshLogButton) {
+            refreshLogButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                addTerminalLog('Refreshing verification status...', 'info');
+                checkVerificationStatus();
+            });
+        }
+        
+        function checkVerificationStatus() {
+            addTerminalLog('Checking verification status...', 'info');
+            
+            fetch('{% url "check_verification_status" %}')
+                .then(response => response.json())
+                .then(data => {
+                    const statusContainer = document.getElementById('verification-status-container');
+                    const statusMessage = document.getElementById('verification-status-message');
+                    
+                    if (data.status === 'verified') {
+                        // User is verified - show success and redirect option
+                        statusContainer.className = 'card mb-4 border-success';
+                        statusContainer.querySelector('.card-header').className = 'card-header bg-success text-white';
+                        statusContainer.querySelector('.card-header h5').innerHTML = 'Verification Successful! <i class="fa fa-check-circle"></i>';
+                        
+                        statusMessage.className = 'alert alert-success';
+                        statusMessage.innerHTML = `
+                            <p>${data.message}</p>
+                            <div class="text-center mt-2">
+                                <a href="${data.redirect_url}" class="btn btn-success">Log In Now</a>
+                            </div>
+                        `;
+                        
+                        // Update terminal log
+                        addTerminalLog('Email verification successful! Account activated.', 'success');
+                        addTerminalLog('You can now log in to your account', 'success');
+                        
+                        // Stop checking since verification is complete
+                        clearInterval(statusInterval);
+                        
+                        // Hide the refresh button
+                        refreshButton.style.display = 'none';
+                        
+                    } else if (data.status === 'pending') {
+                        // Still waiting for verification
+                        statusContainer.className = 'card mb-4 border-warning';
+                        statusContainer.querySelector('.card-header').className = 'card-header bg-warning text-dark';
+                        statusContainer.querySelector('.card-header h5').innerHTML = 'Awaiting Verification <i class="fa fa-clock-o"></i>';
+                        
+                        statusMessage.className = 'alert alert-warning';
+                        let timeInfo = '';
+                        if (data.elapsed_minutes > 0) {
+                            timeInfo = `<p><small>It's been ${data.elapsed_minutes} minute${data.elapsed_minutes > 1 ? 's' : ''} since your first verification attempt.</small></p>`;
+                            
+                            // Update terminal log with elapsed time info
+                            addTerminalLog(`Elapsed time since first attempt: ${data.elapsed_minutes} minute(s)`, 'info');
+                        }
+                        
+                        statusMessage.innerHTML = `
+                            <p>${data.message}</p>
+                            ${timeInfo}
+                            <p><small>Attempts: ${data.attempts}</small></p>
+                        `;
+                        
+                        // Update terminal log with status
+                        if (data.elapsed_minutes > 30) {
+                            addTerminalLog(`Verification pending for over 30 minutes. Possible delivery issue.`, 'warning');
+                        } else if (data.elapsed_minutes > 10) {
+                            addTerminalLog(`Verification pending for over 10 minutes. Check spam folder.`, 'warning');
+                        } else {
+                            addTerminalLog(`Verification email sent but not yet confirmed. Attempts: ${data.attempts}`, 'info');
+                        }
+                        
+                    } else if (data.status === 'error') {
+                        // Error occurred
+                        statusContainer.className = 'card mb-4 border-danger';
+                        statusContainer.querySelector('.card-header').className = 'card-header bg-danger text-white';
+                        statusContainer.querySelector('.card-header h5').innerHTML = 'Verification Issue <i class="fa fa-exclamation-circle"></i>';
+                        
+                        statusMessage.className = 'alert alert-danger';
+                        statusMessage.innerHTML = `<p>${data.message}</p>`;
+                        
+                        // Update terminal log with error
+                        addTerminalLog(`Verification error: ${data.message}`, 'error');
+                    }
+                    
+                    // Add general log entry about check completion
+                    addTerminalLog('Verification status check completed', 'info');
+                })
+                .catch(error => {
+                    console.error('Error checking verification status:', error);
+                });
+        }
+    });
+</script>
+{% endif %}
 {% endblock %}

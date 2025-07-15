@@ -1,0 +1,34 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run Django Server",
+			"type": "shell",
+			"command": "cd /d \"c:\\Users\\angam\\Downloads\\waste-sotor\" && .\\env\\Scripts\\python manage.py runserver",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Collect Static",
+			"type": "shell",
+			"command": "cd /d \"c:\\Users\\angam\\Downloads\\waste-sotor\" && .\\env\\Scripts\\python manage.py collectstatic --noinput",
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "Make Migrations",
+			"type": "shell", 
+			"command": "cd /d \"c:\\Users\\angam\\Downloads\\waste-sotor\" && .\\env\\Scripts\\python manage.py makemigrations",
+			"group": "build",
+			"problemMatcher": []
+		},
+		{
+			"label": "Migrate",
+			"type": "shell",
+			"command": "cd /d \"c:\\Users\\angam\\Downloads\\waste-sotor\" && .\\env\\Scripts\\python manage.py migrate",
+			"group": "build",
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,12 +1,130 @@
 {% autoescape off %}
-Hi {{ user.username }},
-
-Please click on the link below to confirm your registration:
-
-http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
-
-If you did not make this request, you can safely ignore this email.
-
-Best regards,
-The Waste Sorter Team
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Waste Sorter Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #2e7d32;
+            color: white !important;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 15px;
+        }
+        .note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 15px;
+        }
+        .important-box {
+            background-color: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #ffa726;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .gmail-tip {
+            background-color: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Welcome to Waste Sorter!</h2>
+            <p>Please verify your email address</p>
+        </div>
+        
+        <p>Hi {{ user.username }},</p>
+        
+        <p>Thank you for creating an account with <strong>Waste Sorter</strong>. To complete your registration and access all features of our waste management platform, please verify your email address by clicking the button below:</p>
+        
+        <div style="text-align: center;">
+            <a href="{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}" class="button">Verify My Email Address</a>
+        </div>
+        
+        <p style="margin-top: 20px;"><strong>Verification Code:</strong> <span style="background-color: #f1f1f1; padding: 3px 6px; font-family: monospace; border-radius: 3px;">{{ token|slice:":6" }}</span></p>
+        
+        <p>If the button above doesn't work, you can also copy and paste the following link into your browser:</p>
+        <p><a href="{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}">{{ protocol }}://{{ domain }}{% url 'activate' uidb64=uid token=token %}</a></p>
+        
+        <div class="important-box">
+            <strong>Important:</strong>
+            <ul>
+                <li>This verification link will expire in 24 hours</li>
+                <li>If you don't verify your email, you won't be able to access your account</li>
+                <li>Having trouble? Visit <strong>{{ protocol }}://{{ domain }}/resend-verification/</strong> to request a new link</li>
+                <li>For security, this link can only be used once</li>
+            </ul>
+        </div>
+        
+        <div class="gmail-tip">
+            <strong>Tips to find this email:</strong>
+            <ul>
+                <li><strong>Gmail users:</strong> Check your Promotions tab, Spam folder, or search for "Waste Sorter"</li>
+                <li><strong>Outlook/Hotmail users:</strong> Check your Junk Email folder or Other/Focused tabs</li>
+                <li><strong>Yahoo users:</strong> Check your Spam or Bulk Mail folders</li>
+                <li><strong>All users:</strong> Add <strong>mwaraa6@gmail.com</strong> to your contacts</li>
+            </ul>
+        </div>
+        
+        <p>Best regards,<br>
+        The Waste Sorter Team</p>
+        
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px dashed #ddd;">
+            <p style="font-size: 13px; color: #666;">
+                <strong>Why am I receiving this?</strong> You (or someone using your email) recently created an account on Waste Sorter. 
+                If you didn't request this, you can safely ignore this email.
+            </p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; {% now "Y" %} Waste Sorter. All rights reserved.</p>
+        <p>This is an automated message from <strong>mwaraa6@gmail.com</strong>, please do not reply to this email.</p>
+        <p>Sent on {% now "F j, Y \a\t H:i" %}</p>
+    </div>
+</body>
+</html>
 {% endautoescape %}
