@@ -2,40 +2,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Recycling Tips</title>
+    <title>Recycling Tips | WASTE SOTOR</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        body {
+            background-color: #f5f8fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+        }
         .tip-card {
-            transition: transform 0.3s ease;
-            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         .tip-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .tip-card .card-body {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-weight: 600;
+            color: #2c3e50;
         }
         .sidebar {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 20px;
         }
         .section-header {
-            background-color: #e3f2fd;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            background: linear-gradient(135deg, #4ca1af 0%, #2c3e50 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .section-header h1 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .section-header .lead {
+            opacity: 0.9;
         }
         .badge-type {
-            margin-right: 5px;
+            margin-right: 8px;
+            padding: 0.5em 0.8em;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        .list-group-item {
+            border-left: none;
+            border-right: none;
+            padding: 12px 20px;
+            transition: all 0.2s ease;
+        }
+        .list-group-item:hover {
+            background-color: #f8f9fa;
+        }
+        .list-group-item.active {
+            background-color: #4ca1af;
+            border-color: #4ca1af;
+        }
+        .btn-success {
+            background: linear-gradient(to right, #56ab2f, #a8e063);
+            border: none;
+            box-shadow: 0 4px 10px rgba(168, 224, 99, 0.3);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #4ca1af, #2c3e50);
+            border: none;
+            box-shadow: 0 4px 10px rgba(44, 62, 80, 0.3);
+        }
+        .card-header {
+            background-color: rgba(0,0,0,0.03);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            font-weight: 600;
+        }
+        .alert-info {
+            background-color: #e3f2fd;
+            border-color: #bbdefb;
+            color: #0d47a1;
+        }
+        .badge {
+            font-weight: 500;
+        }
+        .text-muted {
+            color: #6c757d !important;
         }
     </style>
 </head>
 <body>
-    <div class="container my-4">
+    <div class="container my-5">
         <div class="section-header">
-            <h1>Welcome to Recycling Tips</h1>
-            <p class="lead">{{ section_info.purpose }}</p>
-            <div class="d-flex justify-content-between">
-                <span><strong>Target Audience:</strong> {{ section_info.target_audience }}</span>
-                <span><strong>Goal:</strong> {{ section_info.goal }}</span>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1>Welcome to Recycling Tips</h1>
+                    <p class="lead">{{ section_info.purpose }}</p>
+                    <div class="mt-3">
+                        <div class="mb-2"><i class="fas fa-users me-2"></i> <strong>Target Audience:</strong> {{ section_info.target_audience }}</div>
+                        <div><i class="fas fa-bullseye me-2"></i> <strong>Goal:</strong> {{ section_info.goal }}</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center d-none d-lg-block">
+                    <i class="fas fa-recycle fa-5x text-white opacity-75"></i>
+                </div>
             </div>
         </div>
 
@@ -48,35 +130,55 @@
                 </div>
                 
                 <!-- Filters -->
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <h5>Filter Tips</h5>
+                <div class="card filter-card mb-4 border-0 shadow-sm">
+                    <div class="card-header bg-white border-bottom-0 pt-3 pb-0">
+                        <h5 class="mb-0"><i class="fas fa-filter me-2"></i>Filter Tips</h5>
                     </div>
                     <div class="card-body">
-                        <div class="row">
+                        <div class="row g-4">
                             <div class="col-md-6">
-                                <h6>By Category:</h6>
-                                <div class="d-flex flex-wrap">
-                                    <a href="{% url 'tips_home' %}" class="btn btn-sm btn-outline-secondary m-1 {% if not selected_category %}active{% endif %}">All</a>
+                                <h6 class="text-uppercase text-muted fw-bold fs-7 mb-3">By Category</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="{% url 'tips_home' %}" class="filter-btn btn btn-sm {% if not selected_category %}btn-primary{% else %}btn-outline-primary{% endif %} rounded-pill px-3 shadow-sm">
+                                        <i class="fas fa-globe-americas me-1"></i> All
+                                    </a>
                                     {% for cat, display in tips.first.get_category_choices %}
-                                        <a href="{% url 'category_tips' cat %}" class="btn btn-sm btn-outline-secondary m-1 {% if selected_category == cat %}active{% endif %}">
-                                            {{ display }} <span class="badge bg-secondary">{{ category_counts|get_item:cat }}</span>
+                                        <a href="{% url 'category_tips' cat %}" 
+                                           class="filter-btn btn btn-sm {% if selected_category == cat %}btn-primary{% else %}btn-outline-primary{% endif %} rounded-pill px-3 shadow-sm">
+                                            {% if cat == 'recyclables' %}<i class="fas fa-recycle me-1"></i>
+                                            {% elif cat == 'compostables' %}<i class="fas fa-seedling me-1"></i>
+                                            {% elif cat == 'general_waste' %}<i class="fas fa-trash me-1"></i>
+                                            {% elif cat == 'plastic' %}<i class="fas fa-wine-bottle me-1"></i>
+                                            {% elif cat == 'organic' %}<i class="fas fa-apple-alt me-1"></i>
+                                            {% elif cat == 'e-waste' %}<i class="fas fa-laptop me-1"></i>
+                                            {% else %}<i class="fas fa-leaf me-1"></i>{% endif %}
+                                            {{ display }}
+                                            <span class="badge bg-white text-primary ms-1">{{ category_counts|get_item:cat }}</span>
                                         </a>
                                     {% endfor %}
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <h6>By Type:</h6>
-                                <div class="d-flex flex-wrap">
-                                    <a href="{% url 'tips_home' %}" class="btn btn-sm btn-outline-secondary m-1 {% if not selected_type %}active{% endif %}">All</a>
-                                    <a href="{% url 'tips_home' %}?type=visual" class="btn btn-sm btn-outline-info m-1 {% if selected_type == 'visual' %}active{% endif %}">
-                                        Visual Guides <span class="badge bg-info">{{ type_counts.visual }}</span>
+                                <h6 class="text-uppercase text-muted fw-bold fs-7 mb-3">By Type</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <a href="{% url 'tips_home' %}" 
+                                       class="filter-btn btn btn-sm {% if not selected_type %}btn-dark{% else %}btn-outline-dark{% endif %} rounded-pill px-3 shadow-sm">
+                                        <i class="fas fa-border-all me-1"></i> All Types
                                     </a>
-                                    <a href="{% url 'tips_home' %}?type=practice" class="btn btn-sm btn-outline-success m-1 {% if selected_type == 'practice' %}active{% endif %}">
-                                        Best Practices <span class="badge bg-success">{{ type_counts.practice }}</span>
+                                    <a href="{% url 'tips_home' %}?type=visual" 
+                                       class="filter-btn btn btn-sm {% if selected_type == 'visual' %}btn-info text-white{% else %}btn-outline-info{% endif %} rounded-pill px-3 shadow-sm">
+                                        <i class="fas fa-image me-1"></i> Visual Guides
+                                        <span class="badge {% if selected_type == 'visual' %}bg-white text-info{% else %}bg-info text-white{% endif %} ms-1">{{ type_counts.visual }}</span>
                                     </a>
-                                    <a href="{% url 'tips_home' %}?type=tutorial" class="btn btn-sm btn-outline-warning m-1 {% if selected_type == 'tutorial' %}active{% endif %}">
-                                        Tutorials <span class="badge bg-warning">{{ type_counts.tutorial }}</span>
+                                    <a href="{% url 'tips_home' %}?type=practice" 
+                                       class="filter-btn btn btn-sm {% if selected_type == 'practice' %}btn-success text-white{% else %}btn-outline-success{% endif %} rounded-pill px-3 shadow-sm">
+                                        <i class="fas fa-check-circle me-1"></i> Best Practices
+                                        <span class="badge {% if selected_type == 'practice' %}bg-white text-success{% else %}bg-success text-white{% endif %} ms-1">{{ type_counts.practice }}</span>
+                                    </a>
+                                    <a href="{% url 'tips_home' %}?type=tutorial" 
+                                       class="filter-btn btn btn-sm {% if selected_type == 'tutorial' %}btn-warning text-dark{% else %}btn-outline-warning{% endif %} rounded-pill px-3 shadow-sm">
+                                        <i class="fas fa-list-ol me-1"></i> Tutorials
+                                        <span class="badge {% if selected_type == 'tutorial' %}bg-white text-warning{% else %}bg-warning text-dark{% endif %} ms-1">{{ type_counts.tutorial }}</span>
                                     </a>
                                 </div>
                             </div>
@@ -85,42 +187,64 @@
                 </div>
                 
                 {% if tips %}
-                    <div class="row">
+                    <div class="row g-4">
                         {% for tip in tips %}
                             <div class="col-md-6">
                                 <div class="card tip-card h-100">
-                                    {% if tip.image %}
-                                        <img src="{{ tip.image.url }}" class="card-img-top" alt="{{ tip.title }}" style="height: 200px; object-fit: cover;">
-                                    {% else %}
-                                        <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
-                                            <span class="text-muted">No image available</span>
+                                    <div class="position-relative">
+                                        {% if tip.image %}
+                                            <img src="{{ tip.image.url }}" class="card-img-top" alt="{{ tip.title }}" style="height: 200px; object-fit: cover;">
+                                        {% else %}
+                                            <div class="card-img-top bg-light d-flex align-items-center justify-content-center" style="height: 200px; background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);">
+                                                <i class="fas {% if tip.is_visual_guide %}fa-image{% elif tip.is_tutorial %}fa-list-ol{% elif tip.is_best_practice %}fa-check-double{% else %}fa-leaf{% endif %} fa-3x text-white"></i>
+                                            </div>
+                                        {% endif %}
+                                        <div class="position-absolute top-0 start-0 p-3">
+                                            <span class="badge rounded-pill bg-dark bg-opacity-75 px-3 py-2">
+                                                <i class="fas fa-tag me-1"></i>{{ tip.get_category_display }}
+                                            </span>
                                         </div>
-                                    {% endif %}
-                                    <div class="card-body">
+                                    </div>
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <div>
+                                                {% if tip.is_visual_guide %}
+                                                    <span class="badge bg-info badge-type"><i class="fas fa-image me-1"></i>Visual Guide</span>
+                                                {% endif %}
+                                                {% if tip.is_best_practice %}
+                                                    <span class="badge bg-success badge-type"><i class="fas fa-check-circle me-1"></i>Best Practice</span>
+                                                {% endif %}
+                                                {% if tip.is_tutorial %}
+                                                    <span class="badge bg-warning text-dark badge-type"><i class="fas fa-list-ol me-1"></i>Tutorial</span>
+                                                {% endif %}
+                                            </div>
+                                            <small class="text-muted">{{ tip.date_posted|date:"M d, Y" }}</small>
+                                        </div>
                                         <h5 class="card-title">{{ tip.title }}</h5>
-                                        <p class="card-text">{{ tip.content|truncatewords:20 }}</p>
-                                        <div class="mb-2">
-                                            {% if tip.is_visual_guide %}
-                                                <span class="badge bg-info badge-type">Visual Guide</span>
-                                            {% endif %}
-                                            {% if tip.is_best_practice %}
-                                                <span class="badge bg-success badge-type">Best Practice</span>
-                                            {% endif %}
-                                            {% if tip.is_tutorial %}
-                                                <span class="badge bg-warning badge-type">Tutorial</span>
-                                            {% endif %}
+                                        <p class="card-text flex-grow-1">{{ tip.content|truncatewords:20 }}</p>
+                                        <div class="mt-auto pt-3 border-top">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <small class="text-muted"><i class="fas fa-users me-1"></i> {{ tip.audience }}</small>
+                                                <a href="{% url 'tip_detail_id' tip.id %}" class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-eye me-1"></i>View Details
+                                                </a>
+                                            </div>
                                         </div>
-                                        <p class="text-muted small">Posted: {{ tip.date_posted }} | For: {{ tip.audience }}</p>
-                                        <a href="{% url 'tip_detail_id' tip.id %}" class="btn btn-primary">View Details</a>
                                     </div>
                                 </div>
                             </div>
                         {% endfor %}
                     </div>
                 {% else %}
-                    <div class="alert alert-info">
-                        No tips available.
-                        <a href="{% url 'add_tip' %}" class="alert-link">Add the first one!</a>
+                    <div class="alert alert-info shadow-sm border-0">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-info-circle fa-2x me-3"></i>
+                            <div>
+                                <h5 class="alert-heading">No tips available yet!</h5>
+                                <p class="mb-0">Be the first to share your knowledge on waste management and recycling. 
+                                <a href="{% url 'add_tip' %}" class="alert-link">Add the first tip!</a></p>
+                            </div>
+                        </div>
                     </div>
                 {% endif %}
             </div>
@@ -128,40 +252,117 @@
             <!-- Sidebar -->
             <div class="col-lg-4">
                 <div class="sidebar">
-                    <h3>Categories</h3>
-                    <ul class="list-group mb-4">
-                        <a href="{% url 'tips_home' %}" class="list-group-item d-flex justify-content-between align-items-center {% if not selected_category %}active{% endif %}">
-                            All Categories
-                            <span class="badge bg-primary rounded-pill">{{ tips.count }}</span>
+                    <!-- Call to Action -->
+                    <div class="p-4 mb-4 text-center bg-gradient rounded-3" style="background: linear-gradient(120deg, #56ab2f, #a8e063);">
+                        <i class="fas fa-plus-circle fa-3x text-white mb-3"></i>
+                        <h4 class="text-white mb-3">Share Your Knowledge</h4>
+                        <p class="text-white mb-3">Have tips that could help others sort waste properly?</p>
+                        <a href="{% url 'add_tip' %}" class="btn btn-light btn-lg w-100 shadow-sm">
+                            <i class="fas fa-plus me-2"></i>Add New Tip
                         </a>
-                        {% for cat, display in tips.first.get_category_choices %}
-                            <a href="{% url 'category_tips' cat %}" class="list-group-item d-flex justify-content-between align-items-center {% if selected_category == cat %}active{% endif %}">
-                                {{ display }}
-                                <span class="badge bg-primary rounded-pill">{{ category_counts|get_item:cat }}</span>
-                            </a>
-                        {% endfor %}
-                    </ul>
+                    </div>
                     
-                    <h3>Tip Types</h3>
-                    <ul class="list-group">
-                        <a href="{% url 'tips_home' %}?type=visual" class="list-group-item d-flex justify-content-between align-items-center {% if selected_type == 'visual' %}active{% endif %}">
-                            Visual Guides
-                            <span class="badge bg-info rounded-pill">{{ type_counts.visual }}</span>
-                        </a>
-                        <a href="{% url 'tips_home' %}?type=practice" class="list-group-item d-flex justify-content-between align-items-center {% if selected_type == 'practice' %}active{% endif %}">
-                            Best Practices
-                            <span class="badge bg-success rounded-pill">{{ type_counts.practice }}</span>
-                        </a>
-                        <a href="{% url 'tips_home' %}?type=tutorial" class="list-group-item d-flex justify-content-between align-items-center {% if selected_type == 'tutorial' %}active{% endif %}">
-                            Tutorials
-                            <span class="badge bg-warning rounded-pill">{{ type_counts.tutorial }}</span>
-                        </a>
-                    </ul>
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0"><i class="fas fa-folder me-2"></i>Categories</h5>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="{% url 'tips_home' %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {% if not selected_category %}active{% endif %}">
+                                <span><i class="fas fa-globe-americas me-2"></i>All Categories</span>
+                                <span class="badge {% if not selected_category %}bg-white text-primary{% else %}bg-primary{% endif %} rounded-pill">{{ tips.count }}</span>
+                            </a>
+                            {% for cat, display in tips.first.get_category_choices %}
+                                <a href="{% url 'category_tips' cat %}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {% if selected_category == cat %}active{% endif %}">
+                                    <span>
+                                        {% if cat == 'recyclables' %}<i class="fas fa-recycle me-2"></i>
+                                        {% elif cat == 'compostables' %}<i class="fas fa-seedling me-2"></i>
+                                        {% elif cat == 'general_waste' %}<i class="fas fa-trash me-2"></i>
+                                        {% elif cat == 'plastic' %}<i class="fas fa-wine-bottle me-2"></i>
+                                        {% elif cat == 'organic' %}<i class="fas fa-apple-alt me-2"></i>
+                                        {% elif cat == 'e-waste' %}<i class="fas fa-laptop me-2"></i>
+                                        {% else %}<i class="fas fa-leaf me-2"></i>{% endif %}
+                                        {{ display }}
+                                    </span>
+                                    <span class="badge {% if selected_category == cat %}bg-white text-primary{% else %}bg-primary{% endif %} rounded-pill">{{ category_counts|get_item:cat }}</span>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0"><i class="fas fa-th-large me-2"></i>Tip Types</h5>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="{% url 'tips_home' %}?type=visual" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {% if selected_type == 'visual' %}text-info active{% endif %}">
+                                <span><i class="fas fa-image me-2"></i>Visual Guides</span>
+                                <span class="badge {% if selected_type == 'visual' %}bg-white text-info{% else %}bg-info{% endif %} rounded-pill">{{ type_counts.visual }}</span>
+                            </a>
+                            <a href="{% url 'tips_home' %}?type=practice" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {% if selected_type == 'practice' %}text-success active{% endif %}">
+                                <span><i class="fas fa-check-circle me-2"></i>Best Practices</span>
+                                <span class="badge {% if selected_type == 'practice' %}bg-white text-success{% else %}bg-success{% endif %} rounded-pill">{{ type_counts.practice }}</span>
+                            </a>
+                            <a href="{% url 'tips_home' %}?type=tutorial" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {% if selected_type == 'tutorial' %}text-warning active{% endif %}">
+                                <span><i class="fas fa-list-ol me-2"></i>Tutorials</span>
+                                <span class="badge {% if selected_type == 'tutorial' %}bg-white text-warning{% else %}bg-warning{% endif %} rounded-pill">{{ type_counts.tutorial }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-body text-center bg-light rounded-3 p-4">
+                            <h5 class="mb-3">Need assistance?</h5>
+                            <p class="mb-3">If you have questions about proper waste sorting or recycling tips, our team is here to help!</p>
+                            <a href="#" class="btn btn-outline-primary">Contact Support</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-uppercase mb-3">WASTE SOTOR</h5>
+                    <p class="small">A platform dedicated to promoting effective waste management and recycling practices to protect our environment.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-uppercase mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'tips_home' %}" class="text-white text-decoration-none"><i class="fas fa-angle-right me-2"></i>Recycling Tips</a></li>
+                        <li><a href="{% url 'add_tip' %}" class="text-white text-decoration-none"><i class="fas fa-angle-right me-2"></i>Add New Tip</a></li>
+                        <li><a href="#" class="text-white text-decoration-none"><i class="fas fa-angle-right me-2"></i>About Us</a></li>
+                        <li><a href="#" class="text-white text-decoration-none"><i class="fas fa-angle-right me-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-uppercase mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-5"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-instagram-square"></i></a>
+                        <a href="#" class="text-white fs-5"><i class="fab fa-youtube-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 pt-3 border-top border-secondary">
+                <p class="small mb-0">&copy; {% now "Y" %} WASTE SOTOR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Initialize Tooltips -->
+    <script>
+        // Enable tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+    </script>
 </body>
 </html>

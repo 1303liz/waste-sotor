@@ -900,3 +900,64 @@ INFO 2025-07-15 17:29:03,829 basehttp "GET /recycle/?type=visual HTTP/1.1" 200 5
 INFO 2025-07-15 17:29:07,059 basehttp "GET /recycle/?type=practice HTTP/1.1" 200 5473
 INFO 2025-07-15 17:29:10,408 basehttp "GET /recycle/ HTTP/1.1" 200 11158
 INFO 2025-07-15 17:29:28,722 basehttp "GET /recycle/category/recyclables/ HTTP/1.1" 200 2856
+INFO 2025-07-15 19:27:03,258 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-15 19:29:15,637 log Not Found: /
+WARNING 2025-07-15 19:29:16,624 basehttp "GET / HTTP/1.1" 404 5665
+WARNING 2025-07-15 19:29:19,873 log Not Found: /
+WARNING 2025-07-15 19:29:20,752 basehttp "GET / HTTP/1.1" 404 5665
+WARNING 2025-07-15 19:29:22,602 log Not Found: /
+WARNING 2025-07-15 19:29:23,149 basehttp "GET / HTTP/1.1" 404 5665
+WARNING 2025-07-15 19:29:26,337 log Not Found: /
+WARNING 2025-07-15 19:29:26,338 log Not Found: /favicon.ico
+WARNING 2025-07-15 19:29:26,745 basehttp "GET / HTTP/1.1" 404 5665
+WARNING 2025-07-15 19:29:28,657 basehttp "GET /favicon.ico HTTP/1.1" 404 5716
+WARNING 2025-07-15 19:29:32,571 log Not Found: /favicon.ico
+WARNING 2025-07-15 19:29:33,739 log Not Found: /
+WARNING 2025-07-15 19:29:33,744 basehttp "GET /favicon.ico HTTP/1.1" 404 5716
+WARNING 2025-07-15 19:29:34,093 basehttp "GET / HTTP/1.1" 404 5665
+INFO 2025-07-15 19:29:34,825 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-15 19:29:35,827 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4724
+WARNING 2025-07-15 19:29:40,497 log Not Found: /
+WARNING 2025-07-15 19:29:40,985 basehttp "GET / HTTP/1.1" 404 5665
+WARNING 2025-07-15 19:29:41,401 log Not Found: /
+WARNING 2025-07-15 19:29:41,589 basehttp "GET / HTTP/1.1" 404 5665
+INFO 2025-07-15 19:30:04,408 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-15 19:30:04,767 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4724
+INFO 2025-07-15 19:30:26,739 basehttp "POST /login/?next=/recycle/ HTTP/1.1" 302 0
+INFO 2025-07-15 19:30:27,367 basehttp "GET /recycle/ HTTP/1.1" 200 11158
+INFO 2025-07-15 19:31:10,933 basehttp "GET /recycle/detail/1/ HTTP/1.1" 200 5205
+INFO 2025-07-15 19:31:11,382 basehttp "GET /static/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-15 19:31:43,251 basehttp "GET /recycle/category/general/ HTTP/1.1" 200 4122
+INFO 2025-07-15 19:31:50,923 basehttp "GET /recycle/ HTTP/1.1" 200 11158
+INFO 2025-07-15 19:31:53,208 basehttp "GET /recycle/add/ HTTP/1.1" 200 10134
+INFO 2025-07-15 19:35:23,481 basehttp "POST /recycle/add/ HTTP/1.1" 302 0
+INFO 2025-07-15 19:35:23,595 basehttp "GET /recycle/detail/2/ HTTP/1.1" 200 5762
+INFO 2025-07-15 19:35:23,783 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 200 10923
+INFO 2025-07-15 19:35:30,157 basehttp "GET /recycle/ HTTP/1.1" 200 12647
+INFO 2025-07-15 19:35:30,289 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 304 0
+WARNING 2025-07-15 20:06:48,536 log Not Found: /
+WARNING 2025-07-15 20:06:48,562 basehttp "GET / HTTP/1.1" 404 5665
+INFO 2025-07-15 20:07:00,341 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:07:00,490 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 304 0
+INFO 2025-07-15 20:23:19,805 autoreload Watching for file changes with StatReloader
+INFO 2025-07-15 20:23:40,873 basehttp "GET /recycle/?type=tutorial HTTP/1.1" 200 14337
+INFO 2025-07-15 20:24:08,462 basehttp "GET /recycle/?type=tutorial HTTP/1.1" 200 14337
+INFO 2025-07-15 20:24:12,526 basehttp "GET /recycle/?type=tutorial HTTP/1.1" 200 14337
+INFO 2025-07-15 20:24:24,164 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:24:27,143 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:24:33,111 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 304 0
+WARNING 2025-07-15 20:24:38,704 log Not Found: /
+WARNING 2025-07-15 20:24:39,249 basehttp "GET / HTTP/1.1" 404 5665
+INFO 2025-07-15 20:24:58,894 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:25:11,708 basehttp "GET /recycle/detail/2/ HTTP/1.1" 200 5762
+INFO 2025-07-15 20:25:38,344 basehttp "GET /recycle/detail/1/ HTTP/1.1" 200 5205
+INFO 2025-07-15 20:26:04,633 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:26:29,158 basehttp "GET /recycle/?type=practice HTTP/1.1" 200 14337
+INFO 2025-07-15 20:26:34,823 basehttp "GET /recycle/?type=tutorial HTTP/1.1" 200 14337
+INFO 2025-07-15 20:26:46,093 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:26:50,701 basehttp "GET /recycle/category/plastic/ HTTP/1.1" 200 2836
+INFO 2025-07-15 20:27:00,264 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:40:06,211 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-15 20:40:06,548 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 304 0
+INFO 2025-07-15 20:40:11,537 basehttp "GET /recycle/add/ HTTP/1.1" 200 10134
+INFO 2025-07-15 20:40:17,953 basehttp "GET /recycle/ HTTP/1.1" 200 27143
