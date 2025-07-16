@@ -31,7 +31,12 @@ SECRET_KEY = 'django-insecure-*o!qsxi33jjjvvi9-&%xvv#3p#m91ce6p=h-9v0c=^^5z$tc4(
 DEBUG = True
 
 # Allow all hosts for development, or specify your IP(s) as needed
-ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
+# Using '*' allows all hosts - this is convenient for development but not secure for production
+ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', '*']
+
+# For network access make sure ALLOWED_HOSTS includes your IP or '*'
+# You can uncomment and modify the line below with your specific IP if needed
+# ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost', '192.168.1.100']
 
 
 # Application definition

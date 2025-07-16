@@ -961,3 +961,41 @@ INFO 2025-07-15 20:40:06,211 basehttp "GET /recycle/ HTTP/1.1" 200 27143
 INFO 2025-07-15 20:40:06,548 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 304 0
 INFO 2025-07-15 20:40:11,537 basehttp "GET /recycle/add/ HTTP/1.1" 200 10134
 INFO 2025-07-15 20:40:17,953 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-16 11:28:02,390 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-16 11:28:13,751 log Not Found: /
+WARNING 2025-07-16 11:28:14,756 basehttp "GET / HTTP/1.1" 404 5665
+WARNING 2025-07-16 11:28:19,333 log Not Found: /favicon.ico
+WARNING 2025-07-16 11:28:19,566 basehttp "GET /favicon.ico HTTP/1.1" 404 5716
+INFO 2025-07-16 11:28:59,309 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-16 11:29:03,188 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 4724
+INFO 2025-07-16 11:30:02,263 basehttp "POST /login/?next=/recycle/ HTTP/1.1" 302 0
+INFO 2025-07-16 11:30:08,940 basehttp "GET /recycle/ HTTP/1.1" 200 27143
+INFO 2025-07-16 11:30:13,571 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 200 10923
+INFO 2025-07-16 11:32:51,193 basehttp "GET /recycle/?type=visual HTTP/1.1" 200 24505
+INFO 2025-07-16 11:32:54,028 basehttp "GET /recycle/category/recyclables/ HTTP/1.1" 200 2856
+INFO 2025-07-16 11:32:58,204 basehttp "GET /recycle/add/ HTTP/1.1" 200 10134
+INFO 2025-07-16 11:33:41,315 basehttp "POST /recycle/add/ HTTP/1.1" 302 0
+INFO 2025-07-16 11:33:41,659 basehttp "GET /recycle/detail/3/ HTTP/1.1" 200 5553
+INFO 2025-07-16 11:33:42,498 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 200 10923
+INFO 2025-07-16 11:33:42,552 basehttp "GET /static/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 304 0
+INFO 2025-07-16 11:34:37,660 basehttp "GET /recycle/ HTTP/1.1" 200 29771
+INFO 2025-07-16 11:34:37,780 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 304 0
+INFO 2025-07-16 11:34:52,009 basehttp "GET /recycle/ HTTP/1.1" 200 29771
+INFO 2025-07-16 11:34:52,184 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 304 0
+INFO 2025-07-16 11:37:01,697 basehttp "GET /recycle/detail/3/ HTTP/1.1" 200 5553
+INFO 2025-07-16 11:37:01,920 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 304 0
+INFO 2025-07-16 11:37:11,471 basehttp "GET /recycle/category/recyclables/ HTTP/1.1" 200 4055
+INFO 2025-07-16 11:37:27,417 basehttp "GET /recycle/ HTTP/1.1" 200 29771
+INFO 2025-07-16 11:37:27,632 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 304 0
+INFO 2025-07-16 11:41:03,500 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-16 11:41:15,393 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 11:46:13,968 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-16 11:46:27,817 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 11:49:09,021 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 12:02:30,288 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-16 12:02:50,502 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 12:10:20,465 basehttp "GET /recycle/category/compostables/ HTTP/1.1" 200 2861
+INFO 2025-07-16 12:42:52,179 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 200 10923
+INFO 2025-07-16 12:43:47,159 basehttp "GET /recycle/category/e-waste/ HTTP/1.1" 200 2836
+INFO 2025-07-16 12:46:01,685 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-16 12:46:09,296 autoreload Watching for file changes with StatReloader
