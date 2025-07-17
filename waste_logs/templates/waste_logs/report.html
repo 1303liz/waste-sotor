@@ -1,15 +1,226 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Report Waste</title>
-</head>
-<body>
-    <h1>Report New Waste</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
-    <a href="{% url 'waste_logs_home' %}">Back to Waste Logs Home</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    {% if is_edit %}
+                        Edit Waste Log
+                    {% else %}
+                        Report New Waste
+                    {% endif %}
+                </h6>
+            </div>
+            <div class="card-body">
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    
+                    {% if form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        {% for error in form.non_field_errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.title.id_for_label }}" class="form-label">Title (optional)</label>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.title.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">Give this waste log a descriptive name (optional)</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.date_logged.id_for_label }}" class="form-label">Date & Time</label>
+                            {{ form.date_logged }}
+                            {% if form.date_logged.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.date_logged.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.category.id_for_label }}" class="form-label">Waste Category *</label>
+                            {{ form.category }}
+                            {% if form.category.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.category.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.subcategory.id_for_label }}" class="form-label">Subcategory</label>
+                            {{ form.subcategory }}
+                            {% if form.subcategory.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.subcategory.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">Select a category first</div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.quantity_kg.id_for_label }}" class="form-label">Quantity (kg) *</label>
+                            {{ form.quantity_kg }}
+                            {% if form.quantity_kg.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.quantity_kg.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">{{ form.quantity_kg.help_text }}</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.measurement_method.id_for_label }}" class="form-label">Measurement Method</label>
+                            {{ form.measurement_method }}
+                            {% if form.measurement_method.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.measurement_method.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.location.id_for_label }}" class="form-label">Location</label>
+                        {{ form.location }}
+                        {% if form.location.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.location.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="form-text">{{ form.location.help_text }}</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.description.id_for_label }}" class="form-label">Description</label>
+                        {{ form.description }}
+                        {% if form.description.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.description.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        {{ form.is_recurring }}
+                        <label class="form-check-label" for="{{ form.is_recurring.id_for_label }}">
+                            This is a recurring waste event
+                        </label>
+                        {% if form.is_recurring.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.is_recurring.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3" id="recurrence-options" style="display: none;">
+                        <label for="{{ form.recurrence_pattern.id_for_label }}" class="form-label">Recurrence Pattern</label>
+                        {{ form.recurrence_pattern }}
+                        {% if form.recurrence_pattern.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.recurrence_pattern.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+                        <a href="{% url 'waste_logs_home' %}" class="btn btn-outline-secondary me-md-2">Cancel</a>
+                        <button type="submit" class="btn btn-primary">
+                            {% if is_edit %}
+                                Save Changes
+                            {% else %}
+                                Submit Report
+                            {% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.querySelector('#{{ form.category.id_for_label }}');
+        const subcategorySelect = document.querySelector('#{{ form.subcategory.id_for_label }}');
+        const isRecurringCheckbox = document.querySelector('#{{ form.is_recurring.id_for_label }}');
+        const recurrenceOptions = document.querySelector('#recurrence-options');
+        
+        // Show/hide recurrence options based on checkbox
+        isRecurringCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                recurrenceOptions.style.display = 'block';
+            } else {
+                recurrenceOptions.style.display = 'none';
+            }
+        });
+        
+        // Initialize recurrence options display
+        if (isRecurringCheckbox.checked) {
+            recurrenceOptions.style.display = 'block';
+        }
+        
+        // Handle category change to update subcategories
+        categorySelect.addEventListener('change', function() {
+            const categoryId = this.value;
+            
+            // Clear subcategory options
+            while (subcategorySelect.options.length > 0) {
+                subcategorySelect.options.remove(0);
+            }
+            
+            // Add empty option
+            const emptyOption = document.createElement('option');
+            emptyOption.value = '';
+            emptyOption.textContent = 'Select subcategory';
+            subcategorySelect.appendChild(emptyOption);
+            
+            // If a category is selected, fetch subcategories
+            if (categoryId) {
+                fetch(`/waste/get-subcategories/?category_id=${categoryId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.subcategories.forEach(subcategory => {
+                            const option = document.createElement('option');
+                            option.value = subcategory.id;
+                            option.textContent = subcategory.name;
+                            subcategorySelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching subcategories:', error));
+            }
+        });
+    });
+</script>
+{% endblock %}

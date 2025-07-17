@@ -1002,3 +1002,342 @@ INFO 2025-07-16 12:46:09,296 autoreload Watching for file changes with StatReloa
 INFO 2025-07-16 12:47:07,223 basehttp "GET /recycle/ HTTP/1.1" 200 29771
 INFO 2025-07-16 12:47:07,476 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 304 0
 INFO 2025-07-16 12:47:11,258 basehttp "GET /recycle/?type=tutorial HTTP/1.1" 200 14337
+INFO 2025-07-16 17:03:54,661 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\models.py changed, reloading.
+INFO 2025-07-16 17:04:04,785 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:04:25,882 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\admin.py changed, reloading.
+INFO 2025-07-16 17:04:30,707 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:05:28,142 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\forms.py changed, reloading.
+INFO 2025-07-16 17:05:33,073 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:06:56,219 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\views.py changed, reloading.
+INFO 2025-07-16 17:07:02,229 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:07:18,153 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\urls.py changed, reloading.
+INFO 2025-07-16 17:07:22,745 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:19:10,370 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\views.py changed, reloading.
+INFO 2025-07-16 17:19:18,696 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:21:17,757 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-16 17:21:25,273 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:22:05,761 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\urls.py changed, reloading.
+INFO 2025-07-16 17:22:11,161 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:23:32,052 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:25:34,706 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:25:43,313 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:25:56,734 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:26:01,164 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:26:16,952 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:26:21,994 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:26:42,637 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:26:47,466 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:28:21,900 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:28:27,718 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:28:39,764 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:28:45,075 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:29:01,409 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:29:05,075 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 17:29:17,106 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\migrations\0002_add_default_categories.py changed, reloading.
+INFO 2025-07-16 17:29:21,749 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-16 17:35:09,443 log Not Found: /
+WARNING 2025-07-16 17:35:09,445 basehttp "GET / HTTP/1.1" 404 14806
+INFO 2025-07-16 17:35:11,960 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-16 17:35:12,276 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-16 17:35:12,632 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+INFO 2025-07-16 17:35:12,860 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2025-07-16 17:35:20,537 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-16 17:35:21,088 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 14093
+INFO 2025-07-16 17:35:36,919 basehttp "POST /login/?next=/waste/ HTTP/1.1" 302 0
+ERROR 2025-07-16 17:35:38,922 log Internal Server Error: /waste/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: waste_logs_wastegoal
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\waste_logs\views.py", line 82, in index
+    return render(request, 'waste_logs/home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 749, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaultfilters.py", line 632, in length
+    return len(value)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: waste_logs_wastegoal
+ERROR 2025-07-16 17:35:39,304 basehttp "GET /waste/ HTTP/1.1" 500 256076
+ERROR 2025-07-16 17:43:45,012 log Internal Server Error: /waste/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: waste_logs_wastegoal
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\waste_logs\views.py", line 82, in index
+    return render(request, 'waste_logs/home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 749, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaultfilters.py", line 632, in length
+    return len(value)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\debug_toolbar\panels\sql\tracking.py", line 160, in _record
+    return method(sql, params)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: waste_logs_wastegoal
+ERROR 2025-07-16 17:43:45,374 basehttp "GET /waste/ HTTP/1.1" 500 256077
+INFO 2025-07-16 20:55:52,355 autoreload Watching for file changes with StatReloader
+INFO 2025-07-16 21:24:31,616 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-16 21:24:40,936 log Not Found: /
+WARNING 2025-07-16 21:24:41,568 basehttp "GET / HTTP/1.1" 404 14809
+INFO 2025-07-16 21:24:43,907 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-16 21:24:44,199 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-16 21:24:44,410 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+INFO 2025-07-16 21:24:44,601 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2025-07-16 21:24:45,043 log Not Found: /favicon.ico
+WARNING 2025-07-16 21:24:45,046 basehttp "GET /favicon.ico HTTP/1.1" 404 14870
+INFO 2025-07-16 21:24:54,395 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-16 21:24:54,703 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 13776
+INFO 2025-07-16 21:25:12,986 basehttp "POST /login/?next=/waste/ HTTP/1.1" 302 0
+INFO 2025-07-16 21:25:14,351 basehttp "GET /waste/ HTTP/1.1" 200 28872
+INFO 2025-07-16 21:26:06,509 basehttp "GET /waste/report/ HTTP/1.1" 200 27829
+INFO 2025-07-16 21:26:21,193 basehttp "GET /waste/get-subcategories/?category_id=7 HTTP/1.1" 200 21
+INFO 2025-07-16 21:26:21,528 basehttp "GET /__debug__/history_sidebar/?store_id=0d55aa395e4c48f98ced5b37ba5b4e84 HTTP/1.1" 200 9090
+INFO 2025-07-16 21:27:11,403 basehttp "POST /waste/report/ HTTP/1.1" 302 0
+INFO 2025-07-16 21:27:11,626 basehttp "GET /waste/ HTTP/1.1" 200 30300
+INFO 2025-07-16 21:27:27,457 basehttp "GET /waste/report/ HTTP/1.1" 200 27830
+INFO 2025-07-16 21:27:36,314 basehttp "POST /logout/ HTTP/1.1" 200 16411
+WARNING 2025-07-16 21:27:51,704 log Not Found: /
+WARNING 2025-07-16 21:27:51,717 basehttp "GET / HTTP/1.1" 404 14809
+INFO 2025-07-16 21:32:19,734 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-16 21:32:19,844 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 13775
+INFO 2025-07-16 21:32:35,952 basehttp "POST /login/?next=/waste/ HTTP/1.1" 302 0
+INFO 2025-07-16 21:32:36,309 basehttp "GET /waste/ HTTP/1.1" 200 29999
+INFO 2025-07-16 21:32:51,174 basehttp "GET /recycle HTTP/1.1" 301 0
+INFO 2025-07-16 21:32:52,357 basehttp "GET /recycle/ HTTP/1.1" 200 38811
+INFO 2025-07-16 21:32:52,725 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 200 10923
+INFO 2025-07-16 21:32:52,845 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 200 10923
+INFO 2025-07-17 09:41:13,816 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-17 09:43:51,350 log Not Found: /
+WARNING 2025-07-17 09:43:53,664 basehttp "GET / HTTP/1.1" 404 14810
+WARNING 2025-07-17 09:44:18,090 log Not Found: /
+WARNING 2025-07-17 09:44:18,790 basehttp "GET / HTTP/1.1" 404 14808
+WARNING 2025-07-17 09:44:19,210 log Not Found: /
+WARNING 2025-07-17 09:44:20,189 basehttp "GET / HTTP/1.1" 404 14809
+WARNING 2025-07-17 09:44:23,364 log Not Found: /
+WARNING 2025-07-17 09:44:24,754 basehttp "GET / HTTP/1.1" 404 14809
+INFO 2025-07-17 09:44:39,118 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-17 09:44:40,768 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-17 09:44:41,565 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-17 09:44:52,377 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-07-17 09:44:59,322 log Not Found: /favicon.ico
+WARNING 2025-07-17 09:44:59,900 basehttp "GET /favicon.ico HTTP/1.1" 404 14871
+INFO 2025-07-17 09:45:11,704 basehttp "GET /waste HTTP/1.1" 301 0
+INFO 2025-07-17 09:45:12,889 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 09:45:13,567 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 13776
+INFO 2025-07-17 09:45:37,220 basehttp "POST /login/?next=/waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 09:45:38,066 basehttp "GET /waste/ HTTP/1.1" 200 29999
+INFO 2025-07-17 09:46:08,166 basehttp "POST /logout/ HTTP/1.1" 200 16412
+WARNING 2025-07-17 09:46:17,758 log Not Found: /
+WARNING 2025-07-17 09:46:17,945 basehttp "GET / HTTP/1.1" 404 14809
+INFO 2025-07-17 09:46:24,980 basehttp "GET /recycle HTTP/1.1" 301 0
+INFO 2025-07-17 09:46:25,163 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-17 09:46:25,233 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 13777
+INFO 2025-07-17 09:46:33,510 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 13775
+INFO 2025-07-17 09:46:39,358 basehttp "POST /login/?next=/waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 09:46:39,602 basehttp "GET /waste/ HTTP/1.1" 200 29999
+INFO 2025-07-17 09:46:46,016 basehttp "GET /waste/report/ HTTP/1.1" 200 27830
+INFO 2025-07-17 09:46:58,266 basehttp "GET /waste/get-subcategories/?category_id=2 HTTP/1.1" 200 21
+INFO 2025-07-17 09:46:58,565 basehttp "GET /__debug__/history_sidebar/?store_id=d620500c130949dfa5d2eef955f13d2b HTTP/1.1" 200 9090
+INFO 2025-07-17 09:47:18,468 basehttp "GET /waste/get-subcategories/?category_id=3 HTTP/1.1" 200 21
+INFO 2025-07-17 09:47:18,828 basehttp "GET /__debug__/history_sidebar/?store_id=6052286f40ac4da2827d9ce2ab6a7632 HTTP/1.1" 200 9090
+INFO 2025-07-17 09:47:52,001 basehttp "POST /waste/report/ HTTP/1.1" 302 0
+INFO 2025-07-17 09:47:52,232 basehttp "GET /waste/ HTTP/1.1" 200 31974
+INFO 2025-07-17 09:47:59,460 basehttp "GET /waste/log/2/ HTTP/1.1" 200 25155
+INFO 2025-07-17 09:48:04,221 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 09:48:09,330 basehttp "GET /recycle/ HTTP/1.1" 200 38810
+INFO 2025-07-17 09:48:10,080 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 200 10923
+INFO 2025-07-17 09:48:10,194 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 200 10923
+INFO 2025-07-17 10:31:31,132 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 10:31:36,660 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 10:31:38,907 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 10:31:41,451 basehttp "GET /recycle/ HTTP/1.1" 200 38810
+INFO 2025-07-17 10:33:43,956 basehttp "GET /waste/ HTTP/1.1" 200 31673

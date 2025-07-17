@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Confirm Deletion</h6>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Warning:</strong> This action cannot be undone.
+                </div>
+                
+                <p class="mb-4">
+                    Are you sure you want to delete the following waste log?
+                </p>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ waste_log.title|default:"Untitled Log" }}</h5>
+                        <p class="card-text">
+                            <strong>Category:</strong> {{ waste_log.category.name }}<br>
+                            <strong>Quantity:</strong> {{ waste_log.quantity_kg|floatformat:2 }} kg<br>
+                            <strong>Date Logged:</strong> {{ waste_log.date_logged|date:"F d, Y" }}
+                        </p>
+                        
+                        {% if waste_log.description %}
+                        <p class="card-text">
+                            <small class="text-muted">{{ waste_log.description|truncatewords:20 }}</small>
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'waste_log_detail' waste_log.id %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Cancel
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash-alt me-1"></i> Yes, Delete Log
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-bullseye me-2"></i> Waste Reduction Goals
+        </h1>
+        <p class="text-muted">Track and manage your waste reduction targets</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'waste_logs_home' %}" class="btn btn-outline-primary">
+            <i class="fas fa-home me-1"></i> Back to Home
+        </a>
+        <button type="button" class="btn btn-success ms-2" data-bs-toggle="modal" data-bs-target="#createGoalModal">
+            <i class="fas fa-plus me-1"></i> New Goal
+        </button>
+    </div>
+</div>
+
+<!-- Active Goals Section -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Active Goals</h6>
+    </div>
+    <div class="card-body">
+        {% if active_goals %}
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Goal</th>
+                        <th>Progress</th>
+                        <th>Target</th>
+                        <th>Current</th>
+                        <th>Timeline</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for goal in active_goals %}
+                    <tr>
+                        <td>
+                            <strong>{{ goal.title }}</strong>
+                            {% if goal.category %}
+                            <br>
+                            <span class="badge rounded-pill" style="background-color: {{ goal.category.color|default:'#6c757d' }};">
+                                {{ goal.category.name }}
+                            </span>
+                            {% endif %}
+                        </td>
+                        <td style="width: 30%;">
+                            <div class="progress mb-2" style="height: 10px;">
+                                <div class="progress-bar bg-success" role="progressbar" 
+                                    style="width: {{ goal.progress_percentage }}%" 
+                                    aria-valuenow="{{ goal.progress_percentage }}" 
+                                    aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div class="small text-muted text-center">{{ goal.progress_percentage|floatformat:1 }}% complete</div>
+                        </td>
+                        <td>{{ goal.target_quantity }} {{ goal.unit }}</td>
+                        <td>{{ goal.current_quantity }} {{ goal.unit }}</td>
+                        <td>
+                            <div class="small">
+                                <strong>Started:</strong> {{ goal.start_date|date:"M d, Y" }}<br>
+                                {% if goal.end_date %}
+                                <strong>Target:</strong> {{ goal.end_date|date:"M d, Y" }}
+                                {% else %}
+                                <em>No end date</em>
+                                {% endif %}
+                            </div>
+                        </td>
+                        <td>
+                            <a href="{% url 'goal_detail' goal.id %}" class="btn btn-sm btn-outline-info">
+                                <i class="fas fa-chart-line"></i>
+                            </a>
+                            <a href="{% url 'delete_goal' goal.id %}" class="btn btn-sm btn-outline-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <div class="mb-3">
+                <i class="fas fa-bullseye fa-4x text-muted"></i>
+            </div>
+            <h5>No active goals yet</h5>
+            <p class="text-muted">Create a goal to start tracking your waste reduction progress</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createGoalModal">
+                <i class="fas fa-plus me-1"></i> Create Your First Goal
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Completed Goals Section -->
+{% if completed_goals %}
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-success">Completed Goals</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Goal</th>
+                        <th>Target</th>
+                        <th>Achieved</th>
+                        <th>Timeline</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for goal in completed_goals %}
+                    <tr>
+                        <td>
+                            <strong>{{ goal.title }}</strong>
+                            {% if goal.category %}
+                            <br>
+                            <span class="badge rounded-pill" style="background-color: {{ goal.category.color|default:'#6c757d' }};">
+                                {{ goal.category.name }}
+                            </span>
+                            {% endif %}
+                        </td>
+                        <td>{{ goal.target_quantity }} {{ goal.unit }}</td>
+                        <td>{{ goal.current_quantity }} {{ goal.unit }}</td>
+                        <td>
+                            <div class="small">
+                                <strong>Started:</strong> {{ goal.start_date|date:"M d, Y" }}<br>
+                                {% if goal.end_date %}
+                                <strong>Target:</strong> {{ goal.end_date|date:"M d, Y" }}
+                                {% else %}
+                                <em>No end date</em>
+                                {% endif %}
+                            </div>
+                        </td>
+                        <td>
+                            <a href="{% url 'goal_detail' goal.id %}" class="btn btn-sm btn-outline-info">
+                                <i class="fas fa-chart-line"></i>
+                            </a>
+                            <a href="{% url 'delete_goal' goal.id %}" class="btn btn-sm btn-outline-danger">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Create Goal Modal -->
+<div class="modal fade" id="createGoalModal" tabindex="-1" aria-labelledby="createGoalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createGoalModalLabel">Create New Goal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.title.id_for_label }}" class="form-label">Goal Title *</label>
+                        {{ form.title }}
+                        {% if form.title.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.title.errors %}{{ error }}{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.description.id_for_label }}" class="form-label">Description</label>
+                        {{ form.description }}
+                        {% if form.description.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.description.errors %}{{ error }}{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.category.id_for_label }}" class="form-label">Waste Category</label>
+                            {{ form.category }}
+                            {% if form.category.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.category.errors %}{{ error }}{% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.target_quantity.id_for_label }}" class="form-label">Target Quantity *</label>
+                            <div class="input-group">
+                                {{ form.target_quantity }}
+                                {{ form.unit }}
+                                {% if form.target_quantity.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.target_quantity.errors %}{{ error }}{% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.start_date.id_for_label }}" class="form-label">Start Date *</label>
+                            {{ form.start_date }}
+                            {% if form.start_date.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.start_date.errors %}{{ error }}{% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.end_date.id_for_label }}" class="form-label">Target End Date</label>
+                            {{ form.end_date }}
+                            {% if form.end_date.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.end_date.errors %}{{ error }}{% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Goal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if form.non_field_errors or form.errors %}
+<!-- Show modal on page load if there are form errors -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var createGoalModal = new bootstrap.Modal(document.getElementById('createGoalModal'));
+        createGoalModal.show();
+    });
+</script>
+{% endif %}
+{% endblock %}

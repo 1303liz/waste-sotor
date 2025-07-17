@@ -1,0 +1,355 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-chart-line me-2"></i> Waste Analytics Dashboard
+        </h1>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'waste_logs_home' %}" class="btn btn-outline-primary">
+            <i class="fas fa-home me-1"></i> Back to Home
+        </a>
+        <a href="{% url 'waste_export' %}" class="btn btn-success ms-2">
+            <i class="fas fa-file-export me-1"></i> Export Data
+        </a>
+    </div>
+</div>
+
+<!-- Date Range Filter -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-2">
+            <div class="col-md-3">
+                <label class="form-label">Start Date</label>
+                {{ filter_form.start_date }}
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">End Date</label>
+                {{ filter_form.end_date }}
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                {{ filter_form.category }}
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Summary Stats Cards -->
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Waste</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ stats.total_waste|floatformat:2 }} kg</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-weight-hanging fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Average Per Day</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ stats.avg_per_day|floatformat:2 }} kg</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar-day fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Logs
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ stats.logs_count }}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Top Category</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            {% if top_waste %}
+                                {{ top_waste.0.category__name }}
+                            {% else %}
+                                N/A
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-sort-amount-down fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row">
+    <!-- Monthly Trend Chart -->
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Waste Over Time</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="wasteMonthlyChart" style="min-height: 300px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Pie Chart -->
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Waste by Category</h6>
+            </div>
+            <div class="card-body">
+                <div class="chart-pie">
+                    <canvas id="wasteCategoryChart" style="min-height: 300px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Environmental Impact & Top Waste -->
+<div class="row">
+    <!-- Environmental Impact Card -->
+    <div class="col-lg-6">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Environmental Impact</h6>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-globe-americas fa-4x text-success mb-3"></i>
+                    <h4 class="text-muted">Estimated Impact of Your Waste</h4>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="h2 mb-0 font-weight-bold">{{ impact.co2_equivalent|floatformat:1 }}</div>
+                        <div class="text-xs text-uppercase mb-1">kg CO₂ Equivalent</div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="h2 mb-0 font-weight-bold">{{ impact.landfill_volume|floatformat:3 }}</div>
+                        <div class="text-xs text-uppercase mb-1">m³ Landfill Volume</div>
+                    </div>
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="h2 mb-0 font-weight-bold">{{ impact.trees_saved|floatformat:1 }}</div>
+                        <div class="text-xs text-uppercase mb-1">Trees Saved (Paper)</div>
+                    </div>
+                </div>
+                
+                <div class="text-muted small text-center mt-3">
+                    <i class="fas fa-info-circle me-1"></i> 
+                    These are simplified estimates based on general waste conversion factors.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Waste Types -->
+    <div class="col-lg-6">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Top Waste Types</h6>
+            </div>
+            <div class="card-body">
+                {% if top_waste %}
+                    <div class="table-responsive">
+                        <table class="table table-bordered" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Total (kg)</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in top_waste %}
+                                <tr>
+                                    <td>{{ item.category__name }}</td>
+                                    <td>{{ item.total|floatformat:2 }}</td>
+                                    <td>
+                                        {% if stats.total_waste %}
+                                            {{ item.total|floatformat:0|default:0 }}%
+                                        {% else %}
+                                            0%
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% else %}
+                    <div class="text-center py-5 text-muted">
+                        <i class="fas fa-chart-pie fa-3x mb-3"></i>
+                        <p>No waste data available for the selected period.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chart.js Script -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Monthly Trend Chart
+        var monthlyCtx = document.getElementById('wasteMonthlyChart');
+        var monthlyData = {{ monthly_data|safe }};
+        
+        if (monthlyCtx) {
+            new Chart(monthlyCtx, {
+                type: 'line',
+                data: {
+                    labels: monthlyData.labels,
+                    datasets: [{
+                        label: 'Waste (kg)',
+                        data: monthlyData.data,
+                        borderColor: 'rgba(78, 115, 223, 1)',
+                        backgroundColor: 'rgba(78, 115, 223, 0.1)',
+                        pointBackgroundColor: 'rgba(78, 115, 223, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverRadius: 5,
+                        pointHoverBackgroundColor: 'rgba(78, 115, 223, 1)',
+                        pointHoverBorderColor: '#fff',
+                        pointHitRadius: 10,
+                        pointBorderWidth: 2,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Weight (kg)'
+                            },
+                            ticks: {
+                                padding: 10
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Month'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgb(255, 255, 255)',
+                            bodyColor: '#858796',
+                            titleMarginBottom: 10,
+                            titleColor: '#6e707e',
+                            titleFontSize: 14,
+                            borderColor: '#dddfeb',
+                            borderWidth: 1,
+                            padding: 15,
+                            displayColors: false
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Category Pie Chart
+        var categoryCtx = document.getElementById('wasteCategoryChart');
+        var categoryData = {{ category_chart_data|safe }};
+        
+        if (categoryCtx) {
+            new Chart(categoryCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: categoryData.labels,
+                    datasets: [{
+                        data: categoryData.data,
+                        backgroundColor: categoryData.colors,
+                        hoverBackgroundColor: categoryData.colors.map(color => {
+                            // Make hover color slightly darker
+                            const colorValue = color.startsWith('#') ? color : '#6e707e';
+                            return colorValue;
+                        }),
+                        hoverBorderColor: "rgba(234, 236, 244, 1)",
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgb(255, 255, 255)',
+                            bodyColor: '#858796',
+                            titleMarginBottom: 10,
+                            titleColor: '#6e707e',
+                            titleFontSize: 14,
+                            borderColor: '#dddfeb',
+                            borderWidth: 1,
+                            padding: 15,
+                            displayColors: false,
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.formattedValue || '';
+                                    return `${label}: ${value} kg`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-8">
+        <h1 class="h3 mb-0 text-gray-800">
+            <i class="fas fa-file-export me-2"></i> Export Waste Data
+        </h1>
+        <p class="text-muted">Download your waste logging data for analysis or backup</p>
+    </div>
+    <div class="col-md-4 text-md-end">
+        <a href="{% url 'waste_logs_home' %}" class="btn btn-outline-primary">
+            <i class="fas fa-home me-1"></i> Back to Home
+        </a>
+    </div>
+</div>
+
+<!-- Filter Card -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Filter Data</h6>
+    </div>
+    <div class="card-body">
+        <form method="get" class="row g-2">
+            <div class="col-md-3">
+                <label class="form-label">Start Date</label>
+                {{ filter_form.start_date }}
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">End Date</label>
+                {{ filter_form.end_date }}
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Category</label>
+                {{ filter_form.category }}
+            </div>
+            <div class="col-md-3 d-flex align-items-end">
+                <button type="submit" class="btn btn-primary w-100">
+                    Apply Filters
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Export Options -->
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Export Options</h6>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    {% for export_type in export_types %}
+                    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center" 
+                       data-format="{{ export_type.format }}">
+                        {% if export_type.format == 'csv' %}
+                        <i class="fas fa-file-csv fa-2x text-success me-3"></i>
+                        {% elif export_type.format == 'json' %}
+                        <i class="fas fa-file-code fa-2x text-primary me-3"></i>
+                        {% elif export_type.format == 'pdf' %}
+                        <i class="fas fa-file-pdf fa-2x text-danger me-3"></i>
+                        {% elif export_type.format == 'excel' %}
+                        <i class="fas fa-file-excel fa-2x text-success me-3"></i>
+                        {% endif %}
+                        <div>
+                            <h5 class="mb-1">{{ export_type.name }} Format</h5>
+                            <p class="mb-1 small">Export your waste logs in {{ export_type.name }} format</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                
+                <div class="text-muted small mt-3">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Your data will be exported based on the filters applied above.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Data Preview -->
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Data Preview</h6>
+            </div>
+            <div class="card-body">
+                {% if logs %}
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Category</th>
+                                <th>Subcategory</th>
+                                <th>Quantity (kg)</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for log in logs %}
+                            <tr>
+                                <td>{{ log.date_logged|date:"Y-m-d H:i" }}</td>
+                                <td>{{ log.category.name }}</td>
+                                <td>{{ log.subcategory.name|default:"-" }}</td>
+                                <td>{{ log.quantity_kg|floatformat:2 }}</td>
+                                <td>{{ log.location|default:"-" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="d-flex justify-content-between align-items-center mt-3">
+                    <div>
+                        <span class="badge bg-primary">{{ logs.count }} records</span>
+                        <span class="badge bg-success ms-2">
+                            {{ logs.aggregate.total_kg.total|floatformat:2 }} total kg
+                        </span>
+                    </div>
+                    
+                    <div id="exportButtons">
+                        <!-- Buttons will be added by JavaScript -->
+                    </div>
+                </div>
+                {% else %}
+                <div class="text-center py-5">
+                    <div class="mb-3">
+                        <i class="fas fa-database fa-4x text-muted"></i>
+                    </div>
+                    <h5>No data available for export</h5>
+                    <p class="text-muted">Try adjusting your filters or add some waste logs first</p>
+                    <a href="{% url 'waste_report' %}" class="btn btn-primary">
+                        <i class="fas fa-plus me-1"></i> Add Waste Log
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get all export type links
+        const exportLinks = document.querySelectorAll('.list-group-item[data-format]');
+        const exportButtonsContainer = document.getElementById('exportButtons');
+        
+        // Create export buttons for each format
+        exportLinks.forEach(link => {
+            const format = link.getAttribute('data-format');
+            const formatName = link.querySelector('h5').textContent;
+            
+            // Create button in the exportButtons container
+            if (exportButtonsContainer) {
+                const button = document.createElement('button');
+                button.className = 'btn btn-sm';
+                
+                // Set button style based on format
+                if (format === 'csv') {
+                    button.className += ' btn-outline-success';
+                    button.innerHTML = '<i class="fas fa-file-csv me-1"></i> Export CSV';
+                } else if (format === 'json') {
+                    button.className += ' btn-outline-primary';
+                    button.innerHTML = '<i class="fas fa-file-code me-1"></i> Export JSON';
+                } else if (format === 'pdf') {
+                    button.className += ' btn-outline-danger';
+                    button.innerHTML = '<i class="fas fa-file-pdf me-1"></i> Export PDF';
+                } else if (format === 'excel') {
+                    button.className += ' btn-outline-success';
+                    button.innerHTML = '<i class="fas fa-file-excel me-1"></i> Export Excel';
+                }
+                
+                // Add button to container
+                exportButtonsContainer.appendChild(button);
+                
+                // Add some margin between buttons
+                if (exportLinks.length > 1) {
+                    button.className += ' ms-2';
+                }
+            }
+            
+            // Handle click on the list item
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Build query string from current filters
+                const urlParams = new URLSearchParams(window.location.search);
+                urlParams.append('format', format);
+                
+                // Here you would normally trigger the download
+                // For now, we'll just alert since the backend isn't fully implemented
+                alert(`Exporting data in ${formatName} format with current filters. In a real application, the download would start now.`);
+                
+                // The actual implementation would do something like:
+                // window.location.href = `/waste/export/download/?${urlParams.toString()}`;
+            });
+        });
+    });
+</script>
+{% endblock %}

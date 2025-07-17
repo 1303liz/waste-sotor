@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card shadow">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Confirm Goal Deletion</h6>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <strong>Warning:</strong> This action cannot be undone.
+                </div>
+                
+                <p class="mb-4">
+                    Are you sure you want to delete the following goal?
+                </p>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ goal.title }}</h5>
+                        <p class="card-text">
+                            <strong>Target:</strong> {{ goal.target_quantity }} {{ goal.unit }}<br>
+                            <strong>Current:</strong> {{ goal.current_quantity }} {{ goal.unit }}<br>
+                            <strong>Progress:</strong> {{ goal.progress_percentage|floatformat:1 }}%
+                        </p>
+                        
+                        {% if goal.description %}
+                        <p class="card-text">
+                            <small class="text-muted">{{ goal.description|truncatewords:20 }}</small>
+                        </p>
+                        {% endif %}
+                        
+                        {% if goal.is_completed %}
+                        <div class="badge bg-success">Completed</div>
+                        {% else %}
+                        <div class="badge bg-primary">Active</div>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'waste_goals' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Cancel
+                        </a>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fas fa-trash-alt me-1"></i> Yes, Delete Goal
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

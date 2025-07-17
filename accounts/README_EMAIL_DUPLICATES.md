@@ -1,4 +1,4 @@
-# Handling Duplicate Email Addresses
+  b# Handling Duplicate Email Addresses
 
 This document explains how to handle the issue of duplicate email addresses in your Django user database.
 
