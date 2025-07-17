@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Debug: Waste Categories and Subcategories</h2>
+    
+    <div class="alert alert-info">
+        Total subcategories in database: {{ total_subcategories }}
+        <div class="float-end">
+            <a href="?action=add_test" class="btn btn-sm btn-primary">Add Test Subcategories</a>
+        </div>
+    </div>
+    
+    <div class="row">
+        {% for item in data %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        {{ item.category.name }}
+                    </div>
+                    <div class="card-body">
+                        <h5>Subcategories:</h5>
+                        {% if item.subcategories %}
+                            <ul class="list-group">
+                                {% for sub in item.subcategories %}
+                                    <li class="list-group-item">{{ sub.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p class="text-muted">No subcategories found</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

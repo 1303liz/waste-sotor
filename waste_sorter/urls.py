@@ -23,7 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('recycle/', include('recycle_tips.urls')),
     path('waste/', include('waste_logs.urls')),
-    path('', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('', include('dashboard.urls')),  # Dashboard app is now the homepage
 ]
 
 # Serve media files during development

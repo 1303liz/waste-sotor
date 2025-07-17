@@ -1341,3 +1341,289 @@ INFO 2025-07-17 10:31:36,660 basehttp "GET /waste/ HTTP/1.1" 200 31673
 INFO 2025-07-17 10:31:38,907 basehttp "GET /waste/ HTTP/1.1" 200 31673
 INFO 2025-07-17 10:31:41,451 basehttp "GET /recycle/ HTTP/1.1" 200 38810
 INFO 2025-07-17 10:33:43,956 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 11:35:05,366 basehttp "GET /waste/report/ HTTP/1.1" 200 27830
+INFO 2025-07-17 11:47:15,059 basehttp "GET /waste/report/ HTTP/1.1" 200 27830
+INFO 2025-07-17 12:37:55,662 autoreload C:\Users\angam\Downloads\waste-sotor\waste_logs\urls.py changed, reloading.
+INFO 2025-07-17 12:38:03,004 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:39:09,422 autoreload C:\Users\angam\Downloads\waste-sotor\debug_view.py changed, reloading.
+INFO 2025-07-17 12:39:16,319 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:40:39,387 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 12:41:00,949 basehttp "GET /waste/report/ HTTP/1.1" 200 27831
+INFO 2025-07-17 12:41:01,653 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-17 12:41:01,727 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-17 12:41:02,948 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-17 12:41:03,105 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+WARNING 2025-07-17 13:22:15,993 log Not Found: /
+WARNING 2025-07-17 13:22:15,997 basehttp "GET / HTTP/1.1" 404 14808
+WARNING 2025-07-17 13:22:40,570 log Not Found: /
+WARNING 2025-07-17 13:22:40,616 basehttp "GET / HTTP/1.1" 404 14808
+WARNING 2025-07-17 13:22:42,088 log Not Found: /favicon.ico
+WARNING 2025-07-17 13:22:42,562 basehttp "GET /favicon.ico HTTP/1.1" 404 14870
+INFO 2025-07-17 13:22:54,588 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 13:22:54,736 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 13775
+INFO 2025-07-17 13:23:07,477 basehttp "POST /login/?next=/waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 13:23:09,141 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 13:23:14,057 basehttp "GET /waste/report/ HTTP/1.1" 200 27830
+INFO 2025-07-17 14:07:29,072 basehttp "POST /logout/ HTTP/1.1" 200 16412
+WARNING 2025-07-17 14:07:44,751 log Not Found: /
+WARNING 2025-07-17 14:07:44,757 basehttp "GET / HTTP/1.1" 404 14809
+INFO 2025-07-17 14:07:52,719 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:07:52,848 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 13775
+INFO 2025-07-17 14:10:34,623 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 13805
+INFO 2025-07-17 14:11:19,439 autoreload C:\Users\angam\Downloads\waste-sotor\debug_view.py changed, reloading.
+INFO 2025-07-17 14:11:19,492 autoreload C:\Users\angam\Downloads\waste-sotor\debug_view.py changed, reloading.
+INFO 2025-07-17 14:11:55,397 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:11:58,058 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 14:15:02,558 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 24292
+INFO 2025-07-17 14:15:49,315 basehttp "POST /login/?next=/waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 14:15:50,017 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 14:15:57,020 basehttp "GET /recycle/ HTTP/1.1" 200 38810
+INFO 2025-07-17 14:15:57,250 basehttp "GET /media/recycle_tips/images/recycle.jpg HTTP/1.1" 200 10923
+INFO 2025-07-17 14:15:57,351 basehttp "GET /media/recycle_tips/images/recycle_U3hSiFK.jpg HTTP/1.1" 200 10923
+INFO 2025-07-17 14:16:20,169 basehttp "GET /recycle/ HTTP/1.1" 200 38810
+INFO 2025-07-17 14:19:54,553 basehttp "GET /waste/ HTTP/1.1" 200 31673
+INFO 2025-07-17 14:19:56,643 basehttp "GET /recycle/ HTTP/1.1" 200 38810
+INFO 2025-07-17 14:37:51,926 basehttp "GET /recycle/ HTTP/1.1" 200 38821
+INFO 2025-07-17 14:38:24,753 basehttp "GET /recycle/ HTTP/1.1" 200 38820
+INFO 2025-07-17 15:08:05,147 basehttp "GET /recycle/ HTTP/1.1" 200 38676
+INFO 2025-07-17 15:10:41,885 basehttp "GET /recycle/ HTTP/1.1" 200 38719
+INFO 2025-07-17 15:12:37,128 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-17 15:17:05,440 log Not Found: /
+WARNING 2025-07-17 15:17:05,509 basehttp "GET / HTTP/1.1" 404 14809
+INFO 2025-07-17 15:17:05,681 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-17 15:17:05,732 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+INFO 2025-07-17 15:17:05,842 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-17 15:17:06,165 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2025-07-17 15:17:06,457 log Not Found: /favicon.ico
+WARNING 2025-07-17 15:17:06,465 basehttp "GET /favicon.ico HTTP/1.1" 404 14870
+INFO 2025-07-17 15:18:57,082 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 15:31:59,455 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-17 15:33:13,661 log Not Found: /
+WARNING 2025-07-17 15:33:13,677 basehttp "GET / HTTP/1.1" 404 5819
+WARNING 2025-07-17 15:33:14,210 log Not Found: /favicon.ico
+WARNING 2025-07-17 15:33:14,220 basehttp "GET /favicon.ico HTTP/1.1" 404 5870
+INFO 2025-07-17 15:33:50,185 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:33:50,272 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 15240
+INFO 2025-07-17 15:33:55,320 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2025-07-17 15:33:55,378 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:33:55,687 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-07-17 15:33:55,893 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-07-17 15:33:55,980 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-07-17 15:33:56,005 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-07-17 15:33:56,018 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-07-17 15:33:56,020 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-07-17 15:33:56,504 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-07-17 15:33:56,514 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-07-17 15:33:56,552 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-07-17 15:33:56,567 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+WARNING 2025-07-17 15:33:56,704 log Not Found: /favicon.ico
+WARNING 2025-07-17 15:33:56,714 basehttp "GET /favicon.ico HTTP/1.1" 404 5870
+INFO 2025-07-17 15:34:12,252 basehttp "POST /login/?next=/waste/ HTTP/1.1" 200 15558
+INFO 2025-07-17 15:34:12,691 basehttp "GET /waste HTTP/1.1" 301 0
+INFO 2025-07-17 15:34:12,771 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:34:13,063 basehttp "GET /login/?next=/waste/ HTTP/1.1" 200 15240
+INFO 2025-07-17 15:34:27,065 basehttp "GET /register/ HTTP/1.1" 200 5418
+INFO 2025-07-17 15:34:46,696 basehttp "POST /register/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:34:46,983 basehttp "GET /verification-sent/ HTTP/1.1" 200 19690
+INFO 2025-07-17 15:34:47,683 basehttp "GET /check-verification-status/ HTTP/1.1" 200 175
+INFO 2025-07-17 15:35:18,295 basehttp "GET /check-verification-status/ HTTP/1.1" 200 175
+INFO 2025-07-17 15:35:48,029 basehttp "GET /check-verification-status/ HTTP/1.1" 200 175
+INFO 2025-07-17 15:36:06,093 basehttp "GET /activate/MQ/ct3cls-c8deac77b5f3c06d4ca2e23476580977/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:36:06,631 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 15:36:18,091 basehttp "GET /check-verification-status/ HTTP/1.1" 200 115
+INFO 2025-07-17 15:36:23,059 basehttp "GET /recycle/add/ HTTP/1.1" 200 10134
+INFO 2025-07-17 15:36:34,910 basehttp "GET /waste/ HTTP/1.1" 200 19502
+INFO 2025-07-17 15:36:40,547 basehttp "GET /waste/report/ HTTP/1.1" 200 18452
+INFO 2025-07-17 15:46:48,678 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:46:48,756 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4173
+INFO 2025-07-17 15:46:48,973 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-07-17 15:46:48,973 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-07-17 15:46:49,013 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-07-17 15:46:49,042 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-07-17 15:46:49,097 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-07-17 15:46:49,132 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-07-17 15:46:49,161 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-07-17 15:47:10,336 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:47:10,460 basehttp "GET /admin/ HTTP/1.1" 200 11624
+INFO 2025-07-17 15:47:10,601 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-07-17 15:47:10,708 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-07-17 15:47:10,933 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-07-17 15:47:17,468 basehttp "GET /admin/waste_logs/wastesubcategory/add/ HTTP/1.1" 200 15536
+INFO 2025-07-17 15:47:17,680 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-07-17 15:47:18,102 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-07-17 15:47:18,125 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-07-17 15:47:18,402 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-07-17 15:47:18,452 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-07-17 15:47:18,493 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-07-17 15:47:18,583 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-07-17 15:47:18,612 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-17 15:47:18,653 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-07-17 15:47:18,735 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-07-17 15:47:19,143 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-07-17 15:47:19,150 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-07-17 15:47:19,793 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-07-17 15:47:19,867 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-07-17 15:53:25,760 basehttp "POST /admin/waste_logs/wastesubcategory/add/ HTTP/1.1" 200 17232
+INFO 2025-07-17 15:53:25,897 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-17 15:53:34,749 basehttp "GET /admin/waste_logs/wastecategory/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12076
+INFO 2025-07-17 15:53:34,966 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-17 15:53:35,376 basehttp "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2025-07-17 15:53:35,594 basehttp "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 537
+INFO 2025-07-17 15:54:15,678 basehttp "GET /admin/waste_logs/wastecategory/add/?_to_field=id&_popup=1 HTTP/1.1" 200 12076
+INFO 2025-07-17 15:54:15,824 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-17 15:54:24,873 basehttp "POST /admin/waste_logs/wastecategory/add/?_to_field=id&_popup=1 HTTP/1.1" 200 327
+INFO 2025-07-17 15:54:25,110 basehttp "GET /static/admin/js/popup_response.js HTTP/1.1" 200 532
+INFO 2025-07-17 15:54:29,577 basehttp "POST /admin/waste_logs/wastesubcategory/add/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:54:30,205 basehttp "GET /admin/waste_logs/wastesubcategory/ HTTP/1.1" 200 13757
+INFO 2025-07-17 15:54:30,321 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-07-17 15:54:30,446 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-07-17 15:54:30,740 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-07-17 15:54:31,029 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-07-17 15:54:31,089 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-07-17 15:54:31,090 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-07-17 15:54:46,447 basehttp "GET /recycle/ HTTP/1.1" 302 0
+INFO 2025-07-17 15:54:46,512 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 200 24293
+INFO 2025-07-17 15:54:46,615 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-17 15:54:46,616 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-17 15:54:46,936 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-17 15:54:46,939 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-17 15:54:50,310 basehttp "GET /login/ HTTP/1.1" 200 23369
+INFO 2025-07-17 15:54:54,738 basehttp "POST /login/ HTTP/1.1" 302 0
+WARNING 2025-07-17 15:54:54,836 log Not Found: /
+WARNING 2025-07-17 15:54:54,837 basehttp "GET / HTTP/1.1" 404 5819
+INFO 2025-07-17 16:00:12,754 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-17 16:00:18,295 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:01:11,200 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\urls.py changed, reloading.
+INFO 2025-07-17 16:01:15,212 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:04:12,287 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-17 16:04:18,220 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:04:26,213 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-17 16:04:33,165 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:04:54,866 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:09:37,753 basehttp "GET /?id=e7a1ee5b-57b6-411d-bbe9-71753013edfd&vscodeBrowserReqId=1752757777366 HTTP/1.1" 302 0
+WARNING 2025-07-17 16:09:38,109 log Not Found: /login/
+WARNING 2025-07-17 16:09:38,148 basehttp "GET /login/?next=/%3Fid%3De7a1ee5b-57b6-411d-bbe9-71753013edfd%26vscodeBrowserReqId%3D1752757777366 HTTP/1.1" 404 3313
+INFO 2025-07-17 16:13:48,743 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:14:58,828 basehttp "GET /?id=e7a1ee5b-57b6-411d-bbe9-71753013edfd&vscodeBrowserReqId=1752758098038 HTTP/1.1" 302 0
+WARNING 2025-07-17 16:14:58,935 log Not Found: /login/
+WARNING 2025-07-17 16:14:58,955 basehttp "GET /login/?next=/%3Fid%3De7a1ee5b-57b6-411d-bbe9-71753013edfd%26vscodeBrowserReqId%3D1752758098038 HTTP/1.1" 404 12396
+INFO 2025-07-17 16:15:29,254 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:15:29,315 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:15:29,507 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:15:37,049 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:15:37,240 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:15:38,906 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:15:56,401 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:15:56,490 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:15:56,500 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:16:08,091 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:16:08,419 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:16:10,576 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:16:17,891 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:16:18,213 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:16:18,560 autoreload C:\Users\angam\Downloads\waste-sotor\dashboard\views.py changed, reloading.
+INFO 2025-07-17 16:16:26,055 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:16:26,791 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:16:27,348 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:23:16,400 basehttp "GET /?id=e7a1ee5b-57b6-411d-bbe9-71753013edfd&vscodeBrowserReqId=1752758595983 HTTP/1.1" 302 0
+WARNING 2025-07-17 16:23:16,739 log Not Found: /login/
+WARNING 2025-07-17 16:23:16,741 basehttp "GET /login/?next=/%3Fid%3De7a1ee5b-57b6-411d-bbe9-71753013edfd%26vscodeBrowserReqId%3D1752758595983 HTTP/1.1" 404 3313
+INFO 2025-07-17 16:24:16,523 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:24:27,857 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:24:28,469 log Not Found: /login/
+WARNING 2025-07-17 16:24:28,485 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+INFO 2025-07-17 16:25:01,301 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:25:01,412 log Not Found: /login/
+WARNING 2025-07-17 16:25:01,431 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+INFO 2025-07-17 16:25:03,083 basehttp "GET / HTTP/1.1" 200 16779
+INFO 2025-07-17 16:25:37,855 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:25:38,203 log Not Found: /login/
+WARNING 2025-07-17 16:25:38,279 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+INFO 2025-07-17 16:26:02,408 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:26:02,491 log Not Found: /login/
+WARNING 2025-07-17 16:26:02,494 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+INFO 2025-07-17 16:26:14,815 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:26:14,910 log Not Found: /login/
+WARNING 2025-07-17 16:26:14,912 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+INFO 2025-07-17 16:26:23,453 basehttp "GET / HTTP/1.1" 200 16779
+INFO 2025-07-17 16:26:24,434 basehttp "GET / HTTP/1.1" 200 16779
+WARNING 2025-07-17 16:26:36,640 log Not Found: /login/
+INFO 2025-07-17 16:26:36,858 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+WARNING 2025-07-17 16:26:36,860 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 404 12251
+INFO 2025-07-17 16:26:41,464 basehttp "GET /waste/ HTTP/1.1" 200 19659
+INFO 2025-07-17 16:26:47,147 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 16:27:14,552 basehttp "GET /waste/ HTTP/1.1" 200 19659
+INFO 2025-07-17 16:27:15,762 basehttp "GET /waste/ HTTP/1.1" 200 19659
+INFO 2025-07-17 16:27:20,862 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 16:27:24,906 basehttp "GET / HTTP/1.1" 200 16779
+WARNING 2025-07-17 16:28:12,869 log Not Found: /login/
+WARNING 2025-07-17 16:28:12,874 basehttp "GET /login/?next=/recycle/ HTTP/1.1" 404 12250
+INFO 2025-07-17 16:28:56,369 basehttp "GET / HTTP/1.1" 200 16769
+INFO 2025-07-17 16:29:14,760 basehttp "GET /waste/ HTTP/1.1" 200 19659
+INFO 2025-07-17 16:29:29,974 basehttp "GET / HTTP/1.1" 200 16779
+INFO 2025-07-17 16:29:31,744 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 16:35:49,214 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:36:52,020 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:36:53,357 log Not Found: /login/
+WARNING 2025-07-17 16:36:53,495 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+WARNING 2025-07-17 16:36:55,256 log Not Found: /favicon.ico
+WARNING 2025-07-17 16:36:55,282 basehttp "GET /favicon.ico HTTP/1.1" 404 12240
+INFO 2025-07-17 16:38:16,306 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:38:33,175 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:38:33,264 log Not Found: /login/
+WARNING 2025-07-17 16:38:33,269 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+WARNING 2025-07-17 16:38:33,810 log Not Found: /favicon.ico
+WARNING 2025-07-17 16:38:33,857 basehttp "GET /favicon.ico HTTP/1.1" 404 12240
+INFO 2025-07-17 16:39:38,995 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:39:43,949 basehttp "GET / HTTP/1.1" 200 20140
+WARNING 2025-07-17 16:40:15,793 log Not Found: /login/
+WARNING 2025-07-17 16:40:15,795 basehttp "GET /login/?next=/ HTTP/1.1" 404 12234
+INFO 2025-07-17 16:40:30,697 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 16:40:35,260 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:40:35,308 log Not Found: /login/
+WARNING 2025-07-17 16:40:35,326 basehttp "GET /login/?next=/ HTTP/1.1" 404 3232
+WARNING 2025-07-17 16:40:35,657 log Not Found: /favicon.ico
+WARNING 2025-07-17 16:40:35,660 basehttp "GET /favicon.ico HTTP/1.1" 404 3240
+INFO 2025-07-17 16:40:44,035 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:40:44,064 log Not Found: /login/
+WARNING 2025-07-17 16:40:44,066 basehttp "GET /login/?next=/ HTTP/1.1" 404 3232
+INFO 2025-07-17 16:40:55,863 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:40:55,918 log Not Found: /login/
+WARNING 2025-07-17 16:40:55,919 basehttp "GET /login/?next=/ HTTP/1.1" 404 3232
+INFO 2025-07-17 16:41:35,869 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:41:37,550 log Not Found: /login/
+WARNING 2025-07-17 16:41:38,393 basehttp "GET /login/?next=/ HTTP/1.1" 404 3232
+WARNING 2025-07-17 16:41:56,912 log Not Found: /login/
+WARNING 2025-07-17 16:41:56,926 basehttp "GET /login/ HTTP/1.1" 404 3225
+INFO 2025-07-17 16:42:05,079 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:42:05,137 log Not Found: /login/
+WARNING 2025-07-17 16:42:05,138 basehttp "GET /login/?next=/ HTTP/1.1" 404 3232
+INFO 2025-07-17 16:42:11,551 basehttp "POST /accounts/logout/ HTTP/1.1" 200 10994
+INFO 2025-07-17 16:42:56,714 basehttp "GET /accounts/login/ HTTP/1.1" 200 18874
+INFO 2025-07-17 16:43:10,255 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-17 16:43:10,397 basehttp "GET / HTTP/1.1" 200 20130
+INFO 2025-07-17 16:43:17,272 basehttp "GET /accounts/login/ HTTP/1.1" 200 18874
+INFO 2025-07-17 16:43:22,260 basehttp "GET / HTTP/1.1" 302 0
+WARNING 2025-07-17 16:43:22,335 log Not Found: /login/
+WARNING 2025-07-17 16:43:22,338 basehttp "GET /login/?next=/ HTTP/1.1" 404 3232
+INFO 2025-07-17 16:44:55,040 basehttp "GET /accounts/login HTTP/1.1" 301 0
+INFO 2025-07-17 16:44:55,083 basehttp "GET /accounts/login/ HTTP/1.1" 200 18874
+INFO 2025-07-17 16:45:48,548 basehttp "GET /accounts/register/ HTTP/1.1" 200 9043
+INFO 2025-07-17 16:46:05,432 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-17 16:46:10,913 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:46:23,012 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-17 16:46:32,221 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:51:28,436 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-17 16:51:45,692 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:52:05,264 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-17 16:52:13,162 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 16:58:38,410 basehttp "GET /accounts/login/ HTTP/1.1" 200 21895
+INFO 2025-07-17 16:59:46,109 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-17 16:59:51,595 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 17:00:50,855 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py changed, reloading.
+INFO 2025-07-17 17:01:10,287 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 17:02:45,984 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-17 17:02:50,034 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 17:03:17,535 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-17 17:03:21,887 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 17:05:14,501 autoreload Watching for file changes with StatReloader

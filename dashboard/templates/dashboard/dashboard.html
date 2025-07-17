@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard | Waste Sorter{% endblock %}
+
+{% block extra_head %}
+<style>
+    .dashboard-card {
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+    
+    .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .dashboard-header {
+        background: linear-gradient(135deg, #43a047 0%, #1de9b6 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .stats-card {
+        background: linear-gradient(135deg, #4fc3f7 0%, #2196f3 100%);
+        color: white;
+        border: none;
+    }
+    
+    .recent-card {
+        background: linear-gradient(135deg, #ffcc80 0%, #ff9800 100%);
+        color: white;
+        border: none;
+    }
+    
+    .tips-card {
+        background: linear-gradient(135deg, #81c784 0%, #4caf50 100%);
+        color: white;
+        border: none;
+    }
+    
+    .category-card {
+        background: linear-gradient(135deg, #b39ddb 0%, #673ab7 100%);
+        color: white;
+        border: none;
+    }
+    
+    .card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .tip-item {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .log-item {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .category-item {
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .welcome-name {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    
+    .quick-actions {
+        margin-top: 20px;
+    }
+    
+    .action-btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        padding: 8px 20px;
+        font-weight: 500;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-header mb-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1>Welcome, <span class="welcome-name">{{ user.first_name|default:user.username }}</span></h1>
+                <p class="lead mb-0">Track your waste management progress and sustainability impact</p>
+            </div>
+            <div class="col-md-4 text-end quick-actions">
+                <a href="{% url 'waste_logs_home' %}" class="btn btn-light action-btn">
+                    <i class="fas fa-plus-circle"></i> Log Waste
+                </a>
+                <a href="{% url 'tips_home' %}" class="btn btn-outline-light action-btn">
+                    <i class="fas fa-lightbulb"></i> Get Tips
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card dashboard-card stats-card">
+            <div class="card-body text-center">
+                <i class="fas fa-weight card-icon"></i>
+                <h5 class="card-title">Total Waste Logged</h5>
+                <h2 class="card-text">{{ total_waste_logged|floatformat:2 }} kg</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card dashboard-card stats-card">
+            <div class="card-body text-center">
+                <i class="fas fa-clipboard-list card-icon"></i>
+                <h5 class="card-title">Total Logs</h5>
+                <h2 class="card-text">{{ total_logs }}</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card dashboard-card stats-card">
+            <div class="card-body text-center">
+                <i class="fas fa-recycle card-icon"></i>
+                <h5 class="card-title">Recycling Rate</h5>
+                <h2 class="card-text">64%</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3 mb-4">
+        <div class="card dashboard-card stats-card">
+            <div class="card-body text-center">
+                <i class="fas fa-tree card-icon"></i>
+                <h5 class="card-title">Carbon Offset</h5>
+                <h2 class="card-text">12.5 kg</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card dashboard-card recent-card">
+            <div class="card-header bg-transparent border-0">
+                <h5 class="mb-0"><i class="fas fa-history me-2"></i> Recent Waste Logs</h5>
+            </div>
+            <div class="card-body">
+                {% if recent_logs %}
+                    {% for log in recent_logs %}
+                    <div class="log-item">
+                        <div class="d-flex justify-content-between">
+                            <h6>{{ log.category.name }}</h6>
+                            <span>{{ log.date_created|date:"M d, Y" }}</span>
+                        </div>
+                        <p class="mb-0">{{ log.quantity_kg }} kg - {{ log.description|truncatechars:50 }}</p>
+                    </div>
+                    {% endfor %}
+                    <a href="{% url 'waste_logs_home' %}" class="btn btn-sm btn-light mt-2">View All Logs</a>
+                {% else %}
+                    <div class="text-center py-3">
+                        <p>No waste logs found. Start tracking your waste!</p>
+                        <a href="{% url 'waste_logs_home' %}" class="btn btn-light">Add First Log</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card dashboard-card category-card">
+            <div class="card-header bg-transparent border-0">
+                <h5 class="mb-0"><i class="fas fa-chart-pie me-2"></i> Waste by Category</h5>
+            </div>
+            <div class="card-body">
+                {% if waste_by_category %}
+                    {% for category in waste_by_category %}
+                    <div class="category-item">
+                        <span>{{ category.category__name }}</span>
+                        <span>{{ category.total|floatformat:2 }} kg</span>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center py-3">
+                        <p>No category data available yet.</p>
+                        <a href="{% url 'waste_logs_home' %}" class="btn btn-light">Add Waste Data</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 mb-4">
+        <div class="card dashboard-card tips-card">
+            <div class="card-header bg-transparent border-0">
+                <h5 class="mb-0"><i class="fas fa-lightbulb me-2"></i> Recycling Tips</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% if recent_tips %}
+                        {% for tip in recent_tips %}
+                        <div class="col-md-4 mb-3">
+                            <div class="tip-item h-100">
+                                <h6>{{ tip.title }}</h6>
+                                <p class="mb-0">{{ tip.content|truncatechars:100 }}</p>
+                                {% if tip.image %}
+                                <img src="{{ tip.image.url }}" class="img-fluid mt-2 rounded" alt="{{ tip.title }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <div class="col-12 text-center py-3">
+                            <p>No recycling tips available.</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="text-center mt-2">
+                    <a href="{% url 'tips_home' %}" class="btn btn-sm btn-light">View More Tips</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+{% endblock %}

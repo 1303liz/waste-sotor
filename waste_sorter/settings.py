@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'recycle_tips',
     'waste_logs',
     'accounts',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Custom middleware for session timeout handling
     'accounts.middleware.SessionTimeoutMiddleware',
+    # Custom middleware for authentication
+    'accounts.authentication_middleware.AuthenticationMiddleware',
 ]
 
 # Debug Toolbar Settings (only used if DEBUG is True)
@@ -147,6 +150,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Authentication settings
+LOGIN_URL = 'login'  # URL name for the login page
+LOGIN_REDIRECT_URL = '/'  # Redirect after successful login
+LOGOUT_REDIRECT_URL = '/'  # Redirect after logout
 
 # Email Configuration (using values from .env file)
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')

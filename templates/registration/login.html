@@ -1,47 +1,443 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container-fluid d-flex align-items-center justify-content-center min-vh-100 p-0" style="background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);">
-    <div class="row w-100 justify-content-center align-items-center">
-        <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
-            <img src="https://undraw.co/api/illustrations/clean_up.svg" alt="Login Illustration" class="img-fluid" style="max-height: 400px;">
-        </div>
-        <div class="col-md-8 col-lg-4">
-            <div class="card shadow-lg border-0 rounded-4 animate__animated animate__fadeInUp" style="background: rgba(255,255,255,0.95);">
-                <div class="card-header bg-success text-white rounded-top-4 text-center">
-                    <h2 class="mb-0 fw-bold">Welcome Back!</h2>
-                    <p class="mb-0 small">Sign in to continue to Waste Sorter</p>
+<style>
+    .login-container {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .login-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23ffffff;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="80" fill="url(%23a)"/></svg>');
+        animation: float 20s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    .login-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .login-header {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        padding: 2rem 1.5rem;
+        text-align: center;
+        position: relative;
+    }
+    
+    .login-header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.1) 10px,
+            rgba(255, 255, 255, 0.1) 20px
+        );
+        animation: slide 10s linear infinite;
+    }
+    
+    @keyframes slide {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    
+    .login-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 2rem;
+        color: white;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .login-title {
+        color: white;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .login-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
+        margin: 0.5rem 0 0;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .login-body {
+        padding: 2.5rem;
+    }
+    
+    .form-floating {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-floating > .form-control {
+        height: 60px;
+        border: 2px solid #e9ecef;
+        border-radius: 12px;
+        padding: 1rem 1rem 0.25rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .form-floating > .form-control:focus {
+        border-color: #4CAF50;
+        box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+        transform: translateY(-2px);
+    }
+    
+    .form-floating > label {
+        padding: 1rem 1rem 0.25rem;
+        color: #6c757d;
+        font-weight: 500;
+    }
+    
+    .input-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    
+    .input-icon {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+        z-index: 3;
+        font-size: 1.2rem;
+    }
+    
+    .form-control-with-icon {
+        padding-left: 45px;
+    }
+    
+    .password-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #6c757d;
+        cursor: pointer;
+        z-index: 3;
+        font-size: 1.2rem;
+    }
+    
+    .password-toggle:hover {
+        color: #4CAF50;
+    }
+    
+    .login-btn {
+        background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .login-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+    
+    .login-btn:hover::before {
+        left: 100%;
+    }
+    
+    .login-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+    }
+    
+    .login-btn:active {
+        transform: translateY(0);
+    }
+    
+    .login-links {
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .login-links a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        margin: 0.5rem;
+    }
+    
+    .login-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 50%;
+        background: #667eea;
+        transition: all 0.3s ease;
+    }
+    
+    .login-links a:hover {
+        color: #4CAF50;
+    }
+    
+    .login-links a:hover::after {
+        width: 100%;
+        left: 0;
+        background: #4CAF50;
+    }
+    
+    .error-alert {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+        border: none;
+        color: white;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        animation: shake 0.5s ease-in-out;
+    }
+    
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+    }
+    
+    .illustration {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+    
+    .illustration-content {
+        text-align: center;
+        color: white;
+    }
+    
+    .illustration-icon {
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        font-size: 4rem;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+    
+    .illustration-text {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    .illustration-subtitle {
+        font-size: 1rem;
+        opacity: 0.9;
+    }
+    
+    @media (max-width: 991px) {
+        .illustration {
+            display: none;
+        }
+        
+        .login-container {
+            padding: 1rem;
+        }
+    }
+</style>
+
+<div class="login-container">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <!-- Illustration Section -->
+            <div class="col-lg-6 illustration">
+                <div class="illustration-content">
+                    <div class="illustration-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <div class="illustration-text">Welcome to Waste Sorter</div>
+                    <div class="illustration-subtitle">Join the movement for a cleaner, greener future</div>
                 </div>
-                <div class="card-body p-4">
-                    <form method="post" autocomplete="off">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" name="username" id="username" class="form-control form-control-lg" required autofocus placeholder="Enter your username">
+            </div>
+            
+            <!-- Login Form Section -->
+            <div class="col-md-8 col-lg-5">
+                <div class="login-card">
+                    <div class="login-header">
+                        <div class="login-icon">
+                            <i class="fas fa-leaf"></i>
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" id="password" class="form-control form-control-lg" required placeholder="Enter your password">
-                        </div>
-                        {% if form.errors %}
-                            <div class="alert alert-danger mt-3">
-                                Your username and password didn't match our records. Please try again.
+                        <h2 class="login-title">Welcome Back!</h2>
+                        <p class="login-subtitle">Sign in to continue your eco-journey</p>
+                    </div>
+                    
+                    <div class="login-body">
+                        <form method="post" autocomplete="off" id="loginForm">
+                            {% csrf_token %}
+                            
+                            {% if form.errors %}
+                                <div class="error-alert">
+                                    <i class="fas fa-exclamation-triangle me-2"></i>
+                                    Your username and password didn't match our records. Please try again.
+                                </div>
+                            {% endif %}
+                            
+                            <div class="input-group">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" 
+                                       name="username" 
+                                       id="username" 
+                                       class="form-control form-control-with-icon" 
+                                       placeholder="Enter your username"
+                                       required 
+                                       autofocus>
                             </div>
-                        {% endif %}
-                        <div class="d-grid gap-2 mt-4">
-                            <button type="submit" class="btn btn-success btn-lg">Login</button>
-                        </div>
-                        <div class="text-center mt-3">
-                            <a href="{% url 'register' %}" class="link-success">Don't have an account? Register here</a>
-                            <br>
-                            <a href="{% url 'password_reset' %}" class="link-secondary">Forgot password?</a>
-                        </div>
-                    </form>
+                            
+                            <div class="input-group">
+                                <i class="fas fa-lock input-icon"></i>
+                                <input type="password" 
+                                       name="password" 
+                                       id="password" 
+                                       class="form-control form-control-with-icon" 
+                                       placeholder="Enter your password"
+                                       required>
+                                <button type="button" class="password-toggle" onclick="togglePassword()">
+                                    <i class="fas fa-eye" id="toggleIcon"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="d-grid">
+                                <button type="submit" class="btn login-btn">
+                                    <i class="fas fa-sign-in-alt me-2"></i>
+                                    Sign In
+                                </button>
+                            </div>
+                            
+                            <div class="login-links">
+                                <a href="{% url 'register' %}">
+                                    <i class="fas fa-user-plus me-1"></i>
+                                    Create New Account
+                                </a>
+                                <br>
+                                <a href="{% url 'password_reset' %}">
+                                    <i class="fas fa-key me-1"></i>
+                                    Forgot Password?
+                                </a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Animate.css for fade-in effect -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        }
+    }
+    
+    // Add loading state to form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalContent = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Signing In...';
+        submitBtn.disabled = true;
+        
+        // Re-enable button after 3 seconds in case of error
+        setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+        }, 3000);
+    });
+    
+    // Add input focus animations
+    document.querySelectorAll('.form-control').forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'translateY(-2px)';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'translateY(0)';
+        });
+    });
+</script>
 {% endblock %}

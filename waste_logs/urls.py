@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from debug_view import debug_subcategories
 
 urlpatterns = [
     path('', views.index, name='waste_logs_home'),
@@ -7,6 +8,7 @@ urlpatterns = [
     path('analytics/', views.analytics, name='waste_analytics'),
     path('goals/', views.goals, name='waste_goals'),
     path('export/', views.export_data, name='waste_export'),
+    path('debug-subcategories/', debug_subcategories, name='debug_subcategories'),
     
     # Waste log CRUD
     path('log/<int:log_id>/', views.waste_log_detail, name='waste_log_detail'),

@@ -143,7 +143,7 @@ def activate(request, uidb64, token):
         login(request, user)
         
         print("*"*80 + "\n")
-        return redirect('tips_home')
+        return redirect('dashboard')
     else:
         if user:
             print(f"❌ Invalid token for user: {user.username}")
@@ -362,6 +362,20 @@ class CustomLoginView(LoginView):
             messages.error(self.request, 'Please verify your email before logging in.')
             return HttpResponseRedirect('/verification-sent/')
         return super().form_valid(form)
+    
+    def get_success_url(self):
+        # First check if 'next' parameter was stored in session
+        next_url = self.request.session.pop('next', None)
+        if next_url:
+            return next_url
+            
+        # Then check for 'next' parameter in GET or POST data
+        next_url = self.request.GET.get('next') or self.request.POST.get('next')
+        if next_url:
+            return next_url
+            
+        # Default to dashboard if no redirect URL is found
+        return '/'
 
 def custom_logout(request):
     """
