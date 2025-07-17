@@ -1627,3 +1627,18 @@ INFO 2025-07-17 17:02:50,034 autoreload Watching for file changes with StatReloa
 INFO 2025-07-17 17:03:17,535 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
 INFO 2025-07-17 17:03:21,887 autoreload Watching for file changes with StatReloader
 INFO 2025-07-17 17:05:14,501 autoreload Watching for file changes with StatReloader
+INFO 2025-07-17 17:05:30,190 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 17:05:36,654 basehttp "GET /waste/ HTTP/1.1" 200 26036
+INFO 2025-07-17 17:05:39,457 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 17:06:43,635 basehttp "GET / HTTP/1.1" 200 23151
+INFO 2025-07-17 17:06:45,958 basehttp "GET /recycle/ HTTP/1.1" 200 14205
+INFO 2025-07-17 17:06:52,743 basehttp "GET /accounts/login/ HTTP/1.1" 200 29883
+WARNING 2025-07-17 17:06:56,241 log Not Found: /login/
+WARNING 2025-07-17 17:06:56,242 basehttp "GET /login/?next=/ HTTP/1.1" 404 3232
+INFO 2025-07-17 17:07:08,365 basehttp "GET /accounts/login/ HTTP/1.1" 200 29883
+INFO 2025-07-17 17:07:56,801 basehttp "GET / HTTP/1.1" 200 23151
+INFO 2025-07-17 17:08:00,284 basehttp "GET / HTTP/1.1" 200 23151
+INFO 2025-07-17 17:08:01,325 basehttp "GET / HTTP/1.1" 200 23151
+INFO 2025-07-17 17:08:06,778 basehttp "POST /accounts/logout/ HTTP/1.1" 200 14015
+INFO 2025-07-17 17:08:16,737 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-17 17:08:16,811 basehttp "GET /accounts/login/ HTTP/1.1" 200 21895
