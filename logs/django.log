@@ -1832,3 +1832,15 @@ INFO 2025-07-18 19:44:02,449 basehttp "GET /recycle/ HTTP/1.1" 200 56718
 INFO 2025-07-18 19:47:50,923 autoreload Watching for file changes with StatReloader
 INFO 2025-07-18 19:47:59,020 basehttp "GET /recycle/ HTTP/1.1" 200 57434
 INFO 2025-07-18 20:05:37,827 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 20:06:27,066 basehttp "GET /recycle/ HTTP/1.1" 200 70029
+INFO 2025-07-18 20:06:29,714 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 304 0
+INFO 2025-07-18 20:06:30,125 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 304 0
+INFO 2025-07-18 20:07:20,526 basehttp "GET /recycle/ HTTP/1.1" 200 70029
+INFO 2025-07-18 20:07:47,573 basehttp "GET /waste/ HTTP/1.1" 200 35064
+INFO 2025-07-18 20:07:58,013 basehttp "GET /recycle/ HTTP/1.1" 200 70029
+INFO 2025-07-18 20:08:01,327 basehttp "GET /waste/ HTTP/1.1" 200 35063
+INFO 2025-07-18 20:08:03,636 basehttp "GET /recycle/ HTTP/1.1" 200 70029
+INFO 2025-07-18 20:08:05,507 basehttp "GET /waste/ HTTP/1.1" 200 35063
+INFO 2025-07-18 20:08:18,526 basehttp "GET / HTTP/1.1" 200 33154
+INFO 2025-07-18 20:08:25,434 basehttp "GET /recycle/ HTTP/1.1" 200 70029
+INFO 2025-07-18 20:09:07,876 basehttp "GET /recycle/ HTTP/1.1" 200 70029
