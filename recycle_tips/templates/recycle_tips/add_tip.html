@@ -1,176 +1,348 @@
+{% extends 'base.html' %}
 {% load recycle_tips_extras %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add a New Recycling Tip</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .form-header {
-            background-color: #e3f2fd;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .tip-type-checkbox {
-            margin-bottom: 15px;
-        }
-        #tutorial-steps-container {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container my-4">
-        <div class="form-header">
-            <div class="d-flex justify-content-between">
-                <div>
-                    <h1>{{ section_info.title }}</h1>
-                    <p class="lead">{{ section_info.purpose }}</p>
-                </div>
-                <div>
-                    <a href="{% url 'tips_home' %}" class="btn btn-outline-primary">Back to Tips</a>
+
+{% block title %}Add New Recycling Tip | Waste Sorter{% endblock %}
+
+{% block extra_head %}
+<style>
+    /* Hero section */
+    .form-hero {
+        background: linear-gradient(135deg, #43a047 0%, #1de9b6 100%);
+        color: white;
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+        border-radius: 0 0 50% 50% / 20px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-hero::before,
+    .form-hero::after {
+        content: '';
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+    }
+    
+    .form-hero::before {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        right: -100px;
+    }
+    
+    .form-hero::after {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        left: 10%;
+    }
+    
+    .hero-text {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hero-icon {
+        font-size: 5rem;
+        margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    /* Form styling */
+    .form-container {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .form-section {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    
+    .form-section:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    
+    .form-section-title {
+        color: #43a047;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .form-section-title i {
+        margin-right: 0.75rem;
+    }
+    
+    .tip-type-checkbox {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        transition: all 0.3s ease;
+    }
+    
+    .tip-type-checkbox:hover {
+        background-color: #f9f9f9;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .tip-type-checkbox label {
+        font-weight: 500;
+        cursor: pointer;
+    }
+    
+    #tutorial-steps-container {
+        display: none;
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #43a047;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Tips card */
+    .tips-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+    }
+    
+    .tips-card-header {
+        background: linear-gradient(135deg, #43a047 0%, #1de9b6 100%);
+        color: white;
+        padding: 1.5rem;
+    }
+    
+    .tip-guideline {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        border-left: 3px solid #43a047;
+        background-color: #f9f9f9;
+        transition: all 0.3s ease;
+    }
+    
+    .tip-guideline:hover {
+        transform: translateX(5px);
+        background-color: #f5f5f5;
+    }
+    
+    .tip-guideline h5 {
+        color: #43a047;
+        font-weight: 600;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="form-hero mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 hero-text">
+                <h1 class="display-4 fw-bold mb-3">{{ section_info.title }}</h1>
+                <p class="lead fs-4 mb-4">{{ section_info.purpose }}</p>
+                <div class="d-flex flex-column gap-2 mb-4">
+                    <div class="d-flex align-items-center">
+                        <span class="bg-white bg-opacity-25 rounded-circle p-2 me-3">
+                            <i class="fas fa-users text-white"></i>
+                        </span>
+                        <span><strong>Target Audience:</strong> {{ section_info.target_audience }}</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="bg-white bg-opacity-25 rounded-circle p-2 me-3">
+                            <i class="fas fa-bullseye text-white"></i>
+                        </span>
+                        <span><strong>Goal:</strong> {{ section_info.goal }}</span>
+                    </div>
                 </div>
             </div>
-            <div class="mt-3">
-                <span><strong>Target Audience:</strong> {{ section_info.target_audience }}</span><br>
-                <span><strong>Goal:</strong> {{ section_info.goal }}</span>
+            <div class="col-lg-5 text-center d-none d-lg-block">
+                <div class="hero-icon">
+                    <i class="fas fa-plus-circle text-white opacity-75 fa-5x"></i>
+                </div>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Add Your Tip</h3>
+<div class="container mb-5">
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="form-container">
+                <h3 class="mb-4 text-center">Share Your Knowledge</h3>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                    <div class="form-section">
+                        <h4 class="form-section-title"><i class="fas fa-info-circle"></i>Basic Information</h4>
+                        <div class="mb-3">
+                            <label for="{{ form.title.id_for_label }}" class="form-label">Title</label>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                                <div class="text-danger">
+                                    {{ form.title.errors }}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">{{ form.title.help_text }}</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.content.id_for_label }}" class="form-label">Content</label>
+                            {{ form.content }}
+                            {% if form.content.errors %}
+                                <div class="text-danger">
+                                    {{ form.content.errors }}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">{{ form.content.help_text }}</div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <form method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-                            
-                            <div class="mb-3">
-                                <label for="{{ form.title.id_for_label }}" class="form-label">Title</label>
-                                {{ form.title }}
-                                {% if form.title.errors %}
+                    
+                    <div class="form-section">
+                        <h4 class="form-section-title"><i class="fas fa-folder"></i>Categorization</h4>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="{{ form.category.id_for_label }}" class="form-label">Category</label>
+                                {{ form.category }}
+                                {% if form.category.errors %}
                                     <div class="text-danger">
-                                        {{ form.title.errors }}
+                                        {{ form.category.errors }}
                                     </div>
                                 {% endif %}
-                                <div class="form-text">{{ form.title.help_text }}</div>
+                                <div class="form-text">{{ form.category.help_text }}</div>
                             </div>
-                            
-                            <div class="mb-3">
-                                <label for="{{ form.content.id_for_label }}" class="form-label">Content</label>
-                                {{ form.content }}
-                                {% if form.content.errors %}
+                            <div class="col-md-6">
+                                <label for="{{ form.audience.id_for_label }}" class="form-label">Target Audience</label>
+                                {{ form.audience }}
+                                {% if form.audience.errors %}
                                     <div class="text-danger">
-                                        {{ form.content.errors }}
+                                        {{ form.audience.errors }}
                                     </div>
                                 {% endif %}
-                                <div class="form-text">{{ form.content.help_text }}</div>
+                                <div class="form-text">{{ form.audience.help_text }}</div>
                             </div>
-                            
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="{{ form.category.id_for_label }}" class="form-label">Category</label>
-                                    {{ form.category }}
-                                    {% if form.category.errors %}
-                                        <div class="text-danger">
-                                            {{ form.category.errors }}
-                                        </div>
-                                    {% endif %}
-                                    <div class="form-text">{{ form.category.help_text }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4 class="form-section-title"><i class="fas fa-image"></i>Visual Content</h4>
+                        <div class="mb-3">
+                            <label for="{{ form.image.id_for_label }}" class="form-label">Image (Optional)</label>
+                            {{ form.image }}
+                            {% if form.image.errors %}
+                                <div class="text-danger">
+                                    {{ form.image.errors }}
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="{{ form.audience.id_for_label }}" class="form-label">Target Audience</label>
-                                    {{ form.audience }}
-                                    {% if form.audience.errors %}
-                                        <div class="text-danger">
-                                            {{ form.audience.errors }}
-                                        </div>
-                                    {% endif %}
-                                    <div class="form-text">{{ form.audience.help_text }}</div>
-                                </div>
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="{{ form.image.id_for_label }}" class="form-label">Image (Optional)</label>
-                                {{ form.image }}
-                                {% if form.image.errors %}
-                                    <div class="text-danger">
-                                        {{ form.image.errors }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">{{ form.image.help_text }}</div>
-                            </div>
-                            
-                            <div class="mb-4">
-                                <label class="form-label">Tip Type</label>
-                                <div class="tip-type-checkbox form-check">
+                            {% endif %}
+                            <div class="form-text">{{ form.image.help_text }}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4 class="form-section-title"><i class="fas fa-list-alt"></i>Tip Type</h4>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="tip-type-checkbox">
                                     {{ form.is_visual_guide }}
                                     <label class="form-check-label" for="{{ form.is_visual_guide.id_for_label }}">
-                                        Visual Guide
+                                        <i class="fas fa-image me-2 text-info"></i>Visual Guide
                                     </label>
                                     <div class="form-text">{{ form.is_visual_guide.help_text }}</div>
                                 </div>
-                                
-                                <div class="tip-type-checkbox form-check">
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="tip-type-checkbox">
                                     {{ form.is_best_practice }}
                                     <label class="form-check-label" for="{{ form.is_best_practice.id_for_label }}">
-                                        Best Practice
+                                        <i class="fas fa-check-circle me-2 text-success"></i>Best Practice
                                     </label>
                                     <div class="form-text">{{ form.is_best_practice.help_text }}</div>
                                 </div>
-                                
-                                <div class="tip-type-checkbox form-check">
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="tip-type-checkbox">
                                     {{ form.is_tutorial }}
                                     <label class="form-check-label" for="{{ form.is_tutorial.id_for_label }}">
-                                        Tutorial
+                                        <i class="fas fa-list-ol me-2 text-warning"></i>Tutorial
                                     </label>
                                     <div class="form-text">{{ form.is_tutorial.help_text }}</div>
                                 </div>
                             </div>
-                            
-                            <div id="tutorial-steps-container" class="mb-3">
-                                <label for="{{ form.tutorial_steps_text.id_for_label }}" class="form-label">Tutorial Steps</label>
-                                {{ form.tutorial_steps_text }}
-                                {% if form.tutorial_steps_text.errors %}
-                                    <div class="text-danger">
-                                        {{ form.tutorial_steps_text.errors }}
-                                    </div>
-                                {% endif %}
-                                <div class="form-text">{{ form.tutorial_steps_text.help_text }}</div>
-                            </div>
-                            
-                            <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary">Submit Tip</button>
-                                <a href="{% url 'tips_home' %}" class="btn btn-outline-secondary">Cancel</a>
-                            </div>
-                        </form>
+                        </div>
+                        
+                        <div id="tutorial-steps-container" class="mt-4">
+                            <h5 class="mb-3"><i class="fas fa-tasks me-2"></i>Tutorial Steps</h5>
+                            <label for="{{ form.tutorial_steps_text.id_for_label }}" class="form-label">Enter steps separated by new lines</label>
+                            {{ form.tutorial_steps_text }}
+                            {% if form.tutorial_steps_text.errors %}
+                                <div class="text-danger">
+                                    {{ form.tutorial_steps_text.errors }}
+                                </div>
+                            {% endif %}
+                            <div class="form-text">{{ form.tutorial_steps_text.help_text }}</div>
+                        </div>
                     </div>
-                </div>
+                    
+                    <div class="d-flex gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg flex-grow-1">
+                            <i class="fas fa-paper-plane me-2"></i>Submit Tip
+                        </button>
+                        <a href="{% url 'tips_home' %}" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-times me-2"></i>Cancel
+                        </a>
+                    </div>
+                </form>
             </div>
-            
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Tips for Creating Good Content</h4>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="tips-card mb-4">
+                <div class="tips-card-header">
+                    <h4 class="mb-0"><i class="fas fa-lightbulb me-2"></i>Tips for Creating Good Content</h4>
+                </div>
+                <div class="card-body">
+                    <div class="tip-guideline">
+                        <h5><i class="fas fa-image me-2"></i>Visual Guides</h5>
+                        <p class="mb-0">Upload a clear, high-quality image showing the proper waste sorting technique. The visual should be easy to understand at a glance.</p>
                     </div>
-                    <div class="card-body">
-                        <h5>Visual Guides</h5>
-                        <p>Upload a clear, high-quality image showing the proper waste sorting technique. The visual should be easy to understand at a glance.</p>
-                        
-                        <h5>Best Practices</h5>
-                        <p>Share actionable advice that community members can immediately implement. Focus on practical tips that make waste sorting easier.</p>
-                        
-                        <h5>Tutorials</h5>
-                        <p>Break down complex processes into simple, numbered steps. Each step should be clear and build on the previous one.</p>
-                        
-                        <h5>General Guidelines</h5>
-                        <ul>
+                    
+                    <div class="tip-guideline">
+                        <h5><i class="fas fa-check-circle me-2"></i>Best Practices</h5>
+                        <p class="mb-0">Share actionable advice that community members can immediately implement. Focus on practical tips that make waste sorting easier.</p>
+                    </div>
+                    
+                    <div class="tip-guideline">
+                        <h5><i class="fas fa-list-ol me-2"></i>Tutorials</h5>
+                        <p class="mb-0">Break down complex processes into simple, numbered steps. Each step should be clear and build on the previous one.</p>
+                    </div>
+                    
+                    <div class="tip-guideline">
+                        <h5><i class="fas fa-star me-2"></i>General Guidelines</h5>
+                        <ul class="mb-0">
                             <li>Be specific about which materials go where</li>
                             <li>Use simple, non-technical language</li>
                             <li>Consider your audience's knowledge level</li>
@@ -179,30 +351,38 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="tips-card text-center p-4">
+                <i class="fas fa-recycle fa-4x text-success mb-3"></i>
+                <h4 class="mb-3">Make an Impact!</h4>
+                <p>Your contributions help build a more sustainable community. Share your knowledge and inspire others to adopt better waste management practices.</p>
+                <a href="{% url 'tips_home' %}" class="btn btn-outline-success">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Tips Hub
+                </a>
+            </div>
         </div>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Show/hide tutorial steps based on checkbox
-        document.addEventListener('DOMContentLoaded', function() {
-            const tutorialCheckbox = document.getElementById('{{ form.is_tutorial.id_for_label }}');
-            const tutorialStepsContainer = document.getElementById('tutorial-steps-container');
-            
-            function toggleTutorialSteps() {
-                if (tutorialCheckbox.checked) {
-                    tutorialStepsContainer.style.display = 'block';
-                } else {
-                    tutorialStepsContainer.style.display = 'none';
-                }
+<script>
+    // Show/hide tutorial steps based on checkbox
+    document.addEventListener('DOMContentLoaded', function() {
+        const tutorialCheckbox = document.getElementById('{{ form.is_tutorial.id_for_label }}');
+        const tutorialStepsContainer = document.getElementById('tutorial-steps-container');
+        
+        function toggleTutorialSteps() {
+            if (tutorialCheckbox.checked) {
+                tutorialStepsContainer.style.display = 'block';
+            } else {
+                tutorialStepsContainer.style.display = 'none';
             }
-            
-            // Initial state
-            toggleTutorialSteps();
-            
-            // Add event listener
-            tutorialCheckbox.addEventListener('change', toggleTutorialSteps);
-        });
-    </script>
-</body>
-</html>
+        }
+        
+        // Initial state
+        toggleTutorialSteps();
+        
+        // Add event listener
+        tutorialCheckbox.addEventListener('change', toggleTutorialSteps);
+    });
+</script>
+{% endblock %}

@@ -1642,3 +1642,193 @@ INFO 2025-07-17 17:08:01,325 basehttp "GET / HTTP/1.1" 200 23151
 INFO 2025-07-17 17:08:06,778 basehttp "POST /accounts/logout/ HTTP/1.1" 200 14015
 INFO 2025-07-17 17:08:16,737 basehttp "GET / HTTP/1.1" 302 0
 INFO 2025-07-17 17:08:16,811 basehttp "GET /accounts/login/ HTTP/1.1" 200 21895
+INFO 2025-07-18 16:14:29,932 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 16:15:38,001 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-18 16:15:39,417 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-18 16:15:43,664 basehttp "GET /accounts/login/ HTTP/1.1" 200 30943
+INFO 2025-07-18 16:15:47,705 basehttp "GET /accounts/login/ HTTP/1.1" 200 30941
+INFO 2025-07-18 16:15:54,331 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-18 16:15:55,320 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+INFO 2025-07-18 16:16:18,476 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-18 16:16:19,330 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+WARNING 2025-07-18 16:16:30,562 log Not Found: /favicon.ico
+WARNING 2025-07-18 16:16:31,086 basehttp "GET /favicon.ico HTTP/1.1" 404 12240
+INFO 2025-07-18 16:16:42,274 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-18 16:16:44,286 basehttp "GET / HTTP/1.1" 200 32185
+INFO 2025-07-18 16:17:46,476 basehttp "GET /recycle/ HTTP/1.1" 200 23244
+INFO 2025-07-18 16:17:50,737 basehttp "GET /recycle/add/ HTTP/1.1" 200 19172
+INFO 2025-07-18 16:20:29,644 basehttp "POST /recycle/add/ HTTP/1.1" 302 0
+INFO 2025-07-18 16:20:29,863 basehttp "GET /recycle/detail/1/ HTTP/1.1" 200 14645
+INFO 2025-07-18 16:20:30,012 basehttp "GET /static/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-18 16:20:30,247 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-18 16:20:42,140 basehttp "GET /recycle/add/ HTTP/1.1" 200 19171
+INFO 2025-07-18 16:21:27,527 basehttp "POST /recycle/add/ HTTP/1.1" 302 0
+INFO 2025-07-18 16:21:27,930 basehttp "GET /recycle/detail/2/ HTTP/1.1" 200 16052
+INFO 2025-07-18 16:21:29,362 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-18 16:21:29,409 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-18 16:21:41,282 basehttp "GET /recycle/ HTTP/1.1" 200 35973
+INFO 2025-07-18 16:21:43,049 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 304 0
+INFO 2025-07-18 16:21:43,231 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 304 0
+INFO 2025-07-18 16:22:38,193 basehttp "GET /recycle/ HTTP/1.1" 200 35974
+INFO 2025-07-18 16:22:38,475 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 304 0
+INFO 2025-07-18 16:22:38,587 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 304 0
+INFO 2025-07-18 16:23:12,221 basehttp "GET /recycle/ HTTP/1.1" 200 35974
+INFO 2025-07-18 16:23:12,510 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 304 0
+INFO 2025-07-18 16:23:12,589 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 304 0
+INFO 2025-07-18 17:25:44,823 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 18:52:20,816 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 18:52:31,384 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-18 18:52:31,675 basehttp "GET /accounts/login/ HTTP/1.1" 200 31554
+INFO 2025-07-18 18:52:52,576 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-18 18:52:53,096 basehttp "GET / HTTP/1.1" 200 33154
+INFO 2025-07-18 18:52:53,693 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-18 18:52:53,694 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+ERROR 2025-07-18 18:52:59,982 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 489, in parse
+    raise self.error(token, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 705, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 615, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'sum'
+ERROR 2025-07-18 18:53:00,337 basehttp "GET /recycle/ HTTP/1.1" 500 285947
+INFO 2025-07-18 18:58:49,031 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 19:00:05,668 basehttp "GET /recycle/?id=6a1c03c4-a879-41e8-a142-28b62d7a896b&vscodeBrowserReqId=1752854402592 HTTP/1.1" 200 47533
+INFO 2025-07-18 19:01:05,074 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 19:01:13,236 basehttp "GET / HTTP/1.1" 200 33155
+INFO 2025-07-18 19:01:28,361 basehttp "GET /recycle/ HTTP/1.1" 200 55443
+INFO 2025-07-18 19:02:25,649 basehttp "GET /recycle/category/general_waste/ HTTP/1.1" 200 38904
+INFO 2025-07-18 19:02:33,958 basehttp "GET /recycle/add/ HTTP/1.1" 200 41210
+INFO 2025-07-18 19:02:48,029 basehttp "GET /recycle/ HTTP/1.1" 200 55443
+INFO 2025-07-18 19:27:53,748 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 19:31:06,459 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\templatetags\recycle_tips_extras.py changed, reloading.
+INFO 2025-07-18 19:31:16,789 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 19:31:28,116 basehttp "GET / HTTP/1.1" 200 33155
+INFO 2025-07-18 19:31:31,815 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 304 0
+INFO 2025-07-18 19:31:32,402 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 304 0
+ERROR 2025-07-18 19:32:00,124 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 515: 'endfor', expected 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-07-18 19:32:00,537 basehttp "GET /recycle/ HTTP/1.1" 500 267403
+INFO 2025-07-18 19:36:50,863 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 19:37:02,140 basehttp "GET /recycle/ HTTP/1.1" 200 56956
+INFO 2025-07-18 19:37:14,816 basehttp "GET /recycle/ HTTP/1.1" 200 56955
+INFO 2025-07-18 19:37:19,197 basehttp "GET /recycle/ HTTP/1.1" 200 56955
+INFO 2025-07-18 19:43:43,624 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 19:43:55,266 basehttp "GET / HTTP/1.1" 200 33155
+INFO 2025-07-18 19:44:02,449 basehttp "GET /recycle/ HTTP/1.1" 200 56718
+INFO 2025-07-18 19:47:50,923 autoreload Watching for file changes with StatReloader
+INFO 2025-07-18 19:47:59,020 basehttp "GET /recycle/ HTTP/1.1" 200 57434
+INFO 2025-07-18 20:05:37,827 autoreload Watching for file changes with StatReloader
