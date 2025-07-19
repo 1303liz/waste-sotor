@@ -1882,3 +1882,4 @@ INFO 2025-07-19 20:10:46,602 basehttp "GET /waste/ HTTP/1.1" 200 35064
 INFO 2025-07-19 20:10:50,332 basehttp "GET /waste/ HTTP/1.1" 200 35063
 INFO 2025-07-19 20:10:51,815 basehttp "GET /waste/ HTTP/1.1" 200 35063
 INFO 2025-07-19 20:10:53,111 basehttp "GET /waste/ HTTP/1.1" 200 35063
+INFO 2025-07-19 20:29:54,975 autoreload Watching for file changes with StatReloader
