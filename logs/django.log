@@ -1883,3 +1883,7 @@ INFO 2025-07-19 20:10:50,332 basehttp "GET /waste/ HTTP/1.1" 200 35063
 INFO 2025-07-19 20:10:51,815 basehttp "GET /waste/ HTTP/1.1" 200 35063
 INFO 2025-07-19 20:10:53,111 basehttp "GET /waste/ HTTP/1.1" 200 35063
 INFO 2025-07-19 20:29:54,975 autoreload Watching for file changes with StatReloader
+INFO 2025-07-19 20:30:03,233 basehttp "GET /waste/ HTTP/1.1" 200 34531
+INFO 2025-07-19 20:43:33,853 basehttp "GET / HTTP/1.1" 200 32621
+INFO 2025-07-19 20:43:34,138 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-19 20:43:34,197 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491

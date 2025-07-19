@@ -2,3 +2,6 @@
 db.sqlite3
 .db
 run_app.bat
+logs
+django.log
+__pycache__
