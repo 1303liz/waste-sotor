@@ -1844,3 +1844,37 @@ INFO 2025-07-18 20:08:05,507 basehttp "GET /waste/ HTTP/1.1" 200 35063
 INFO 2025-07-18 20:08:18,526 basehttp "GET / HTTP/1.1" 200 33154
 INFO 2025-07-18 20:08:25,434 basehttp "GET /recycle/ HTTP/1.1" 200 70029
 INFO 2025-07-18 20:09:07,876 basehttp "GET /recycle/ HTTP/1.1" 200 70029
+INFO 2025-07-19 19:37:58,934 autoreload Watching for file changes with StatReloader
+INFO 2025-07-19 19:38:17,222 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-19 19:38:18,508 basehttp "GET /accounts/login/ HTTP/1.1" 200 30942
+INFO 2025-07-19 19:38:21,104 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-19 19:38:21,136 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-19 19:38:27,776 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-19 19:38:27,942 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-07-19 19:38:28,424 log Not Found: /favicon.ico
+WARNING 2025-07-19 19:38:28,440 basehttp "GET /favicon.ico HTTP/1.1" 404 12238
+INFO 2025-07-19 19:39:08,734 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-19 19:39:09,536 basehttp "GET / HTTP/1.1" 200 33154
+INFO 2025-07-19 19:39:10,490 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-19 19:39:10,639 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-19 19:39:41,244 basehttp "POST /accounts/logout/ HTTP/1.1" 200 23067
+INFO 2025-07-19 19:39:50,814 basehttp "GET /recycle/ HTTP/1.1" 200 62041
+INFO 2025-07-19 19:39:58,157 basehttp "GET /accounts/login/ HTTP/1.1" 200 30943
+INFO 2025-07-19 19:40:02,932 basehttp "GET /recycle/ HTTP/1.1" 200 62041
+INFO 2025-07-19 19:40:11,011 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-19 19:40:14,045 basehttp "GET /accounts/login/ HTTP/1.1" 200 30943
+INFO 2025-07-19 19:40:20,140 basehttp "GET /recycle/ HTTP/1.1" 200 62042
+INFO 2025-07-19 19:40:37,390 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-19 19:40:38,004 basehttp "GET /accounts/login/ HTTP/1.1" 200 30943
+INFO 2025-07-19 19:40:57,970 basehttp "GET /accounts/login/ HTTP/1.1" 200 30942
+INFO 2025-07-19 20:05:34,622 autoreload Watching for file changes with StatReloader
+INFO 2025-07-19 20:05:57,842 basehttp "GET /accounts/login/ HTTP/1.1" 200 30945
+INFO 2025-07-19 20:06:18,148 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-19 20:06:21,304 basehttp "GET /waste/ HTTP/1.1" 200 35064
+INFO 2025-07-19 20:06:42,504 basehttp "GET /waste/analytics/ HTTP/1.1" 200 38667
+INFO 2025-07-19 20:06:52,242 basehttp "GET /waste/ HTTP/1.1" 200 35063
+INFO 2025-07-19 20:06:57,785 basehttp "GET /waste/export/ HTTP/1.1" 200 32900
+INFO 2025-07-19 20:07:07,155 basehttp "GET /waste/ HTTP/1.1" 200 35063
+INFO 2025-07-19 20:07:12,156 basehttp "GET /waste/goals/ HTTP/1.1" 200 30801
+INFO 2025-07-19 20:07:34,004 basehttp "GET /waste/ HTTP/1.1" 200 35063
+INFO 2025-07-19 20:10:38,098 autoreload Watching for file changes with StatReloader
