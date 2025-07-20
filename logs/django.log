@@ -1887,3 +1887,23 @@ INFO 2025-07-19 20:30:03,233 basehttp "GET /waste/ HTTP/1.1" 200 34531
 INFO 2025-07-19 20:43:33,853 basehttp "GET / HTTP/1.1" 200 32621
 INFO 2025-07-19 20:43:34,138 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
 INFO 2025-07-19 20:43:34,197 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-20 16:20:04,958 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 16:20:28,647 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-20 16:20:29,947 basehttp "GET /accounts/login/ HTTP/1.1" 200 30257
+INFO 2025-07-20 16:20:30,694 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-20 16:20:30,756 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-20 16:20:32,530 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-20 16:20:32,774 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+WARNING 2025-07-20 16:20:37,073 log Not Found: /favicon.ico
+WARNING 2025-07-20 16:20:37,123 basehttp "GET /favicon.ico HTTP/1.1" 404 12240
+INFO 2025-07-20 16:20:43,596 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-20 16:20:45,148 basehttp "GET / HTTP/1.1" 200 32622
+INFO 2025-07-20 16:20:47,796 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-20 16:20:47,943 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-20 16:20:59,288 basehttp "GET /waste/ HTTP/1.1" 200 34530
+INFO 2025-07-20 16:23:32,203 autoreload Watching for file changes with StatReloader
+INFO 2025-07-20 16:23:52,383 basehttp "GET / HTTP/1.1" 200 31299
+INFO 2025-07-20 16:27:57,039 basehttp - Broken pipe from ('127.0.0.1', 53404)
+INFO 2025-07-20 16:27:57,677 basehttp "GET / HTTP/1.1" 200 31502
+INFO 2025-07-20 16:28:21,882 basehttp "GET /recycle/ HTTP/1.1" 200 68377
+INFO 2025-07-20 16:48:18,771 autoreload Watching for file changes with StatReloader

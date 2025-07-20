@@ -220,51 +220,20 @@
     {% endif %}
 
     <!-- Footer -->
-    <footer class="footer mt-5 py-5 bg-dark text-light">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Waste Sorter</h5>
-                    <p class="mb-3 opacity-75">Making waste management easier and more efficient for everyone. Join us in creating a sustainable future for our planet.</p>
-                    <div class="social-links">
-                        <a href="#" class="text-light" target="_blank" title="Follow us on Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-light" target="_blank" title="Follow us on Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-light" target="_blank" title="Follow us on Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-light" target="_blank" title="Connect on LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Quick Links removed to reduce footer size -->
-                <div class="col-lg-4 col-md-12">
-                    <h5 class="text-uppercase">Contact Us</h5>
-                    <ul class="list-unstyled contact-info">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>support@wastesorter.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+1 234 567 8900</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Eco Street, Green City</span>
-                        </li>
-                    </ul>
-                </div>
+    <footer class="footer py-2 bg-dark text-light" style="font-size:1rem;">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div>
+                &copy; {% now "Y" %} Waste Sorter. All rights reserved.
             </div>
-            <div class="row mt-5">
-                <div class="col-12 text-center">
-                    <hr class="opacity-25">
-                    <p class="mb-0 opacity-75">&copy; {% now "Y" %} Waste Sorter. All rights reserved.</p>
-                </div>
+            <div class="dropdown">
+                <button class="btn btn-sm btn-outline-light dropdown-toggle px-3 py-1" type="button" id="contactDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contact Us
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="contactDropdown" style="background-color: #23272b; color: #fff; min-width: 220px;">
+                    <li><a class="dropdown-item text-white" style="background-color: #23272b;" href="mailto:support@wastesorter.com"><i class="fas fa-envelope me-2"></i>support@wastesorter.com</a></li>
+                    <li><a class="dropdown-item text-white" style="background-color: #23272b;" href="tel:+12345678900"><i class="fas fa-phone me-2"></i>+1 234 567 8900</a></li>
+                    <li><span class="dropdown-item text-white" style="background-color: #23272b;"><i class="fas fa-map-marker-alt me-2"></i>123 Eco Street, Green City</span></li>
+                </ul>
             </div>
         </div>
     </footer>
