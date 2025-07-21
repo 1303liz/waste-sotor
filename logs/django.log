@@ -1985,3 +1985,4 @@ INFO 2025-07-20 17:13:21,676 basehttp "GET /waste/goals/ HTTP/1.1" 200 29224
 INFO 2025-07-20 17:14:28,727 basehttp "POST /waste/goals/ HTTP/1.1" 302 0
 INFO 2025-07-20 17:14:28,943 basehttp "GET /waste/goals/ HTTP/1.1" 200 31462
 INFO 2025-07-20 17:14:35,383 basehttp "GET /recycle/ HTTP/1.1" 200 77686
+INFO 2025-07-21 19:31:48,381 autoreload Watching for file changes with StatReloader
