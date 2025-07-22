@@ -54,3 +54,12 @@ INFO 2025-07-17 17:08:06,706 views User logout initiated: eliza (mwaranganga@gma
 INFO 2025-07-17 17:08:06,772 views User logout completed: eliza (mwaranganga@gmail.com)
 INFO 2025-07-19 19:39:40,993 views User logout initiated: eliza (mwaranganga@gmail.com)
 INFO 2025-07-19 19:39:41,125 views User logout completed: eliza (mwaranganga@gmail.com)
+INFO 2025-07-22 10:40:48,551 utils Email mikepremium8@gmail.com appears to be deliverable
+INFO 2025-07-22 10:41:00,398 utils Email mikepremium8@gmail.com appears to be deliverable
+INFO 2025-07-22 10:41:00,404 views New user registration attempt: mikepremium8@gmail.com
+INFO 2025-07-22 10:41:00,404 utils Email mikepremium8@gmail.com appears to be deliverable
+INFO 2025-07-22 10:41:01,147 views Created new user: username=mikesplore, email=mikepremium8@gmail.com
+INFO 2025-07-22 10:41:01,150 utils Attempting to send verification email to mikepremium8@gmail.com
+INFO 2025-07-22 10:41:08,558 utils Successfully sent verification email to mikepremium8@gmail.com in 7.41 seconds
+INFO 2025-07-22 10:41:08,561 views Registration completed successfully for mikesplore (mikepremium8@gmail.com)
+INFO 2025-07-22 10:42:16,688 views Account activated successfully for user: mikesplore (mikepremium8@gmail.com)

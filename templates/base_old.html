@@ -1,0 +1,367 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Waste Sorter{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container.mt-4 {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #1a1a1a, #2c2c2c);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(76, 175, 80, 0.3) 50%, 
+                transparent 100%
+            );
+        }
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .social-links a:hover {
+            color: #4CAF50 !important;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+        }
+        .footer ul li a {
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        .footer ul li a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .footer ul li a:hover {
+            color: #4CAF50 !important;
+            padding-left: 1.5rem;
+        }
+        .footer ul li a:hover::before {
+            opacity: 1;
+        }
+        .footer h5 {
+            position: relative;
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #4CAF50;
+        }
+        .footer .contact-info li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        .footer .contact-info li:hover {
+            opacity: 1;
+        }
+        .footer .contact-info i {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 0.5rem;
+            border-radius: 50%;
+            margin-right: 1rem;
+            color: #4CAF50;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-item .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-item .nav-link:hover {
+            color: #4CAF50 !important;
+        }
+        .navbar {
+            background: linear-gradient(to right, #1a1a1a, #2c2c2c) !important;
+        }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Waste Sorter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tips_home' %}">Recycle Tips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'waste_logs_home' %}">Waste Logs</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-user-circle me-1"></i> {{ user.username }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><h6 class="dropdown-header">Account</h6></li>
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'waste_logs_home' %}">My Waste Logs</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                                        <i class="fa fa-sign-out-alt me-1"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">
+                                <i class="fa fa-sign-in-alt me-1"></i> Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">
+                                <i class="fa fa-user-plus me-1"></i> Register
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %} alert-dismissible fade show">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    {% if user.is_authenticated %}
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to log out of your account?</p>
+                    <p class="text-muted">You will need to login again to access your account features.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form method="post" action="{% url 'logout' %}" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Yes, Log Out</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer class="footer py-2 bg-dark text-light" style="font-size:1rem;">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+            <div>
+                &copy; {% now "Y" %} Waste Sorter. All rights reserved.
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-sm btn-outline-light dropdown-toggle px-3 py-1" type="button" id="contactDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Contact Us
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="contactDropdown" style="background-color: #23272b; color: #fff; min-width: 220px;">
+                    <li><a class="dropdown-item text-white" style="background-color: #23272b;" href="mailto:support@wastesorter.com"><i class="fas fa-envelope me-2"></i>support@wastesorter.com</a></li>
+                    <li><a class="dropdown-item text-white" style="background-color: #23272b;" href="tel:+12345678900"><i class="fas fa-phone me-2"></i>+1 234 567 8900</a></li>
+                    <li><span class="dropdown-item text-white" style="background-color: #23272b;"><i class="fas fa-map-marker-alt me-2"></i>123 Eco Street, Green City</span></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_scripts %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    {% if user.is_authenticated %}
+    <!-- Session timeout warning script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Session timeout settings from Django
+            const sessionTimeout = {{ request.session.get_expiry_age|default:7200 }}; // Get from Django or default to 2 hours
+            const warningTime = sessionTimeout * 0.8; // Show warning at 80% of timeout
+            
+            let inactivityTimer;
+            let lastActivity = new Date();
+            
+            // Function to reset the inactivity timer
+            function resetInactivityTimer() {
+                lastActivity = new Date();
+                clearTimeout(inactivityTimer);
+                // Set timer to show warning
+                inactivityTimer = setTimeout(showTimeoutWarning, warningTime * 1000);
+            }
+            
+            // Function to show the timeout warning
+            function showTimeoutWarning() {
+                const timeLeft = sessionTimeout - ((new Date() - lastActivity) / 1000);
+                const minutesLeft = Math.round(timeLeft / 60);
+                
+                if (minutesLeft <= 0) {
+                    // Session has expired, redirect to login
+                    window.location.href = "{% url 'login' %}";
+                    return;
+                }
+                
+                // Create or show the warning modal
+                let warningModal = document.getElementById('sessionTimeoutModal');
+                
+                if (!warningModal) {
+                    const modalHTML = `
+                        <div class="modal fade" id="sessionTimeoutModal" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-warning text-dark">
+                                        <h5 class="modal-title">
+                                            <i class="fas fa-exclamation-triangle me-2"></i>
+                                            Session Timeout Warning
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Your session is about to expire due to inactivity.</p>
+                                        <p>You will be automatically logged out in <span id="timeout-countdown">${minutesLeft}</span> minutes.</p>
+                                        <p>Do you want to stay logged in?</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Logout Now
+                                        </button>
+                                        <button type="button" class="btn btn-primary" id="extendSessionBtn">
+                                            Stay Logged In
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.insertAdjacentHTML('beforeend', modalHTML);
+                    warningModal = document.getElementById('sessionTimeoutModal');
+                    
+                    // Add event listener to the extend session button
+                    document.getElementById('extendSessionBtn').addEventListener('click', function() {
+                        // Make an AJAX request to extend the session
+                        fetch(window.location.href, {
+                            method: 'HEAD',
+                            credentials: 'same-origin'
+                        }).then(() => {
+                            const bsModal = bootstrap.Modal.getInstance(warningModal);
+                            bsModal.hide();
+                            resetInactivityTimer();
+                        });
+                    });
+                    
+                    // If they dismiss without extending, log them out when time runs out
+                    warningModal.addEventListener('hidden.bs.modal', function () {
+                        const timeLeft = sessionTimeout - ((new Date() - lastActivity) / 1000);
+                        if (timeLeft > 0) {
+                            setTimeout(() => {
+                                window.location.href = "{% url 'logout' %}";
+                            }, timeLeft * 1000);
+                        }
+                    });
+                } else {
+                    // Update the countdown
+                    document.getElementById('timeout-countdown').textContent = minutesLeft;
+                }
+                
+                // Show the modal
+                const bsModal = new bootstrap.Modal(warningModal);
+                bsModal.show();
+                
+                // Set a timer to update the countdown
+                const countdownTimer = setInterval(() => {
+                    const newTimeLeft = sessionTimeout - ((new Date() - lastActivity) / 1000);
+                    const newMinutesLeft = Math.round(newTimeLeft / 60);
+                    
+                    if (newMinutesLeft <= 0) {
+                        clearInterval(countdownTimer);
+                        window.location.href = "{% url 'logout' %}";
+                    } else {
+                        document.getElementById('timeout-countdown').textContent = newMinutesLeft;
+                    }
+                }, 60000); // Update every minute
+            }
+            
+            // Track user activity
+            ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'].forEach(event => {
+                document.addEventListener(event, resetInactivityTimer, false);
+            });
+            
+            // Initial setup
+            resetInactivityTimer();
+        });
+    </script>
+    {% endif %}
+</body>
+</html>

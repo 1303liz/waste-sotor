@@ -31,6 +31,9 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
+    # Add django_browser_reload URLs for Tailwind development
+    urlpatterns.append(path("__reload__/", include("django_browser_reload.urls")))
+    
     # Add debug toolbar URLs in development
     try:
         import debug_toolbar
