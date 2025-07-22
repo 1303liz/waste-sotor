@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tailwind',
+    'wastesoter',
+    'django_browser_reload',
     'recycle_tips',
     'waste_logs',
     'accounts',
@@ -60,6 +63,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Custom middleware for session timeout handling
@@ -232,6 +236,13 @@ LOGIN_URL = '/login/'
 
 # Session settings for security
 SESSION_COOKIE_AGE = 7200  # 2 hours in seconds
+
+# Tailwind configuration
+TAILWIND_APP_NAME = 'wastesoter'
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_SECURE = False  # Set to True in production with HTTPS
 SESSION_SAVE_EVERY_REQUEST = True  # Update the session expiry time on each request

@@ -1,0 +1,38 @@
+<aside class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+    <h2 class="font-heading text-lg font-semibold text-gray-900 mb-4">Category Breakdown</h2>
+    <ul class="space-y-3 mb-8">
+        {% for category in categories %}
+        <li class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full inline-block" style="background-color: {{ category.color|default:'#6b7280' }};"></span>
+                <span class="text-gray-700 font-medium">{{ category.name }}</span>
+            </div>
+            <span class="text-gray-500 text-sm">{{ category.total_kg|default:'0' }} kg</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <h2 class="font-heading text-lg font-semibold text-gray-900 mb-4">Recycling Tips</h2>
+    <div class="space-y-4">
+        {% for tip in recycle_tips %}
+        <div class="flex items-start bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div class="flex-shrink-0 mr-3">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100">
+                    <i class="fas fa-leaf text-emerald-500"></i>
+                </span>
+            </div>
+            <div>
+                <p class="text-gray-800 text-sm font-medium">{{ tip }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        {% if not recycle_tips %}
+        <div class="text-center py-8">
+            <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-lightbulb text-gray-400 text-2xl"></i>
+            </div>
+            <h3 class="font-medium text-gray-900 mb-2">No tips available</h3>
+            <p class="text-gray-500 text-sm mb-4">Check back later for sustainability tips</p>
+        </div>
+        {% endif %}
+    </div>
+</aside>
