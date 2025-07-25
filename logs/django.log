@@ -5333,3 +5333,1266 @@ INFO 2025-07-22 11:58:19,145 basehttp "GET /waste/ HTTP/1.1" 200 41785
 INFO 2025-07-22 11:58:19,301 basehttp "GET /static/css/dist/styles.css?v=1753185499 HTTP/1.1" 200 33737
 WARNING 2025-07-22 11:58:30,833 log Not Found: /profile/
 WARNING 2025-07-22 11:58:30,833 basehttp "GET /profile/ HTTP/1.1" 404 12933
+INFO 2025-07-22 21:07:37,378 autoreload Watching for file changes with StatReloader
+INFO 2025-07-22 21:14:26,908 autoreload Watching for file changes with StatReloader
+INFO 2025-07-22 21:14:41,517 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:41,876 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:42,339 basehttp "GET /static/css/dist/styles.css?v=1753208081 HTTP/1.1" 200 33739
+INFO 2025-07-22 21:14:42,453 basehttp "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 200 623
+INFO 2025-07-22 21:14:44,990 basehttp "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 200 2711
+WARNING 2025-07-22 21:14:46,118 log Not Found: /favicon.ico
+INFO 2025-07-22 21:14:46,236 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+WARNING 2025-07-22 21:14:46,283 basehttp "GET /favicon.ico HTTP/1.1" 404 12584
+INFO 2025-07-22 21:14:46,518 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:47,024 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:47,231 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:47,257 basehttp - Broken pipe from ('127.0.0.1', 64931)
+INFO 2025-07-22 21:14:47,421 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:47,547 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:47,802 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:47,984 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:14:49,004 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:49,716 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:49,816 basehttp - Broken pipe from ('127.0.0.1', 64929)
+INFO 2025-07-22 21:14:50,110 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:50,379 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:50,383 basehttp - Broken pipe from ('127.0.0.1', 64939)
+INFO 2025-07-22 21:14:50,587 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:50,759 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:50,954 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:51,082 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:14:51,320 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:51,504 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:14:51,760 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:51,947 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:52,185 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:52,347 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:14:52,552 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:52,718 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:52,792 basehttp - Broken pipe from ('127.0.0.1', 64943)
+INFO 2025-07-22 21:14:53,235 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:53,463 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:14:53,468 basehttp - Broken pipe from ('127.0.0.1', 64945)
+INFO 2025-07-22 21:14:53,845 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:54,134 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:54,374 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:54,565 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:54,877 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:55,109 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:55,309 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:55,560 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:55,793 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:55,964 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:14:56,191 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:56,464 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:56,677 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:56,942 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:57,386 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:57,562 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:57,997 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:58,476 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:58,890 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:59,093 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:14:59,504 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:14:59,641 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:14:59,661 basehttp - Broken pipe from ('127.0.0.1', 64946)
+INFO 2025-07-22 21:15:00,161 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:00,543 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:15:00,977 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:01,142 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:15:01,570 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:01,755 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:02,218 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:02,539 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:03,050 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:03,232 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:03,237 basehttp - Broken pipe from ('127.0.0.1', 64952)
+INFO 2025-07-22 21:15:03,638 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:03,741 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:04,158 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:04,334 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:04,535 basehttp "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 304 0
+INFO 2025-07-22 21:15:04,997 basehttp "GET /static/css/dist/styles.css?v=1753208104 HTTP/1.1" 200 33739
+INFO 2025-07-22 21:15:07,965 basehttp "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 304 0
+INFO 2025-07-22 21:15:08,243 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:08,544 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:08,803 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:09,180 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:09,234 basehttp - Broken pipe from ('127.0.0.1', 64953)
+INFO 2025-07-22 21:15:09,398 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:09,745 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:15:10,885 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:11,146 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:11,415 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:11,666 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:12,007 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:12,241 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:12,498 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:12,727 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:15:12,791 basehttp - Broken pipe from ('127.0.0.1', 64954)
+INFO 2025-07-22 21:15:13,063 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:13,290 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:13,529 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:13,691 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:13,898 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:14,140 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:14,397 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:14,544 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:15:14,795 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:15,005 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-22 21:15:15,244 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:15,410 basehttp "GET /accounts/login/ HTTP/1.1" 200 35756
+INFO 2025-07-22 21:15:15,777 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:15,807 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-22 21:15:16,088 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-22 21:15:35,572 basehttp "GET / HTTP/1.1" 200 42404
+INFO 2025-07-22 21:15:35,710 basehttp "GET /static/css/dist/styles.css?v=1753208134 HTTP/1.1" 200 33739
+INFO 2025-07-22 21:15:35,960 basehttp "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 304 0
+INFO 2025-07-22 21:15:36,177 basehttp "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 304 0
+INFO 2025-07-22 21:15:48,938 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-22 21:15:49,164 basehttp "GET /static/css/dist/styles.css?v=1753208148 HTTP/1.1" 200 33739
+INFO 2025-07-22 21:15:50,091 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-22 21:15:50,155 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-22 21:16:07,746 basehttp "GET /waste/ HTTP/1.1" 200 43882
+INFO 2025-07-22 21:16:07,939 basehttp "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 304 0
+INFO 2025-07-22 21:16:07,974 basehttp "GET /static/css/dist/styles.css?v=1753208167 HTTP/1.1" 200 33739
+INFO 2025-07-22 21:16:08,272 basehttp "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 304 0
+INFO 2025-07-23 09:47:00,236 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 10:01:22,054 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:22,577 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:23,386 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:23,476 basehttp "GET /accounts/login/ HTTP/1.1" 200 35757
+INFO 2025-07-23 10:01:25,534 basehttp "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 304 0
+INFO 2025-07-23 10:01:25,550 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-23 10:01:25,562 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-23 10:01:25,649 basehttp "GET /static/css/dist/styles.css?v=1753254083 HTTP/1.1" 200 33739
+INFO 2025-07-23 10:01:25,815 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-23 10:01:25,818 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-23 10:01:25,821 basehttp "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 304 0
+INFO 2025-07-23 10:01:27,779 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:31,281 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:31,346 basehttp "GET /static/css/dist/styles.css?v=1753254082 HTTP/1.1" 200 33739
+WARNING 2025-07-23 10:01:31,707 log Not Found: /favicon.ico
+WARNING 2025-07-23 10:01:32,983 basehttp "GET /favicon.ico HTTP/1.1" 404 12585
+INFO 2025-07-23 10:01:33,444 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:33,893 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:34,842 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:35,174 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:35,525 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:35,763 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:36,064 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:36,347 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:36,614 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:37,006 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:37,929 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:38,442 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:38,753 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:39,710 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:40,322 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:40,642 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:41,085 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:41,742 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:01:42,136 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:42,468 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:01:42,715 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:42,904 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:43,401 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:43,938 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:44,404 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:44,851 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:01:45,217 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:45,655 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:46,016 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:46,415 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:46,503 basehttp - Broken pipe from ('127.0.0.1', 58864)
+INFO 2025-07-23 10:01:46,901 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:47,165 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:47,445 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:47,676 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:47,930 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:48,181 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:48,432 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:48,708 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:49,168 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:49,343 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:01:49,346 basehttp - Broken pipe from ('127.0.0.1', 58878)
+INFO 2025-07-23 10:01:49,795 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:49,981 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:50,396 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:50,578 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:01:51,015 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:51,178 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:51,594 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:52,078 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:52,115 basehttp - Broken pipe from ('127.0.0.1', 58883)
+INFO 2025-07-23 10:01:52,548 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:52,725 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:53,724 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:54,341 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:54,773 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:54,903 basehttp "GET /accounts/login/ HTTP/1.1" 200 35757
+INFO 2025-07-23 10:01:55,311 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:55,521 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:55,956 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:56,105 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:01:56,520 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:56,656 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:01:56,658 basehttp - Broken pipe from ('127.0.0.1', 58885)
+INFO 2025-07-23 10:01:57,075 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:57,271 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:57,685 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:57,917 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:58,620 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:01:59,036 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:01:59,689 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:00,190 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:02:00,222 basehttp - Broken pipe from ('127.0.0.1', 58887)
+INFO 2025-07-23 10:02:00,936 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:01,119 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:01,603 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:01,870 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:02,335 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:02,634 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:03,137 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:03,403 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:03,903 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:04,147 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:05,594 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:07,432 basehttp "GET /accounts/login/ HTTP/1.1" 200 35760
+INFO 2025-07-23 10:02:08,776 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:08,842 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:09,075 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:02:10,070 basehttp "GET /static/css/dist/styles.css?v=1753254128 HTTP/1.1" 200 33739
+INFO 2025-07-23 10:02:11,492 basehttp "GET /accounts/login/ HTTP/1.1" 200 35760
+INFO 2025-07-23 10:02:12,786 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:13,028 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:14,187 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:14,939 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:16,616 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:18,129 basehttp "GET /accounts/login/ HTTP/1.1" 200 35760
+INFO 2025-07-23 10:02:19,371 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:19,767 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:21,265 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:21,511 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:22,743 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:23,108 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:23,110 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:23,293 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:23,595 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:23,878 basehttp "GET /static/css/dist/styles.css?v=1753254143 HTTP/1.1" 200 33739
+INFO 2025-07-23 10:02:24,397 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:24,544 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:25,794 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:26,129 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:27,272 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:27,522 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:28,776 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:29,070 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:30,240 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:30,587 basehttp "GET /recycle/ HTTP/1.1" 200 76163
+INFO 2025-07-23 10:02:30,854 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:02:30,888 basehttp "GET /static/css/dist/styles.css?v=1753254149 HTTP/1.1" 200 33739
+INFO 2025-07-23 10:02:31,733 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:31,919 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:32,555 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:32,873 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:33,051 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:33,617 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:02:34,521 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:35,267 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:36,504 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:37,154 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:37,284 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:37,500 basehttp "GET /accounts/login/ HTTP/1.1" 200 35757
+INFO 2025-07-23 10:02:37,708 basehttp "GET /static/css/dist/styles.css?v=1753254157 HTTP/1.1" 200 33739
+INFO 2025-07-23 10:02:38,435 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:39,195 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:40,534 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:40,855 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 10:02:40,895 basehttp - Broken pipe from ('127.0.0.1', 58932)
+INFO 2025-07-23 10:02:42,475 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:44,975 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:48,153 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 10:02:49,334 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 10:02:51,132 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:10:36,169 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:11:02,410 basehttp "GET / HTTP/1.1" 200 42404
+INFO 2025-07-23 11:11:03,421 basehttp "GET /static/css/dist/styles.css?v=1753258261 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:11:23,003 basehttp "POST /accounts/logout/ HTTP/1.1" 200 28450
+INFO 2025-07-23 11:11:23,153 basehttp "GET /static/css/dist/styles.css?v=1753258282 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:11:38,357 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-23 11:11:38,590 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 11:11:38,726 basehttp "GET /static/css/dist/styles.css?v=1753258298 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:18:36,862 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 11:18:37,011 basehttp "GET /static/css/dist/styles.css?v=1753258716 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:18:37,285 basehttp "GET /static/django-browser-reload/reload-listener.js HTTP/1.1" 304 0
+INFO 2025-07-23 11:20:01,236 basehttp "GET /recycle/ HTTP/1.1" 200 76166
+INFO 2025-07-23 11:20:01,450 basehttp "GET /static/css/dist/styles.css?v=1753258800 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:20:01,901 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 302 0
+INFO 2025-07-23 11:20:02,230 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 302 0
+INFO 2025-07-23 11:20:02,347 basehttp "GET /accounts/login/ HTTP/1.1" 200 35757
+INFO 2025-07-23 11:20:02,828 basehttp "GET /accounts/login/ HTTP/1.1" 200 35758
+INFO 2025-07-23 11:21:45,265 basehttp "GET /recycle/ HTTP/1.1" 200 76166
+INFO 2025-07-23 11:21:45,430 basehttp "GET /static/css/dist/styles.css?v=1753258904 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:21:54,582 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 302 0
+INFO 2025-07-23 11:21:54,672 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 302 0
+INFO 2025-07-23 11:21:54,720 basehttp "GET /accounts/login/ HTTP/1.1" 200 35759
+INFO 2025-07-23 11:21:54,803 basehttp "GET /accounts/login/ HTTP/1.1" 200 35757
+INFO 2025-07-23 11:21:59,929 basehttp "GET /waste/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:22:00,036 basehttp "GET /accounts/login/ HTTP/1.1" 200 35757
+INFO 2025-07-23 11:22:00,196 basehttp "GET /static/css/dist/styles.css?v=1753258919 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:22:07,146 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:22:09,378 basehttp "GET /waste/ HTTP/1.1" 200 43883
+INFO 2025-07-23 11:22:10,308 basehttp "GET /static/css/dist/styles.css?v=1753258927 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:22:15,954 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-23 11:22:16,086 basehttp "GET /static/css/dist/styles.css?v=1753258935 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:22:16,400 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-23 11:22:16,567 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-23 11:22:17,728 basehttp "GET /waste/ HTTP/1.1" 200 43882
+INFO 2025-07-23 11:22:18,360 basehttp "GET /static/css/dist/styles.css?v=1753258937 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:23:53,370 basehttp "GET /waste/report/ HTTP/1.1" 200 35102
+INFO 2025-07-23 11:23:53,504 basehttp "GET /static/css/dist/styles.css?v=1753259033 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:24:12,682 basehttp "GET / HTTP/1.1" 200 42405
+INFO 2025-07-23 11:24:13,456 basehttp "GET /static/css/dist/styles.css?v=1753259051 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:24:21,312 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-23 11:24:21,654 basehttp "GET /static/css/dist/styles.css?v=1753259060 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:24:37,989 basehttp "GET / HTTP/1.1" 200 42404
+INFO 2025-07-23 11:24:38,154 basehttp "GET /static/css/dist/styles.css?v=1753259077 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:24:39,996 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-23 11:24:40,129 basehttp "GET /static/css/dist/styles.css?v=1753259079 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:24:43,360 basehttp "GET / HTTP/1.1" 200 42403
+INFO 2025-07-23 11:24:43,502 basehttp "GET /static/css/dist/styles.css?v=1753259083 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:25:32,273 basehttp "GET / HTTP/1.1" 200 42404
+INFO 2025-07-23 11:25:32,437 basehttp "GET /static/css/dist/styles.css?v=1753259132 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:25:35,871 basehttp "GET / HTTP/1.1" 200 42403
+INFO 2025-07-23 11:25:35,979 basehttp "GET /static/css/dist/styles.css?v=1753259135 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:25:39,789 basehttp "GET /waste/ HTTP/1.1" 200 43882
+INFO 2025-07-23 11:25:39,927 basehttp "GET /static/css/dist/styles.css?v=1753259139 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:25:55,869 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-23 11:25:56,028 basehttp "GET /static/css/dist/styles.css?v=1753259155 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:33:30,716 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-23 11:33:30,892 basehttp "GET /static/css/dist/styles.css?v=1753259610 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:33:31,144 basehttp "GET /static/django-browser-reload/reload-worker.js HTTP/1.1" 304 0
+INFO 2025-07-23 11:35:53,785 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-23 11:35:54,151 basehttp "GET /static/css/dist/styles.css?v=1753259753 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:37:13,925 basehttp "GET /recycle/ HTTP/1.1" 200 80344
+INFO 2025-07-23 11:37:14,756 basehttp "GET /static/css/dist/styles.css?v=1753259833 HTTP/1.1" 200 33739
+ERROR 2025-07-23 11:37:26,195 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tip_detail' with arguments '(1,)' not found. 1 pattern(s) tried: ['recycle/detail/\\Z']
+ERROR 2025-07-23 11:37:26,718 basehttp "GET /recycle/ HTTP/1.1" 500 212041
+ERROR 2025-07-23 11:38:51,195 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tip_detail' with arguments '(1,)' not found. 1 pattern(s) tried: ['recycle/detail/\\Z']
+ERROR 2025-07-23 11:38:51,709 basehttp "GET /recycle/ HTTP/1.1" 500 212040
+ERROR 2025-07-23 11:39:33,967 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tip_detail' with arguments '(1,)' not found. 1 pattern(s) tried: ['recycle/detail/\\Z']
+ERROR 2025-07-23 11:39:34,330 basehttp "GET /recycle/ HTTP/1.1" 500 212039
+INFO 2025-07-23 11:41:01,217 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-23 11:41:06,794 autoreload Watching for file changes with StatReloader
+ERROR 2025-07-23 11:41:09,278 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tip_detail' with arguments '(1,)' not found. 1 pattern(s) tried: ['recycle/detail/\\Z']
+ERROR 2025-07-23 11:41:09,629 basehttp "GET /recycle/ HTTP/1.1" 500 212039
+INFO 2025-07-23 11:41:17,836 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-23 11:41:21,907 autoreload Watching for file changes with StatReloader
+ERROR 2025-07-23 11:41:24,131 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tip_detail' with arguments '(1,)' not found. 1 pattern(s) tried: ['recycle/detail/\\Z']
+ERROR 2025-07-23 11:41:24,692 basehttp "GET /recycle/ HTTP/1.1" 500 212040
+INFO 2025-07-23 11:43:19,859 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:43:35,401 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-23 11:43:35,561 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-23 11:43:40,374 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:43:40,711 autoreload Watching for file changes with StatReloader
+ERROR 2025-07-23 11:43:45,807 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tip_detail' with arguments '(1,)' not found. 1 pattern(s) tried: ['recycle/detail/\\Z']
+ERROR 2025-07-23 11:43:46,102 basehttp "GET /recycle/ HTTP/1.1" 500 212040
+INFO 2025-07-23 11:44:23,826 basehttp "GET /?id=f78d89e6-25b5-4183-8877-b415c6f2c3ba&vscodeBrowserReqId=1753260263196 HTTP/1.1" 302 0
+INFO 2025-07-23 11:44:24,211 basehttp "GET /accounts/login/ HTTP/1.1" 200 28532
+INFO 2025-07-23 11:45:32,397 basehttp "GET / HTTP/1.1" 200 42404
+INFO 2025-07-23 11:45:35,349 basehttp "GET /static/css/dist/styles.css?v=1753260331 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:45:53,642 basehttp "POST /accounts/logout/ HTTP/1.1" 200 28450
+INFO 2025-07-23 11:45:53,729 basehttp "GET /static/css/dist/styles.css?v=1753260353 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:46:02,681 basehttp "GET /accounts/login/ HTTP/1.1" 200 28532
+INFO 2025-07-23 11:46:03,404 basehttp "GET /static/css/dist/styles.css?v=1753260362 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:46:04,257 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:04,368 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:04,562 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:04,671 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:04,695 basehttp - Broken pipe from ('127.0.0.1', 61417)
+INFO 2025-07-23 11:46:05,253 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:05,402 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:05,598 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:05,688 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:05,861 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:05,940 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:06,136 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:06,245 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:06,253 basehttp - Broken pipe from ('127.0.0.1', 61421)
+INFO 2025-07-23 11:46:06,417 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:06,612 basehttp "GET /accounts/login/ HTTP/1.1" 200 28531
+INFO 2025-07-23 11:46:06,798 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:06,949 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:07,137 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:07,232 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:07,410 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:07,514 basehttp "GET /accounts/login/ HTTP/1.1" 200 28531
+INFO 2025-07-23 11:46:07,698 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:07,846 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:08,149 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:08,252 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:08,832 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:09,265 basehttp "GET /accounts/login/ HTTP/1.1" 200 28532
+INFO 2025-07-23 11:46:09,505 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:09,744 basehttp "GET /accounts/login/ HTTP/1.1" 200 28531
+INFO 2025-07-23 11:46:09,850 basehttp - Broken pipe from ('127.0.0.1', 61425)
+INFO 2025-07-23 11:46:10,249 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:10,367 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:10,376 basehttp - Broken pipe from ('127.0.0.1', 61428)
+INFO 2025-07-23 11:46:10,572 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:10,749 basehttp "GET /accounts/login/ HTTP/1.1" 200 28531
+INFO 2025-07-23 11:46:10,939 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:11,142 basehttp "GET /accounts/login/ HTTP/1.1" 200 28530
+INFO 2025-07-23 11:46:11,412 basehttp - Broken pipe from ('127.0.0.1', 61430)
+INFO 2025-07-23 11:46:12,130 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:13,249 basehttp "GET /accounts/login/ HTTP/1.1" 200 28533
+INFO 2025-07-23 11:46:13,862 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:14,227 basehttp "GET /accounts/login/ HTTP/1.1" 200 28532
+INFO 2025-07-23 11:46:14,514 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:14,727 basehttp "GET /accounts/login/ HTTP/1.1" 200 28532
+INFO 2025-07-23 11:46:15,222 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:15,527 basehttp "GET /accounts/login/ HTTP/1.1" 200 28532
+INFO 2025-07-23 11:46:15,661 basehttp - Broken pipe from ('127.0.0.1', 61431)
+INFO 2025-07-23 11:46:16,076 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:16,196 basehttp "GET /accounts/login/ HTTP/1.1" 200 28531
+INFO 2025-07-23 11:46:16,675 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:16,809 basehttp "GET /accounts/login/ HTTP/1.1" 200 28531
+INFO 2025-07-23 11:46:17,256 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:17,469 basehttp "GET /accounts/login/ HTTP/1.1" 200 28531
+INFO 2025-07-23 11:46:17,941 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:17,993 basehttp "GET /__reload__/events/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:46:18,309 basehttp "GET /accounts/login/ HTTP/1.1" 200 28532
+INFO 2025-07-23 11:48:06,710 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-23 11:48:08,434 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-23 11:48:20,266 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:48:23,594 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:48:28,441 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-23 11:48:28,589 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-23 11:48:34,205 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:48:34,520 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:48:40,943 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\urls.py changed, reloading.
+INFO 2025-07-23 11:48:41,680 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\urls.py changed, reloading.
+INFO 2025-07-23 11:48:47,905 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:48:48,357 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 11:52:17,916 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-23 11:52:26,653 log Not Found: /__reload__/events/
+WARNING 2025-07-23 11:52:26,655 basehttp "GET /__reload__/events/ HTTP/1.1" 404 12268
+INFO 2025-07-23 11:52:33,340 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-23 11:52:33,760 basehttp "GET /accounts/login/ HTTP/1.1" 200 28340
+INFO 2025-07-23 11:52:33,853 basehttp "GET /static/css/dist/styles.css?v=1753260753 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:52:39,419 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-23 11:52:39,713 basehttp "GET / HTTP/1.1" 200 42213
+INFO 2025-07-23 11:52:39,836 basehttp "GET /static/css/dist/styles.css?v=1753260759 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:53:20,226 basehttp "GET /waste/ HTTP/1.1" 200 43692
+INFO 2025-07-23 11:53:20,377 basehttp "GET /static/css/dist/styles.css?v=1753260799 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:53:29,808 basehttp "GET /waste/report/ HTTP/1.1" 200 34910
+INFO 2025-07-23 11:53:29,987 basehttp "GET /static/css/dist/styles.css?v=1753260809 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:53:40,292 basehttp "GET /waste/report/ HTTP/1.1" 200 34909
+INFO 2025-07-23 11:53:40,470 basehttp "GET /static/css/dist/styles.css?v=1753260820 HTTP/1.1" 200 33739
+INFO 2025-07-23 11:57:52,345 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 13:49:28,524 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 13:49:41,794 basehttp "GET / HTTP/1.1" 200 43146
+INFO 2025-07-23 13:49:42,059 basehttp "GET /static/css/dist/styles.css?v=1753267781 HTTP/1.1" 200 33739
+ERROR 2025-07-23 13:49:53,335 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 59, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tip_detail' with arguments '(1,)' not found. 1 pattern(s) tried: ['recycle/detail/\\Z']
+ERROR 2025-07-23 13:49:54,310 basehttp "GET /recycle/ HTTP/1.1" 500 211621
+INFO 2025-07-23 13:52:18,050 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\urls.py changed, reloading.
+INFO 2025-07-23 13:52:25,260 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 13:53:22,480 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 13:55:55,861 basehttp "GET /recycle/?id=f78d89e6-25b5-4183-8877-b415c6f2c3ba&vscodeBrowserReqId=1753268154231 HTTP/1.1" 200 36495
+INFO 2025-07-23 13:57:39,194 autoreload Watching for file changes with StatReloader
+INFO 2025-07-23 13:59:56,844 basehttp "GET / HTTP/1.1" 200 42214
+INFO 2025-07-23 13:59:58,853 basehttp "GET /static/css/dist/styles.css?v=1753268395 HTTP/1.1" 200 33739
+INFO 2025-07-23 14:00:04,756 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-23 14:00:04,876 basehttp "GET /static/css/dist/styles.css?v=1753268404 HTTP/1.1" 200 33739
+INFO 2025-07-23 14:00:05,082 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-23 14:00:05,083 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-23 14:00:24,329 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-23 14:00:24,467 basehttp "GET /static/css/dist/styles.css?v=1753268424 HTTP/1.1" 200 33739
+INFO 2025-07-23 14:00:41,426 basehttp "GET /waste/ HTTP/1.1" 200 43692
+INFO 2025-07-23 14:00:41,583 basehttp "GET /static/css/dist/styles.css?v=1753268440 HTTP/1.1" 200 33739
+INFO 2025-07-23 14:00:46,293 basehttp "GET /waste/report/ HTTP/1.1" 200 58620
+INFO 2025-07-23 14:00:46,431 basehttp "GET /static/css/dist/styles.css?v=1753268446 HTTP/1.1" 200 33739
+INFO 2025-07-24 13:20:57,724 autoreload Watching for file changes with StatReloader
+INFO 2025-07-24 13:21:12,239 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-24 13:21:12,543 basehttp "GET /accounts/login/ HTTP/1.1" 200 28340
+INFO 2025-07-24 13:21:14,864 basehttp "GET /static/css/dist/styles.css?v=1753352472 HTTP/1.1" 200 33739
+INFO 2025-07-24 13:21:15,103 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-24 13:21:15,555 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+INFO 2025-07-24 13:21:17,429 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-24 13:21:17,673 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2025-07-24 13:21:26,657 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-24 13:21:27,577 basehttp "GET / HTTP/1.1" 200 42213
+INFO 2025-07-24 13:21:27,862 basehttp "GET /static/css/dist/styles.css?v=1753352486 HTTP/1.1" 200 33739
+INFO 2025-07-24 13:51:26,076 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 13:51:26,205 basehttp "GET /static/css/dist/styles.css?v=1753354285 HTTP/1.1" 200 33739
+INFO 2025-07-24 13:51:27,212 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-24 13:51:27,272 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-24 13:51:43,523 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 13:51:43,657 basehttp "GET /static/css/dist/styles.css?v=1753354303 HTTP/1.1" 200 33739
+INFO 2025-07-24 13:53:23,232 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 13:53:23,334 basehttp "GET /static/css/dist/styles.css?v=1753354403 HTTP/1.1" 200 33739
+INFO 2025-07-24 13:53:29,057 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 13:53:29,194 basehttp "GET /static/css/dist/styles.css?v=1753354408 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:09:12,052 autoreload Watching for file changes with StatReloader
+INFO 2025-07-24 15:09:28,838 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-24 15:09:29,390 basehttp "GET /accounts/login/ HTTP/1.1" 200 28340
+INFO 2025-07-24 15:09:29,797 basehttp "GET /static/css/dist/styles.css?v=1753358969 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:09:30,018 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+INFO 2025-07-24 15:09:30,482 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+INFO 2025-07-24 15:09:31,089 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+INFO 2025-07-24 15:09:31,483 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+INFO 2025-07-24 15:09:46,891 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-24 15:09:47,743 basehttp "GET / HTTP/1.1" 200 42213
+INFO 2025-07-24 15:09:47,959 basehttp "GET /static/css/dist/styles.css?v=1753358986 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:09:59,887 basehttp "GET / HTTP/1.1" 200 42213
+INFO 2025-07-24 15:10:00,022 basehttp "GET /static/css/dist/styles.css?v=1753358999 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:10:17,224 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:10:17,388 basehttp "GET /static/css/dist/styles.css?v=1753359017 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:10:17,528 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-24 15:10:17,727 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-24 15:10:25,409 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:10:25,570 basehttp "GET /static/css/dist/styles.css?v=1753359025 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:10:48,510 basehttp "GET /recycle/tip/1/ HTTP/1.1" 200 41075
+INFO 2025-07-24 15:10:49,126 basehttp "GET /static/css/dist/styles.css?v=1753359048 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:10:49,127 basehttp "GET /static/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-24 15:11:00,716 basehttp "GET /recycle/category/general_waste/ HTTP/1.1" 200 39713
+INFO 2025-07-24 15:11:00,891 basehttp "GET /static/css/dist/styles.css?v=1753359060 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:11:14,198 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:11:14,239 basehttp "GET /static/css/dist/styles.css?v=1753359073 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:11:31,983 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:11:32,085 basehttp "GET /static/css/dist/styles.css?v=1753359091 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:11:39,926 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:11:41,021 basehttp "GET /static/css/dist/styles.css?v=1753359099 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:11:46,491 basehttp "GET /waste/ HTTP/1.1" 200 43691
+INFO 2025-07-24 15:11:46,576 basehttp "GET /static/css/dist/styles.css?v=1753359106 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:11:57,497 basehttp "GET /recycle/ HTTP/1.1" 200 40594
+INFO 2025-07-24 15:11:57,689 basehttp "GET /static/css/dist/styles.css?v=1753359117 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:17:39,859 autoreload Watching for file changes with StatReloader
+INFO 2025-07-24 15:17:49,513 basehttp "GET /recycle/ HTTP/1.1" 200 40596
+INFO 2025-07-24 15:17:49,645 basehttp "GET /static/css/dist/styles.css?v=1753359469 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:17:57,744 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:17:58,292 basehttp "GET /static/css/dist/styles.css?v=1753359477 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:18:51,972 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:18:52,177 basehttp "GET /static/css/dist/styles.css?v=1753359531 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:19:22,880 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:19:23,046 basehttp "GET /static/css/dist/styles.css?v=1753359562 HTTP/1.1" 200 33739
+INFO 2025-07-24 15:21:32,030 basehttp "GET /recycle/ HTTP/1.1" 200 40595
+INFO 2025-07-24 15:21:32,151 basehttp "GET /static/css/dist/styles.css?v=1753359691 HTTP/1.1" 200 33739
+INFO 2025-07-25 10:03:21,864 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 10:06:20,244 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 10:06:23,101 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 10:06:23,896 basehttp "GET /accounts/login/ HTTP/1.1" 200 28342
+INFO 2025-07-25 10:06:24,585 basehttp "GET /accounts/login/ HTTP/1.1" 200 28340
+INFO 2025-07-25 10:06:27,630 basehttp "GET /static/css/dist/styles.css?v=1753427184 HTTP/1.1" 200 33739
+WARNING 2025-07-25 10:06:29,737 log Not Found: /favicon.ico
+WARNING 2025-07-25 10:06:29,760 basehttp "GET /favicon.ico HTTP/1.1" 404 12238
+INFO 2025-07-25 10:06:33,144 basehttp "GET /static/css/dist/styles.css?v=1753427182 HTTP/1.1" 200 33739
+INFO 2025-07-25 10:12:24,472 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 10:12:35,666 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 10:12:36,836 basehttp "GET /accounts/login/ HTTP/1.1" 200 28340
+INFO 2025-07-25 10:12:37,368 basehttp "GET /static/css/dist/styles.css?v=1753427556 HTTP/1.1" 200 33739
+INFO 2025-07-25 10:12:45,873 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 10:12:45,974 basehttp "GET /accounts/login/ HTTP/1.1" 200 28339
+INFO 2025-07-25 10:12:46,054 basehttp "GET /static/css/dist/styles.css?v=1753427565 HTTP/1.1" 200 33739
+INFO 2025-07-25 10:12:55,465 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-25 10:12:56,716 basehttp "GET / HTTP/1.1" 200 37248
+INFO 2025-07-25 10:12:56,949 basehttp "GET /static/css/dist/styles.css?v=1753427576 HTTP/1.1" 200 33739
+INFO 2025-07-25 10:25:29,181 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 10:27:57,470 basehttp "GET / HTTP/1.1" 200 42214
+INFO 2025-07-25 10:27:57,598 basehttp "GET /static/css/dist/styles.css?v=1753428477 HTTP/1.1" 200 33739
+INFO 2025-07-25 10:28:05,292 basehttp "POST /accounts/logout/ HTTP/1.1" 200 28259
+INFO 2025-07-25 10:28:05,442 basehttp "GET /static/css/dist/styles.css?v=1753428485 HTTP/1.1" 200 33739
+INFO 2025-07-25 10:28:20,663 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 10:28:21,330 basehttp "GET /accounts/login/ HTTP/1.1" 200 15538
+INFO 2025-07-25 10:32:03,697 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-25 10:32:43,470 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 10:34:28,655 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 10:44:40,470 basehttp "GET / HTTP/1.1" 302 0
+ERROR 2025-07-25 10:44:42,319 log Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 543: 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-07-25 10:44:42,540 basehttp "GET /accounts/login/ HTTP/1.1" 500 175224
+INFO 2025-07-25 10:44:43,304 basehttp "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+INFO 2025-07-25 10:44:43,446 basehttp "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+INFO 2025-07-25 10:44:43,455 basehttp "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+INFO 2025-07-25 10:44:43,610 basehttp "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+INFO 2025-07-25 11:00:15,169 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:07:26,402 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:07:41,193 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 11:07:42,266 basehttp "GET /accounts/login/ HTTP/1.1" 200 18627
+INFO 2025-07-25 11:07:59,901 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-25 11:08:01,763 basehttp "GET / HTTP/1.1" 200 42653
+ERROR 2025-07-25 11:08:56,748 log Internal Server Error: /accounts/logout/
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endblock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\accounts\views.py", line 437, in custom_logout
+    return render(request, 'registration/logged_out.html')
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\Downloads\waste-sotor\env\Lib\site-packages\django\template\base.py", line 577, in invalid_block_tag
+    raise self.error(
+    ...<3 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 335: 'endblock'. Did you forget to register or load this tag?
+ERROR 2025-07-25 11:08:57,622 basehttp "POST /accounts/logout/ HTTP/1.1" 500 177107
+INFO 2025-07-25 11:11:42,106 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:12:15,465 basehttp "POST /accounts/logout/ HTTP/1.1" 302 0
+INFO 2025-07-25 11:12:15,649 basehttp "GET /accounts/login/ HTTP/1.1" 200 21784
+INFO 2025-07-25 11:12:23,846 basehttp "GET /accounts/password-reset/ HTTP/1.1" 200 24097
+INFO 2025-07-25 11:16:09,296 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:16:26,411 basehttp "GET /accounts/password-reset/ HTTP/1.1" 200 24097
+INFO 2025-07-25 11:22:45,114 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:26:19,927 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-25 11:26:19,975 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-25 11:26:28,383 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:26:30,085 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:34:01,142 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:34:53,913 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 11:35:01,266 basehttp "GET /accounts/login/ HTTP/1.1" 200 19538
+INFO 2025-07-25 11:38:29,050 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:38:36,419 basehttp "GET /accounts/login/ HTTP/1.1" 200 19537
+INFO 2025-07-25 11:38:44,300 basehttp "GET /accounts/password-reset/ HTTP/1.1" 200 24098
+INFO 2025-07-25 11:51:33,960 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:51:52,894 basehttp "GET /accounts/password-reset/ HTTP/1.1" 200 16762
+INFO 2025-07-25 11:52:12,913 basehttp "POST /accounts/password-reset/ HTTP/1.1" 302 0
+WARNING 2025-07-25 11:52:13,098 log Not Found: /password-reset/done/
+WARNING 2025-07-25 11:52:13,196 basehttp "GET /password-reset/done/ HTTP/1.1" 404 12274
+INFO 2025-07-25 11:56:52,050 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-25 11:56:52,136 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\views.py changed, reloading.
+INFO 2025-07-25 11:57:19,695 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:57:19,830 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:58:07,834 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-25 11:58:08,047 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-25 11:58:16,936 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:58:21,204 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 11:59:47,244 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:05:25,837 autoreload Watching for file changes with StatReloader
+WARNING 2025-07-25 12:05:43,777 log Not Found: /password-reset/done/
+WARNING 2025-07-25 12:05:43,784 basehttp "GET /password-reset/done/ HTTP/1.1" 404 12277
+WARNING 2025-07-25 12:05:48,318 log Not Found: /password-reset/done/
+WARNING 2025-07-25 12:05:48,334 basehttp "GET /password-reset/done/ HTTP/1.1" 404 12275
+WARNING 2025-07-25 12:05:59,270 log Not Found: /password
+WARNING 2025-07-25 12:05:59,271 basehttp "GET /password HTTP/1.1" 404 12227
+INFO 2025-07-25 12:06:09,574 basehttp "GET /recycle HTTP/1.1" 301 0
+INFO 2025-07-25 12:06:10,105 basehttp "GET /recycle/ HTTP/1.1" 200 36856
+INFO 2025-07-25 12:06:10,490 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 302 0
+INFO 2025-07-25 12:06:10,635 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 302 0
+INFO 2025-07-25 12:06:10,779 basehttp "GET /accounts/login/ HTTP/1.1" 200 19537
+INFO 2025-07-25 12:06:11,106 basehttp "GET /accounts/login/ HTTP/1.1" 200 19535
+INFO 2025-07-25 12:06:21,528 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 12:06:22,292 basehttp "GET /accounts/login/ HTTP/1.1" 200 19535
+INFO 2025-07-25 12:14:12,335 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:14:22,594 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-07-25 12:14:24,590 basehttp "GET /accounts/login/ HTTP/1.1" 200 19617
+INFO 2025-07-25 12:14:42,275 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-07-25 12:14:42,561 basehttp "GET / HTTP/1.1" 200 42651
+INFO 2025-07-25 12:32:37,410 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\authentication_middleware.py changed, reloading.
+INFO 2025-07-25 12:32:37,779 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\authentication_middleware.py changed, reloading.
+INFO 2025-07-25 12:32:50,023 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:32:50,256 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:33:15,851 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-25 12:33:16,909 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\settings.py changed, reloading.
+INFO 2025-07-25 12:33:20,844 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:33:21,661 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:33:52,421 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py changed, reloading.
+INFO 2025-07-25 12:33:53,590 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py changed, reloading.
+INFO 2025-07-25 12:33:57,944 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:33:59,407 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:34:44,478 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:37:49,390 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-25 12:37:49,512 autoreload C:\Users\angam\Downloads\waste-sotor\accounts\urls.py changed, reloading.
+INFO 2025-07-25 12:37:49,700 autoreload C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py changed, reloading.
+INFO 2025-07-25 12:38:04,993 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:38:07,688 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:38:07,847 autoreload Watching for file changes with StatReloader
+INFO 2025-07-25 12:38:50,073 basehttp "GET / HTTP/1.1" 200 42653
+INFO 2025-07-25 12:38:57,980 basehttp "GET /recycle/ HTTP/1.1" 200 41034
+INFO 2025-07-25 12:38:58,921 basehttp "GET /media/recycle_tips/images/waste_sorting.jpg HTTP/1.1" 200 23843
+INFO 2025-07-25 12:38:59,275 basehttp "GET /media/recycle_tips/images/project.png HTTP/1.1" 200 85491
+INFO 2025-07-25 12:39:09,081 basehttp "GET /waste/ HTTP/1.1" 200 44131

@@ -6,7 +6,7 @@ class AuthenticationMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        # List of URLs that don't require authentication
+        # List of URLs that don't require authentication (only auth-related pages)
         public_urls = [
             'login',
             'register',
@@ -18,13 +18,18 @@ class AuthenticationMiddleware:
             'verification_sent',
             'resend_verification',
             'check_verification_status',
-            'tips_home',
-            'tip_detail',
-            'category_tips',
         ]
 
+        # Skip middleware for admin URLs and static files
+        if request.path.startswith('/admin/') or request.path.startswith('/static/') or request.path.startswith('/media/'):
+            response = self.get_response(request)
+            return response
+
         # Check if current URL name matches any in the public URLs list
-        current_url_name = resolve(request.path_info).url_name
+        try:
+            current_url_name = resolve(request.path_info).url_name
+        except:
+            current_url_name = None
         
         # If user is not authenticated and URL is not public, redirect to login
         if not request.user.is_authenticated and current_url_name not in public_urls:

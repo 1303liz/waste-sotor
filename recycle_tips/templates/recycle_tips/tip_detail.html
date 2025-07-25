@@ -412,7 +412,7 @@
                                                 <div class="card-body p-2">
                                                     <h6 class="card-title mb-1">{{ related_tip.title|truncatechars:40 }}</h6>
                                                     <p class="card-text small text-muted mb-2">{{ related_tip.content|truncatechars:40 }}</p>
-                                                    <a href="{% url 'tip_detail_id' related_tip.id %}" class="btn btn-sm btn-primary">View Tip</a>
+                                                    <a href="{% url 'tip_detail' related_tip.id %}" class="btn btn-sm btn-primary">View Tip</a>
                                                 </div>
                                             </div>
                                         </div>

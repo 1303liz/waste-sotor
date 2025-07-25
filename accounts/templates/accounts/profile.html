@@ -1,0 +1,432 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile | Waste Sorter{% endblock %}
+
+{% block extra_head %}
+<style>
+    body {
+        background: #f8fafc;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    
+    .profile-header {
+        background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+        color: white;
+        padding: 3rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .profile-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+        opacity: 0.5;
+    }
+    
+    .profile-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+    
+    .profile-avatar {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        border: 4px solid rgba(255,255,255,0.3);
+        backdrop-filter: blur(10px);
+    }
+    
+    .profile-info h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    .profile-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+    
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255,255,255,0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        backdrop-filter: blur(10px);
+    }
+    
+    .content-section {
+        padding: 3rem 0;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .stat-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e5e7eb;
+        text-align: center;
+        transition: all 0.2s ease;
+    }
+    
+    .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        margin: 0 auto 1rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    
+    .stat-label {
+        color: #6b7280;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    
+    .activity-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .activity-card {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e5e7eb;
+    }
+    
+    .activity-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .activity-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+    }
+    
+    .activity-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin: 0;
+    }
+    
+    .activity-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .activity-item {
+        padding: 1rem 0;
+        border-bottom: 1px solid #f3f4f6;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .activity-item:last-child {
+        border-bottom: none;
+    }
+    
+    .activity-name {
+        font-weight: 500;
+        color: #374151;
+    }
+    
+    .activity-date {
+        font-size: 0.875rem;
+        color: #6b7280;
+    }
+    
+    .empty-activity {
+        text-align: center;
+        color: #9ca3af;
+        font-style: italic;
+        padding: 2rem 0;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .btn-primary {
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        text-decoration: none;
+        color: white;
+    }
+    
+    .btn-outline {
+        background: white;
+        color: #4CAF50;
+        border: 2px solid #4CAF50;
+    }
+    
+    .btn-outline:hover {
+        background: #4CAF50;
+        color: white;
+        text-decoration: none;
+    }
+    
+    @media (max-width: 768px) {
+        .profile-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .profile-info h1 {
+            font-size: 2rem;
+        }
+        
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .activity-section {
+            grid-template-columns: 1fr;
+        }
+        
+        .action-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn {
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Profile Header -->
+<div class="profile-header">
+    <div class="container">
+        <div class="profile-content">
+            <div class="profile-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-info">
+                <h1>{{ user.get_full_name|default:user.username }}</h1>
+                <div class="profile-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>{{ user.email }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Joined {{ user.date_joined|date:"M d, Y" }}</span>
+                    </div>
+                    {% if user.last_login %}
+                    <div class="meta-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Last active {{ user.last_login|date:"M d, Y" }}</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container content-section">
+    <!-- Statistics -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <span class="stat-number">{{ user_waste_logs }}</span>
+            <div class="stat-label">Waste Logs Created</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-plus-circle"></i>
+            </div>
+            <span class="stat-number">{{ user_waste_entries }}</span>
+            <div class="stat-label">Waste Entries Logged</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <span class="stat-number">{{ user_tips }}</span>
+            <div class="stat-label">Tips Contributed</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <span class="stat-number">{{ user_waste_entries }}</span>
+            <div class="stat-label">Environmental Actions</div>
+        </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="activity-section">
+        <!-- Recent Waste Logs -->
+        <div class="activity-card">
+            <div class="activity-header">
+                <div class="activity-icon">
+                    <i class="fas fa-clipboard-list"></i>
+                </div>
+                <h3 class="activity-title">Recent Waste Logs</h3>
+            </div>
+            
+            {% if recent_logs %}
+            <ul class="activity-list">
+                {% for log in recent_logs %}
+                <li class="activity-item">
+                    <div>
+                        <div class="activity-name">{{ log.title }}</div>
+                        <div class="activity-date">{{ log.created_at|date:"M d, Y" }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="empty-activity">
+                <i class="fas fa-inbox"></i><br>
+                No waste logs created yet
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Recent Waste Entries -->
+        <div class="activity-card">
+            <div class="activity-header">
+                <div class="activity-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <h3 class="activity-title">Recent Entries</h3>
+            </div>
+            
+            {% if recent_entries %}
+            <ul class="activity-list">
+                {% for entry in recent_entries %}
+                <li class="activity-item">
+                    <div>
+                        <div class="activity-name">{{ entry.category.name }} - {{ entry.quantity_kg }}kg</div>
+                        <div class="activity-date">{{ entry.created_at|date:"M d, Y" }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <div class="empty-activity">
+                <i class="fas fa-inbox"></i><br>
+                No waste entries logged yet
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <a href="{% url 'waste_logs_home' %}" class="btn btn-primary">
+            <i class="fas fa-plus"></i>
+            Create Waste Log
+        </a>
+        <a href="{% url 'tips_home' %}" class="btn btn-outline">
+            <i class="fas fa-lightbulb"></i>
+            Browse Tips
+        </a>
+        <a href="{% url 'password_change' %}" class="btn btn-outline">
+            <i class="fas fa-key"></i>
+            Change Password
+        </a>
+    </div>
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+{% endblock %}

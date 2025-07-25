@@ -5,6 +5,7 @@ from django.db.models import Count, Q
 from .models import Tip
 from .forms import TipForm
 
+@login_required
 def tips_home(request):
     # Get filter parameters from GET request
     category = request.GET.get('category', None)

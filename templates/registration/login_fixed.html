@@ -23,26 +23,13 @@
     .login-card {
         background: white;
         border-radius: 16px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 
-                    0 0 0 1px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         padding: 3rem 2.5rem;
         width: 100%;
         max-width: 420px;
         position: relative;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.2);
-        overflow: hidden;
-    }
-    
-    .login-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #10b981, #059669, #047857);
-        opacity: 0.8;
     }
     
     .login-header {
@@ -173,18 +160,6 @@
         border-top: 1px solid #e5e7eb;
         padding-top: 1.5rem;
         margin-top: 1rem;
-        position: relative;
-    }
-    
-    .links-section::before {
-        content: '';
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        width: 60px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #10b981, transparent);
-        transform: translateX(-50%);
     }
     
     .auth-link {
@@ -193,16 +168,13 @@
         font-weight: 600;
         display: inline-block;
         margin: 0.25rem 0;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.2s ease;
         font-size: 0.9rem;
         position: relative;
-        padding: 0.5rem 0.75rem;
-        border-radius: 8px;
     }
     
     .auth-link:hover {
         color: #059669;
-        background: rgba(16, 185, 129, 0.05);
         transform: translateY(-1px);
     }
     
@@ -211,28 +183,21 @@
         position: absolute;
         width: 0;
         height: 2px;
-        bottom: 2px;
+        bottom: -2px;
         left: 50%;
-        background: linear-gradient(90deg, #10b981, #059669);
+        background: #10b981;
         transition: all 0.3s ease;
         transform: translateX(-50%);
-        border-radius: 1px;
     }
     
     .auth-link:hover::after {
-        width: calc(100% - 1.5rem);
+        width: 100%;
     }
     
     .divider {
         margin: 0 1rem;
-        color: #d1d5db;
+        color: #9ca3af;
         font-weight: 300;
-        font-size: 1.1rem;
-        opacity: 0.7;
-        display: inline-flex;
-        align-items: center;
-        height: 20px;
-    }
     }
     
     .loading-spinner {

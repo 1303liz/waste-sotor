@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    Add Entry to "{{ waste_log.title|default:"Waste Log" }}"
+                </h6>
+            </div>
+            <div class="card-body">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'waste_logs_home' %}">Waste Logs</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'waste_log_detail' waste_log.id %}">{{ waste_log.title|default:"Log Detail" }}</a></li>
+                        <li class="breadcrumb-item active">Add Entry</li>
+                    </ol>
+                </nav>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.category.id_for_label }}" class="form-label">Category *</label>
+                            {{ form.category }}
+                            {% if form.category.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.category.errors %}{{ error }}{% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.subcategory.id_for_label }}" class="form-label">Subcategory</label>
+                            {{ form.subcategory }}
+                            {% if form.subcategory.errors %}
+                            <div class="invalid-feedback d-block">
+                                {% for error in form.subcategory.errors %}{{ error }}{% endfor %}
+                            </div>
+                            {% endif %}
+                            <div class="form-text">Select a category first</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.quantity_kg.id_for_label }}" class="form-label">Quantity (kg) *</label>
+                        {{ form.quantity_kg }}
+                        {% if form.quantity_kg.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.quantity_kg.errors %}{{ error }}{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.notes.id_for_label }}" class="form-label">Notes</label>
+                        {{ form.notes }}
+                        {% if form.notes.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.notes.errors %}{{ error }}{% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mt-4">
+                        <a href="{% url 'waste_log_detail' waste_log.id %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-1"></i> Back to Log
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle me-1"></i> Add Entry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.querySelector('#{{ form.category.id_for_label }}');
+        const subcategorySelect = document.querySelector('#{{ form.subcategory.id_for_label }}');
+        
+        // Handle category change to update subcategories
+        categorySelect.addEventListener('change', function() {
+            const categoryId = this.value;
+            
+            // Clear subcategory options
+            while (subcategorySelect.options.length > 0) {
+                subcategorySelect.options.remove(0);
+            }
+            
+            // Add empty option
+            const emptyOption = document.createElement('option');
+            emptyOption.value = '';
+            emptyOption.textContent = 'Select subcategory';
+            subcategorySelect.appendChild(emptyOption);
+            
+            // If a category is selected, fetch subcategories
+            if (categoryId) {
+                fetch(`/waste/get-subcategories/?category_id=${categoryId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.subcategories.forEach(subcategory => {
+                            const option = document.createElement('option');
+                            option.value = subcategory.id;
+                            option.textContent = subcategory.name;
+                            subcategorySelect.appendChild(option);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching subcategories:', error));
+            }
+        });
+    });
+</script>
+{% endblock %}

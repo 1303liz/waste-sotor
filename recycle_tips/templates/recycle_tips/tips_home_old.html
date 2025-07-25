@@ -1,0 +1,1401 @@
+{% extends 'base.html' %}
+{% load recycle_tips_extras %}
+
+{% block title %}Recycling Tips | Waste Sorter{% endblock %}
+
+{% block extra_head %}
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Animate on Scroll -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<style>
+    /* Base Font Styles */
+    body {
+        font-family: 'Lato', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6, .btn {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .stat-value, .display-4 {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    /* Hero section - Modern Wave Style */
+    .tips-hero {
+        background: linear-gradient(135deg, #3ccf4e 0%, #1ca385 100%);
+        color: white;
+        padding: 5rem 0 7rem;
+        margin-bottom: 4rem;
+        position: relative;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        box-shadow: 0 10px 30px rgba(28, 163, 133, 0.25);
+    }
+    
+    .tips-hero::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+        border-radius: 50%;
+        animation: pulse 15s infinite alternate;
+    }
+    
+    .tips-hero::after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        left: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        border-radius: 50%;
+        animation: pulse 20s infinite alternate-reverse;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.2); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 0.5; }
+    }
+    
+    .hero-text {
+        position: relative;
+        z-index: 2;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero-text h1 {
+        font-size: 3.2rem;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+    }
+    
+    .hero-text h1:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 80px;
+        height: 5px;
+        background: white;
+        border-radius: 10px;
+    }
+    
+    .hero-text p {
+        font-size: 1.3rem;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        line-height: 1.7;
+    }
+    
+    .hero-icon {
+        font-size: 6rem;
+        margin-bottom: 1.5rem;
+        animation: float 3s ease-in-out infinite;
+        filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+    }
+    
+    @keyframes float {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-15px) rotate(5deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+    }
+    
+    .hero-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .hero-particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: particleFloat 15s infinite linear;
+    }
+    
+    @keyframes particleFloat {
+        0% { transform: translateY(0) translateX(0); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(-500px) translateX(200px); opacity: 0; }
+    }
+    
+    /* Category filters */
+    .category-filter {
+        margin-bottom: 2rem;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .filter-buttons {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 1rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        margin-bottom: 2rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+    }
+    
+    .filter-buttons::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .category-btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        margin: 0.4rem;
+        border: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        background-color: white;
+        color: #465168;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e9ecef;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .category-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        color: #3ccf4e;
+        border-color: rgba(60, 207, 78, 0.3);
+    }
+    
+    .category-btn.active {
+        background: linear-gradient(135deg, #3ccf4e 0%, #1ca385 100%);
+        color: white;
+        box-shadow: 0 6px 12px rgba(60, 207, 78, 0.3);
+        border-color: transparent;
+    }
+    
+    .category-btn:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, #3ccf4e, #1ca385);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+        opacity: 0;
+    }
+    
+    .category-btn:hover:after {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 1;
+    }
+    
+    .category-btn.active:after {
+        opacity: 0;
+    }
+    
+    /* Tip cards */
+    .tips-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .tip-card {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: white;
+        border: none;
+        backdrop-filter: blur(10px);
+    }
+    
+    .tip-card:hover {
+        transform: translateY(-12px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(60, 207, 78, 0.15);
+        border-color: rgba(67, 160, 71, 0.3);
+    }
+    
+    .tip-img-container {
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+        background: #f5f5f5;
+    }
+    
+    .tip-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .tip-card:hover .tip-img {
+        transform: scale(1.08);
+    }
+    
+    .category-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 6px 16px;
+        border-radius: 30px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        z-index: 2;
+        background: linear-gradient(135deg, #3ccf4e 0%, #1ca385 100%);
+        color: white;
+        box-shadow: 0 4px 12px rgba(28, 163, 133, 0.3);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+    
+    .category-badge:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(28, 163, 133, 0.4);
+        background: linear-gradient(135deg, #32b843 0%, #169178 100%);
+        color: white;
+        text-decoration: none;
+    }
+    
+    .category-badge:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+    
+    .category-badge:hover:before {
+        transform: scale(15);
+        opacity: 0.2;
+    }
+    
+    .tip-content {
+        padding: 1.8rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(180deg, #ffffff 0%, #f9fcfa 100%);
+        border-top: 1px solid rgba(60, 207, 78, 0.1);
+    }
+    
+    .tip-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #1a2942;
+        line-height: 1.3;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .tip-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 40px;
+        background: linear-gradient(90deg, #3ccf4e 0%, #1ca385 100%);
+        border-radius: 10px;
+    }
+    
+    .tip-description {
+        color: #546174;
+        margin-bottom: 1rem;
+        flex-grow: 1;
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+    
+    .tip-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(60, 207, 78, 0.15);
+    }
+    
+    .tip-date {
+        color: #8c98a4;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
+    
+    .tip-date i {
+        color: #3ccf4e;
+        margin-right: 6px;
+    }
+    
+    .tip-types {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .tip-type-badge {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+        color: #43a047;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+    }
+    
+    .tip-type-badge:hover {
+        transform: scale(1.1);
+    }
+    
+    /* Card Container */
+    .tip-card-container {
+        margin-bottom: 3rem;
+    }
+    
+    /* No results */
+    .no-tips {
+        text-align: center;
+        padding: 4rem 2rem;
+        border-radius: 16px;
+        background: linear-gradient(145deg, #ffffff, #f0f4f1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        margin: 2rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .no-tips:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, #3ccf4e, #1ca385);
+    }
+    
+    .no-tips i {
+        font-size: 4.5rem;
+        color: #d1d9e6;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        animation: pulse-light 2s infinite ease-in-out;
+    }
+    
+    .no-tips h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1a2942;
+        margin-bottom: 1rem;
+    }
+    
+    .no-tips p {
+        color: #546174;
+        max-width: 500px;
+        margin: 0 auto 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .no-tips .btn {
+        padding: 0.8rem 2rem;
+        font-weight: 600;
+        border-radius: 50px;
+        box-shadow: 0 5px 15px rgba(60, 207, 78, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .no-tips .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(60, 207, 78, 0.3);
+    }
+    
+    @keyframes pulse-light {
+        0% { opacity: 0.7; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+        100% { opacity: 0.7; transform: scale(1); }
+    }
+    
+    /* Pagination Styling for Future Use */
+    .pagination-container {
+        margin: 3rem 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .pagination {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        border-radius: 50px;
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .page-item {
+        margin: 0 2px;
+    }
+    
+    .page-link {
+        color: #546174;
+        padding: 12px 18px;
+        border-radius: 50px !important;
+        margin: 0 3px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        border: none;
+        background: transparent;
+    }
+    
+    .page-link:hover {
+        background: #f0f4f1;
+        color: #3ccf4e;
+        transform: translateY(-2px);
+    }
+    
+    .page-item.active .page-link {
+        background: linear-gradient(135deg, #3ccf4e 0%, #1ca385 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 5px 15px rgba(60, 207, 78, 0.25);
+    }
+    
+    .page-item.disabled .page-link {
+        color: #b0bac9;
+        background: #f9f9f9;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+        background: white;
+        border-radius: 16px;
+        padding: 1.75rem;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+        position: sticky;
+        top: 20px;
+        border: 1px solid rgba(60, 207, 78, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+    }
+    
+    .sidebar-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.8rem;
+        border-bottom: none;
+        position: relative;
+        color: #1a2942;
+    }
+    
+    .sidebar-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 4px;
+        background: linear-gradient(90deg, #3ccf4e, #1ca385);
+        border-radius: 10px;
+    }
+    
+    .sidebar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .sidebar-item {
+        margin: 5px 0;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        border-bottom: none;
+    }
+    
+    .sidebar-item:hover {
+        background-color: #f8f9fa;
+        transform: translateX(5px);
+    }
+    
+    .sidebar-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #546174;
+        text-decoration: none;
+        padding: 12px 15px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+    
+    .sidebar-link:hover {
+        color: #3ccf4e;
+    }
+    
+    .sidebar-link.active {
+        background: linear-gradient(135deg, rgba(60, 207, 78, 0.1) 0%, rgba(28, 163, 133, 0.1) 100%);
+        color: #3ccf4e;
+        font-weight: 600;
+    }
+    
+    .sidebar-count {
+        background: linear-gradient(135deg, #3ccf4e 0%, #1ca385 100%);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        min-width: 28px;
+        text-align: center;
+        box-shadow: 0 3px 8px rgba(60, 207, 78, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-link:hover .sidebar-count {
+        transform: scale(1.1);
+    }
+        font-weight: 600;
+    }
+    
+    /* Glassmorphism card effect */
+    .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.08),
+            0 2px 5px rgba(255, 255, 255, 0.6) inset;
+        border-radius: 16px;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .glass-card:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        transition: 0.5s;
+    }
+    
+    .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 
+            0 15px 40px rgba(0, 0, 0, 0.12),
+            0 2px 5px rgba(255, 255, 255, 0.6) inset;
+    }
+    
+    .glass-card:hover:before {
+        left: 100%;
+    }
+    
+    /* Filter card */
+    .filter-card {
+        margin-bottom: 2rem;
+        transition: all 0.3s ease;
+    }
+    
+    .filter-btn {
+        transition: all 0.3s ease;
+    }
+    
+    .filter-btn:hover {
+        transform: translateY(-2px);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        background: linear-gradient(135deg, #3ccf4e, #1ca385);
+        border-radius: 15px;
+        padding: 2rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .search-box {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+    
+    .search-box input {
+        padding-left: 3rem;
+        border-radius: 30px;
+        height: 50px;
+    }
+    
+    .search-box i {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+    }
+    
+    /* Stats counter */
+    .stats-counter {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .stat-item {
+        text-align: center;
+    }
+    
+    .stat-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #43a047;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    /* Most Popular Tips */
+    .popular-tip-card {
+        transition: all 0.3s ease;
+    }
+    
+    .popular-tip-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Community Impact */
+    .impact-stat {
+        padding: 1rem;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .impact-stat:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+    
+    /* Ribbon */
+    .ribbon {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        position: absolute;
+    }
+    
+    .ribbon::before,
+    .ribbon::after {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        display: block;
+        border: 5px solid #2980b9;
+    }
+    
+    .ribbon span {
+        position: absolute;
+        display: block;
+        width: 180px;
+        padding: 5px 0;
+        background-color: #3498db;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        color: #fff;
+        font-size: 13px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+    .ribbon-top-right {
+        top: -10px;
+        right: -10px;
+    }
+    
+    .ribbon-top-right::before,
+    .ribbon-top-right::after {
+        border-top-color: transparent;
+        border-right-color: transparent;
+    }
+    
+    .ribbon-top-right::before {
+        top: 0;
+        left: 0;
+    }
+    
+    .ribbon-top-right::after {
+        bottom: 0;
+        right: 0;
+    }
+    
+    .ribbon-top-right span {
+        left: -25px;
+        top: 30px;
+        transform: rotate(45deg);
+    }
+    
+    /* Mobile sticky Add Tip button */
+    .mobile-add-tip {
+        display: none;
+    }
+    
+    @media (max-width: 767px) {
+        .sidebar {
+            margin-top: 2rem;
+            position: static;
+        }
+        
+        .tips-hero {
+            border-radius: 0 0 30% 30% / 15px;
+            padding: 2rem 0;
+        }
+        
+        .mobile-add-tip {
+            display: block;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .mobile-add-tip-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3ccf4e, #1ca385);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-add-tip-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Accessibility Controls -->
+<div class="accessibility-controls position-fixed top-0 end-0 m-3 z-3">
+    <button id="highContrastToggle" class="btn btn-sm btn-light rounded-circle shadow" title="Toggle High Contrast Mode" aria-label="Toggle High Contrast Mode">
+        <i class="fas fa-adjust"></i>
+    </button>
+</div>
+
+<!-- Mobile Add Tip Button -->
+<div class="mobile-add-tip">
+    <a href="{% url 'add_tip' %}" class="mobile-add-tip-btn" aria-label="Add New Tip">
+        <i class="fas fa-plus"></i>
+    </a>
+</div>
+
+<!-- Hero Section -->
+<section class="tips-hero mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 hero-text">
+                <h1 class="display-4 fw-bold mb-3">Recycling Tips Hub</h1>
+                <p class="lead fs-4 mb-4">{{ section_info.purpose }}</p>
+                <div class="d-flex flex-column gap-2 mb-4">
+                    <div class="d-flex align-items-center">
+                        <span class="bg-white bg-opacity-25 rounded-circle p-2 me-3">
+                            <i class="fas fa-users text-white"></i>
+                        </span>
+                        <span><strong>Target Audience:</strong> {{ section_info.target_audience }}</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="bg-white bg-opacity-25 rounded-circle p-2 me-3">
+                            <i class="fas fa-bullseye text-white"></i>
+                        </span>
+                        <span><strong>Goal:</strong> {{ section_info.goal }}</span>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <a href="{% url 'add_tip' %}" class="btn btn-light btn-lg rounded-pill px-4 me-3">
+                        <i class="fas fa-plus-circle me-2"></i>Add New Tip
+                    </a>
+                    <a href="#tips-section" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                        <i class="fas fa-chevron-down me-2"></i>Browse Tips
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center d-none d-lg-block">
+                <div class="hero-icon">
+                    <i class="fas fa-recycle text-white opacity-75 fa-5x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Counter -->
+<div class="container mb-5">
+    <div class="stats-counter">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="stat-item">
+                    <i class="fas fa-leaf fa-2x mb-3 text-success"></i>
+                    <div class="stat-value">{{ tips.count }}</div>
+                    <div class="stat-label">Total Tips</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-item">
+                    <i class="fas fa-th-large fa-2x mb-3 text-primary"></i>
+                    <div class="stat-value">{{ category_counts.values|length }}</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-item">
+                    <i class="fas fa-users fa-2x mb-3 text-warning"></i>
+                    <div class="stat-value">{{ type_counts.values|sum_values }}</div>
+                    <div class="stat-label">Learning Resources</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container" id="tips-section">
+    <div class="row">
+        <!-- Tips Content -->
+        <div class="col-lg-8 mb-5">
+            <!-- Search Box -->
+            <div class="search-box mb-4">
+                <i class="fas fa-search"></i>
+                <input type="text" class="form-control form-control-lg shadow-sm" placeholder="Search for recycling tips...">
+            </div>
+            
+            <!-- Filters -->
+            <div class="card filter-card mb-4 border-0 shadow-sm">
+                <div class="card-header bg-white border-bottom-0 pt-3 pb-0">
+                    <h5 class="mb-0"><i class="fas fa-filter me-2"></i>Filter Tips</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase text-muted fw-bold fs-7 mb-3">By Category</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <!-- Category Dropdown Filter -->
+                                <div class="dropdown mb-2">
+                                    <button class="btn btn-primary dropdown-toggle rounded-pill px-3 shadow-sm" type="button" id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {% if selected_category %}
+                                            {% for cat, display in tips.first.get_category_choices %}
+                                                {% if selected_category == cat %}
+                                                    {% if cat == 'recyclables' %}<i class="fas fa-recycle me-1"></i>
+                                                    {% elif cat == 'compostables' %}<i class="fas fa-seedling me-1"></i>
+                                                    {% elif cat == 'general_waste' %}<i class="fas fa-trash me-1"></i>
+                                                    {% elif cat == 'plastic' %}<i class="fas fa-wine-bottle me-1"></i>
+                                                    {% elif cat == 'organic' %}<i class="fas fa-apple-alt me-1"></i>
+                                                    {% elif cat == 'e-waste' %}<i class="fas fa-laptop me-1"></i>
+                                                    {% else %}<i class="fas fa-leaf me-1"></i>{% endif %}
+                                                    {{ display }}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% else %}
+                                            <i class="fas fa-globe-americas me-1"></i> All
+                                        {% endif %}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                                        <li>
+                                            <a class="dropdown-item {% if not selected_category %}active{% endif %}" href="{% url 'tips_home' %}">
+                                                <i class="fas fa-globe-americas me-1"></i> All
+                                                <span class="badge bg-light text-primary ms-1">{{ tips.count }}</span>
+                                            </a>
+                                        </li>
+                                        {% for cat, display in tips.first.get_category_choices %}
+                                        <li>
+                                            <a class="dropdown-item {% if selected_category == cat %}active{% endif %}" href="{% url 'category_tips' cat %}">
+                                                {% if cat == 'recyclables' %}<i class="fas fa-recycle me-1"></i>
+                                                {% elif cat == 'compostables' %}<i class="fas fa-seedling me-1"></i>
+                                                {% elif cat == 'general_waste' %}<i class="fas fa-trash me-1"></i>
+                                                {% elif cat == 'plastic' %}<i class="fas fa-wine-bottle me-1"></i>
+                                                {% elif cat == 'organic' %}<i class="fas fa-apple-alt me-1"></i>
+                                                {% elif cat == 'e-waste' %}<i class="fas fa-laptop me-1"></i>
+                                                {% else %}<i class="fas fa-leaf me-1"></i>{% endif %}
+                                                {{ display }}
+                                                <span class="badge bg-light text-primary ms-1">{{ category_counts|get_item:cat }}</span>
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase text-muted fw-bold fs-7 mb-3">By Type</h6>
+                            <div class="dropdown mb-2">
+                                <button class="btn btn-dark dropdown-toggle rounded-pill px-3 shadow-sm" type="button" id="typeDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {% if selected_type == 'visual' %}
+                                        <i class="fas fa-image me-1"></i> Visual Guides
+                                    {% elif selected_type == 'practice' %}
+                                        <i class="fas fa-check-circle me-1"></i> Best Practices
+                                    {% elif selected_type == 'tutorial' %}
+                                        <i class="fas fa-list-ol me-1"></i> Tutorials
+                                    {% else %}
+                                        <i class="fas fa-border-all me-1"></i> All Types
+                                    {% endif %}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="typeDropdown">
+                                    <li>
+                                        <a class="dropdown-item {% if not selected_type %}active{% endif %}" href="{% url 'tips_home' %}">
+                                            <i class="fas fa-border-all me-1"></i> All Types
+                                            <span class="badge bg-light text-dark ms-1">{{ tips.count }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item {% if selected_type == 'visual' %}active{% endif %}" href="{% url 'tips_home' %}?type=visual">
+                                            <i class="fas fa-image me-1"></i> Visual Guides
+                                            <span class="badge bg-info text-white ms-1">{{ type_counts.visual }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item {% if selected_type == 'practice' %}active{% endif %}" href="{% url 'tips_home' %}?type=practice">
+                                            <i class="fas fa-check-circle me-1"></i> Best Practices
+                                            <span class="badge bg-success text-white ms-1">{{ type_counts.practice }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item {% if selected_type == 'tutorial' %}active{% endif %}" href="{% url 'tips_home' %}?type=tutorial">
+                                            <i class="fas fa-list-ol me-1"></i> Tutorials
+                                            <span class="badge bg-warning text-dark ms-1">{{ type_counts.tutorial }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Most Popular Tips Section -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-header bg-white border-bottom-0">
+                    <h5 class="mb-0"><i class="fas fa-star me-2 text-warning"></i>Most Popular Tips</h5>
+                </div>
+                <div class="card-body pb-0">
+                    <div class="row g-3">
+                        {% for tip in tips|dictsortreversed:"views"|slice:":3" %}
+                            <div class="col-md-4">
+                                <div class="popular-tip-card border shadow-sm rounded-3 h-100 position-relative overflow-hidden">
+                                    <div class="ribbon ribbon-top-right"><span>Popular</span></div>
+                                    <div class="p-3 text-center">
+                                        <div class="rounded-circle bg-light mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                            <i class="fas {% if tip.category == 'recyclables' %}fa-recycle{% elif tip.category == 'compostables' %}fa-seedling{% elif tip.category == 'general_waste' %}fa-trash{% elif tip.category == 'plastic' %}fa-wine-bottle{% elif tip.category == 'organic' %}fa-apple-alt{% elif tip.category == 'e-waste' %}fa-laptop{% else %}fa-leaf{% endif %} fa-2x text-success"></i>
+                                        </div>
+                                        <h6 class="mb-2">{{ tip.title|truncatechars:40 }}</h6>
+                                        <p class="small text-muted">{{ tip.content|truncatewords:10 }}</p>
+                                        <a href="{% url 'tip_detail_id' tip.id %}" class="btn btn-sm btn-outline-success rounded-pill px-3">View Tip</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-top-0 text-center py-3">
+                    <a href="#" class="text-success fw-semibold">View All Popular Tips <i class="fas fa-chevron-right ms-1"></i></a>
+                </div>
+            </div>
+            
+            <!-- Community Impact Section -->
+            <div class="card border-0 shadow-sm mb-4 overflow-hidden">
+                <div class="card-header bg-white border-bottom-0">
+                    <h5 class="mb-0"><i class="fas fa-users me-2 text-primary"></i>Community Impact</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-lg-7 p-4">
+                            <div class="row g-4">
+                                <div class="col-6">
+                                    <div class="impact-stat text-center">
+                                        <div class="display-4 fw-bold text-success mb-2">{{ tips.count }}</div>
+                                        <p class="text-muted mb-0">Recycling Tips Shared</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="impact-stat text-center">
+                                        <div class="display-4 fw-bold text-primary mb-2">{{ category_counts.values|sum_values }}</div>
+                                        <p class="text-muted mb-0">Categories Covered</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="impact-stat text-center">
+                                        <div class="display-4 fw-bold text-info mb-2">{{ type_counts.values|sum_values }}</div>
+                                        <p class="text-muted mb-0">Learning Materials</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="impact-stat text-center">
+                                        <div class="display-4 fw-bold text-warning mb-2">100+</div>
+                                        <p class="text-muted mb-0">Community Members</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 d-none d-lg-block">
+                            <div class="bg-light p-4 h-100 d-flex align-items-center justify-content-center">
+                                <div class="text-center">
+                                    <i class="fas fa-globe-americas fa-5x text-success opacity-50 mb-3"></i>
+                                    <h5 class="mb-3">Making a Difference</h5>
+                                    <p class="mb-0">Together we're creating a more sustainable future</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tips Grid -->
+            {% if tips %}
+                <div class="tips-grid">
+                    {% for tip in tips %}
+                        <div class="tip-card">
+                            <div class="tip-img-container">
+                                {% if tip.image %}
+                                    <img src="{{ tip.image.url }}" class="tip-img" alt="Recycling tip: {{ tip.title }} - {{ tip.get_category_display }} category" loading="lazy">
+                                {% else %}
+                                    <div style="height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #3ccf4e 0%, #1ca385 100%);">
+                                        <i class="fas {% if tip.is_visual_guide %}fa-image{% elif tip.is_tutorial %}fa-list-ol{% elif tip.is_best_practice %}fa-check-double{% else %}fa-leaf{% endif %} fa-3x text-white"></i>
+                                    </div>
+                                {% endif %}
+                                <div class="category-badge">
+                                    {% if tip.category == 'recyclables' %}<i class="fas fa-recycle me-1"></i>
+                                    {% elif tip.category == 'compostables' %}<i class="fas fa-seedling me-1"></i>
+                                    {% elif tip.category == 'general_waste' %}<i class="fas fa-trash me-1"></i>
+                                    {% elif tip.category == 'plastic' %}<i class="fas fa-wine-bottle me-1"></i>
+                                    {% elif tip.category == 'organic' %}<i class="fas fa-apple-alt me-1"></i>
+                                    {% elif tip.category == 'e-waste' %}<i class="fas fa-laptop me-1"></i>
+                                    {% else %}<i class="fas fa-leaf me-1"></i>{% endif %}
+                                    {{ tip.get_category_display }}
+                                </div>
+                            </div>
+                            <div class="tip-content">
+                                <h3 class="tip-title">{{ tip.title }}</h3>
+                                <p class="tip-description">{{ tip.content|truncatewords:20 }}</p>
+                                <div class="tip-meta">
+                                    <div class="tip-date">
+                                        <i class="far fa-calendar-alt me-1"></i> {{ tip.date_posted|date:"M d, Y" }}
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="tip-types me-2">
+                                            {% if tip.is_visual_guide %}
+                                                <div class="tip-type-badge" data-bs-toggle="tooltip" title="Visual Guide">
+                                                    <i class="fas fa-image"></i>
+                                                </div>
+                                            {% endif %}
+                                            {% if tip.is_best_practice %}
+                                                <div class="tip-type-badge" data-bs-toggle="tooltip" title="Best Practice">
+                                                    <i class="fas fa-check-circle"></i>
+                                                </div>
+                                            {% endif %}
+                                            {% if tip.is_tutorial %}
+                                                <div class="tip-type-badge" data-bs-toggle="tooltip" title="Tutorial">
+                                                    <i class="fas fa-list-ol"></i>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        {% if tip.author %}
+                                            <div class="contributor-badge" data-bs-toggle="tooltip" title="Contribution by {{ tip.author }}">
+                                                <span class="badge rounded-pill bg-success-subtle text-success border border-success-subtle">
+                                                    <i class="fas fa-user-edit me-1"></i> {{ tip.author|truncatechars:10 }}
+                                                </span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <a href="{% url 'tip_detail_id' tip.id %}" class="btn btn-primary w-100 mt-3">
+                                    <i class="fas fa-eye me-1"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-tips">
+                    <i class="fas fa-leaf"></i>
+                    <h3>No Tips Available Yet</h3>
+                    <p class="mb-4">Be the first to share your knowledge on waste management and recycling.</p>
+                    <a href="{% url 'add_tip' %}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-plus-circle me-2"></i>Add The First Tip
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="sidebar">
+                <!-- Call to Action -->
+                <div class="cta-section mb-4">
+                    <div class="mb-3">
+                        <i class="fas fa-plus-circle fa-3x mb-3"></i>
+                        <h4 class="mb-3">Share Your Knowledge</h4>
+                        <p class="mb-4">Have tips that could help others sort waste properly?</p>
+                        <a href="{% url 'add_tip' %}" class="btn btn-light btn-lg w-100 shadow">
+                            <i class="fas fa-plus me-2"></i>Add New Tip
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Categories List -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0"><i class="fas fa-folder me-2"></i>Categories</h5>
+                    </div>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item">
+                            <a href="{% url 'tips_home' %}" class="sidebar-link {% if not selected_category %}text-success fw-bold{% endif %}">
+                                <span><i class="fas fa-globe-americas me-2"></i>All Categories</span>
+                                <span class="sidebar-count">{{ tips.count }}</span>
+                            </a>
+                        </li>
+                        {% for cat, display in tips.first.get_category_choices %}
+                        <li class="sidebar-item">
+                            <a href="{% url 'category_tips' cat %}" class="sidebar-link {% if selected_category == cat %}text-success fw-bold{% endif %}">
+                                <span>
+                                    {% if cat == 'recyclables' %}<i class="fas fa-recycle me-2"></i>
+                                    {% elif cat == 'compostables' %}<i class="fas fa-seedling me-2"></i>
+                                    {% elif cat == 'general_waste' %}<i class="fas fa-trash me-2"></i>
+                                    {% elif cat == 'plastic' %}<i class="fas fa-wine-bottle me-2"></i>
+                                    {% elif cat == 'organic' %}<i class="fas fa-apple-alt me-2"></i>
+                                    {% elif cat == 'e-waste' %}<i class="fas fa-laptop me-2"></i>
+                                    {% else %}<i class="fas fa-leaf me-2"></i>{% endif %}
+                                    {{ display }}
+                                </span>
+                                <span class="sidebar-count">{{ category_counts|get_item:cat }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <!-- Tip Types -->
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0"><i class="fas fa-th-large me-2"></i>Tip Types</h5>
+                    </div>
+                    <ul class="sidebar-list">
+                        <li class="sidebar-item">
+                            <a href="{% url 'tips_home' %}?type=visual" class="sidebar-link {% if selected_type == 'visual' %}text-info fw-bold{% endif %}">
+                                <span><i class="fas fa-image me-2"></i>Visual Guides</span>
+                                <span class="sidebar-count">{{ type_counts.visual }}</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{% url 'tips_home' %}?type=practice" class="sidebar-link {% if selected_type == 'practice' %}text-success fw-bold{% endif %}">
+                                <span><i class="fas fa-check-circle me-2"></i>Best Practices</span>
+                                <span class="sidebar-count">{{ type_counts.practice }}</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{% url 'tips_home' %}?type=tutorial" class="sidebar-link {% if selected_type == 'tutorial' %}text-warning fw-bold{% endif %}">
+                                <span><i class="fas fa-list-ol me-2"></i>Tutorials</span>
+                                <span class="sidebar-count">{{ type_counts.tutorial }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Help Card -->
+                <div class="glass-card p-4 text-center">
+                    <i class="fas fa-question-circle fa-3x text-primary mb-3"></i>
+                    <h5 class="mb-3">Need assistance?</h5>
+                    <p class="mb-4">If you have questions about proper waste sorting or recycling tips, our team is here to help!</p>
+                    <a href="#" class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#supportModal">Contact Support</a>
+                </div>
+                <!-- Support Modal -->
+                <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="supportModalLabel">Contact Support</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <p>Email us at <a href="mailto:support@example.com">support@example.com</a> or call <a href="tel:1234567890">123-456-7890</a>.</p>
+                        <p>We are happy to help with any questions about recycling or waste sorting!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Enable tooltips
+    document.addEventListener('DOMContentLoaded', function() {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        
+        // Enhanced keyboard navigation for accessibility
+        const tipCards = document.querySelectorAll('.tip-card');
+        
+        tipCards.forEach(card => {
+            // Make cards focusable
+            card.setAttribute('tabindex', '0');
+            
+            // Keyboard navigation for cards
+            card.addEventListener('keydown', function(e) {
+                // Enter or Space key activates the card's main link
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const link = this.querySelector('a.btn');
+                    if (link) link.click();
+                }
+            });
+            
+            // Visual feedback on focus for accessibility
+            card.addEventListener('focus', function() {
+                this.classList.add('shadow-lg');
+                this.style.outline = '2px solid #3ccf4e';
+            });
+            
+            card.addEventListener('blur', function() {
+                this.classList.remove('shadow-lg');
+                this.style.outline = 'none';
+            });
+        });
+        
+        // High contrast mode toggle
+        const highContrastToggle = document.getElementById('highContrastToggle');
+        const htmlElement = document.documentElement;
+        
+        // Check if high contrast mode was previously enabled
+        const highContrastEnabled = localStorage.getItem('highContrastMode') === 'true';
+        if (highContrastEnabled) {
+            htmlElement.classList.add('high-contrast');
+        }
+        
+        highContrastToggle.addEventListener('click', function() {
+            htmlElement.classList.toggle('high-contrast');
+            const isEnabled = htmlElement.classList.contains('high-contrast');
+            localStorage.setItem('highContrastMode', isEnabled);
+        });
+    });
+</script>
+
+<style>
+    /* High Contrast Mode Styles */
+    html.high-contrast {
+        filter: contrast(1.4);
+    }
+    
+    html.high-contrast body {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    html.high-contrast .tips-hero,
+    html.high-contrast .cta-section {
+        background: #000 !important;
+        color: #fff !important;
+    }
+    
+    html.high-contrast .card,
+    html.high-contrast .sidebar {
+        background: #fff !important;
+        border: 2px solid #000 !important;
+    }
+    
+    html.high-contrast .tip-card {
+        box-shadow: 0 0 0 2px #000 !important;
+    }
+    
+    html.high-contrast a:not(.btn),
+    html.high-contrast .text-muted {
+        color: #000 !important;
+    }
+    
+    html.high-contrast .btn-primary,
+    html.high-contrast .btn-success {
+        background-color: #000 !important;
+        border-color: #000 !important;
+        color: #fff !important;
+    }
+    
+    html.high-contrast img {
+        filter: contrast(1.2) grayscale(0.5);
+    }
+</style>
+{% endblock %}

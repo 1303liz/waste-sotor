@@ -10,6 +10,10 @@ urlpatterns = [
     path('check-verification-status/', views.check_verification_status, name='check_verification_status'),
     path('login/', views.CustomLoginView.as_view(), name='login'),
     path('logout/', views.custom_logout, name='logout'),
+    path('profile/', views.profile, name='profile'),
+    # Password change URLs
+    path('password-change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
+    path('password-change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     # Password reset URLs
     path('password-reset/', views.CustomPasswordResetView.as_view(), name='password_reset'),
     path('password-reset/done/', 
@@ -17,7 +21,7 @@ urlpatterns = [
         name='password_reset_done'),
     path('reset/<uidb64>/<token>/', 
         auth_views.PasswordResetConfirmView.as_view(
-            success_url='/reset/done/'
+            success_url='/accounts/reset/done/'
         ), 
         name='password_reset_confirm'),
     path('reset/done/', 

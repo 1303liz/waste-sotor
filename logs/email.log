@@ -63,3 +63,14 @@ INFO 2025-07-22 10:41:01,150 utils Attempting to send verification email to mike
 INFO 2025-07-22 10:41:08,558 utils Successfully sent verification email to mikepremium8@gmail.com in 7.41 seconds
 INFO 2025-07-22 10:41:08,561 views Registration completed successfully for mikesplore (mikepremium8@gmail.com)
 INFO 2025-07-22 10:42:16,688 views Account activated successfully for user: mikesplore (mikepremium8@gmail.com)
+INFO 2025-07-23 11:11:22,608 views User logout initiated: eliza (mwaranganga@gmail.com)
+INFO 2025-07-23 11:11:22,753 views User logout completed: eliza (mwaranganga@gmail.com)
+INFO 2025-07-23 11:45:53,498 views User logout initiated: eliza (mwaranganga@gmail.com)
+INFO 2025-07-23 11:45:53,565 views User logout completed: eliza (mwaranganga@gmail.com)
+INFO 2025-07-25 10:28:05,165 views User logout initiated: eliza (mwaranganga@gmail.com)
+INFO 2025-07-25 10:28:05,206 views User logout completed: eliza (mwaranganga@gmail.com)
+INFO 2025-07-25 11:08:56,037 views User logout initiated: eliza (mwaranganga@gmail.com)
+INFO 2025-07-25 11:08:56,086 views User logout completed: eliza (mwaranganga@gmail.com)
+INFO 2025-07-25 11:52:09,396 utils Attempting to send password reset email to mwaranganga@gmail.com
+INFO 2025-07-25 11:52:12,808 utils Successfully sent password reset email to mwaranganga@gmail.com in 3.43 seconds
+INFO 2025-07-25 11:52:12,812 views Password reset email sent for primary user: eliza (mwaranganga@gmail.com)

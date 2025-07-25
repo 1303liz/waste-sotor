@@ -17,9 +17,35 @@ from django.db import IntegrityError
 import logging
 from .utils import send_verification_email, send_password_reset_email, check_email_deliverability
 from .user_utils import find_primary_user_for_email, get_unique_username
+from django.contrib.auth.decorators import login_required
 
 # Get the custom email logger
 email_logger = logging.getLogger('accounts.email')
+
+@login_required
+def profile(request):
+    """User profile page showing account information and stats"""
+    from waste_logs.models import WasteLog, WasteEntry
+    from recycle_tips.models import Tip
+    
+    # Get user statistics
+    user_waste_logs = WasteLog.objects.filter(user=request.user).count()
+    user_waste_entries = WasteEntry.objects.filter(waste_log__user=request.user).count()
+    user_tips = Tip.objects.filter(author=request.user).count() if hasattr(Tip, 'author') else 0
+    
+    # Get recent activity
+    recent_logs = WasteLog.objects.filter(user=request.user).order_by('-created_at')[:5]
+    recent_entries = WasteEntry.objects.filter(waste_log__user=request.user).order_by('-created_at')[:5]
+    
+    context = {
+        'user_waste_logs': user_waste_logs,
+        'user_waste_entries': user_waste_entries,
+        'user_tips': user_tips,
+        'recent_logs': recent_logs,
+        'recent_entries': recent_entries,
+    }
+    
+    return render(request, 'accounts/profile.html', context)
 
 def register(request):
     if request.method == 'POST':
@@ -404,7 +430,7 @@ def custom_logout(request):
         
         # Add a success message if the user was authenticated
         if user_info['was_authenticated']:
-            messages.success(request, f"You have been successfully logged out. Thank you for using Waste Sorter!")
+            messages.success(request, f"You have been successfully logged out. See you next time!")
             email_logger.info(f"User logout completed: {user_info['username']} ({user_info['email']})")
         
         # Render the logout confirmation page
@@ -417,7 +443,7 @@ def custom_logout(request):
 
 class CustomPasswordResetView(auth_views.PasswordResetView):
     email_template_name = 'registration/password_reset_email.html'
-    success_url = '/password-reset/done/'
+    success_url = '/accounts/password-reset/done/'
     
     def form_valid(self, form):
         email = form.cleaned_data["email"]

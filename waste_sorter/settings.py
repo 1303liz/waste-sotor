@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tailwind',
     'wastesoter',
-    'django_browser_reload',
+    # 'django_browser_reload',  # Disabled to prevent ping messages
     'recycle_tips',
     'waste_logs',
     'accounts',
@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django_browser_reload.middleware.BrowserReloadMiddleware',
+    # 'django_browser_reload.middleware.BrowserReloadMiddleware',  # Disabled to prevent ping messages
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Custom middleware for session timeout handling
@@ -232,7 +232,7 @@ LOGGING = {
 # Login Settings
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL = '/login/'
+LOGIN_URL = '/accounts/login/'
 
 # Session settings for security
 SESSION_COOKIE_AGE = 7200  # 2 hours in seconds

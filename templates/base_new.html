@@ -1,204 +1,66 @@
-{% load static tailwind_tags %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Waste Sorter{% endblock %}</title>
-    {% tailwind_css %}
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <style>
         body {
             font-family: 'Inter', sans-serif;
-        }
-        
-        .font-heading {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .bg-gradient-eco {
             background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
         }
-        
-        .bg-gradient-light {
-            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+        .minimal-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
         }
-        
-        .glass-effect {
+        .minimal-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 3rem 2.5rem;
+            width: 100%;
+            max-width: 420px;
+            position: relative;
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 0.6s ease-out;
         }
-        
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-blur {
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
-        
-        @keyframes fadeIn {
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        .btn-eco {
-            background: linear-gradient(135deg, #10b981, #059669);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-eco:hover {
-            background: linear-gradient(135deg, #059669, #047857);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
-        }
-        
-        .notification-badge {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
     </style>
-    
     {% block extra_head %}{% endblock %}
 </head>
-<body class="bg-gradient-light min-h-screen">
-    <!-- Navigation -->
-    <nav class="nav-blur sticky top-0 z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-3">
-                        <div class="w-10 h-10 bg-gradient-eco rounded-xl flex items-center justify-center">
-                            <i class="fas fa-recycle text-white text-lg"></i>
-                        </div>
-                        <span class="font-heading text-xl font-bold text-gray-900">Waste Sorter</span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="{% url 'dashboard' %}" class="text-gray-700 hover:text-emerald-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                            <i class="fas fa-home mr-2"></i>Dashboard
-                        </a>
-                        <a href="{% url 'tips_home' %}" class="text-gray-700 hover:text-emerald-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                            <i class="fas fa-lightbulb mr-2"></i>Recycle Tips
-                        </a>
-                        <a href="{% url 'waste_logs_home' %}" class="text-gray-700 hover:text-emerald-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                            <i class="fas fa-clipboard-list mr-2"></i>Waste Logs
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- User Menu -->
-                <div class="flex items-center space-x-4">
-                    {% if user.is_authenticated %}
-                        <div class="relative group">
-                            <button class="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                                <div class="w-8 h-8 bg-gradient-eco rounded-full flex items-center justify-center">
-                                    <i class="fas fa-user text-white text-sm"></i>
-                                </div>
-                                <span class="font-medium">{{ user.first_name|default:user.username }}</span>
-                                <i class="fas fa-chevron-down text-xs"></i>
-                            </button>
-                            
-                            <!-- Dropdown Menu -->
-                            <div class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                <div class="py-2">
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200">
-                                        <i class="fas fa-user-circle mr-2"></i>Profile
-                                    </a>
-                                    <a href="{% url 'waste_logs_home' %}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors duration-200">
-                                        <i class="fas fa-clipboard-list mr-2"></i>My Waste Logs
-                                    </a>
-                                    <div class="border-t border-gray-100 my-2"></div>
-                                    <button onclick="document.getElementById('logoutModal').classList.remove('hidden')" class="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors duration-200">
-                                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    {% else %}
-                        <div class="flex items-center space-x-3">
-                            <a href="{% url 'login' %}" class="text-gray-700 hover:text-emerald-600 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                                <i class="fas fa-sign-in-alt mr-2"></i>Login
-                            </a>
-                            <a href="{% url 'register' %}" class="btn-eco text-white px-6 py-2 rounded-lg text-sm font-medium">
-                                <i class="fas fa-user-plus mr-2"></i>Register
-                            </a>
-                        </div>
-                    {% endif %}
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button class="mobile-menu-btn text-gray-700 hover:text-emerald-600 p-2">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
+<body>
+    <div class="minimal-wrapper">
+        <div class="minimal-card">
+            {% block content %}{% endblock %}
         </div>
-        
-        <!-- Mobile Navigation -->
-        <div class="mobile-menu hidden md:hidden bg-white border-t border-gray-100">
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="{% url 'dashboard' %}" class="block px-3 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg text-sm font-medium">
-                    <i class="fas fa-home mr-2"></i>Dashboard
-                </a>
-                <a href="{% url 'tips_home' %}" class="block px-3 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg text-sm font-medium">
-                    <i class="fas fa-lightbulb mr-2"></i>Recycle Tips
-                </a>
-                <a href="{% url 'waste_logs_home' %}" class="block px-3 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg text-sm font-medium">
-                    <i class="fas fa-clipboard-list mr-2"></i>Waste Logs
-                </a>
-                {% if not user.is_authenticated %}
-                    <div class="border-t border-gray-100 pt-2 mt-2">
-                        <a href="{% url 'login' %}" class="block px-3 py-2 text-gray-700 hover:text-emerald-600 hover:bg-gray-50 rounded-lg text-sm font-medium">
-                            <i class="fas fa-sign-in-alt mr-2"></i>Login
-                        </a>
-                        <a href="{% url 'register' %}" class="block mx-3 mt-2 btn-eco text-white px-4 py-2 rounded-lg text-sm font-medium text-center">
-                            <i class="fas fa-user-plus mr-2"></i>Register
-                        </a>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="flex-1">
-        <!-- Messages -->
-        {% if messages %}
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-                {% for message in messages %}
+    </div>
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
                     <div class="mb-4 notification-badge">
                         {% if message.tags == 'success' %}
                             <div class="bg-emerald-50 border border-emerald-200 text-emerald-800 px-4 py-3 rounded-xl flex items-center space-x-3">
@@ -294,13 +156,13 @@
                         <li class="flex items-center space-x-3">
                             <i class="fas fa-envelope text-emerald-400"></i>
                             <a href="mailto:support@wastesorter.com" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200">
-                                support@wastesorter.com
+                                mwaranganga@gmail.com
                             </a>
                         </li>
                         <li class="flex items-center space-x-3">
                             <i class="fas fa-phone text-emerald-400"></i>
                             <a href="tel:+12345678900" class="text-gray-300 hover:text-emerald-400 transition-colors duration-200">
-                                +1 (234) 567-8900
+                                +1 (254) 98919283
                             </a>
                         </li>
                         <li class="flex items-center space-x-3">

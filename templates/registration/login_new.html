@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Waste Sorter{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+        min-height: 100vh;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .login-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+    
+    .login-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        padding: 2.5rem 2rem;
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+    }
+    
+    .login-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        color: white;
+        font-size: 1.5rem;
+    }
+    
+    .login-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .login-subtitle {
+        color: #666;
+        font-size: 0.875rem;
+        margin: 0;
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-label {
+        display: block;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .form-input {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        background: #fafafa;
+    }
+    
+    .form-input:focus {
+        outline: none;
+        border-color: #4CAF50;
+        background: white;
+        box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    }
+    
+    .login-btn {
+        width: 100%;
+        background: linear-gradient(135deg, #4CAF50, #2E7D32);
+        color: white;
+        border: none;
+        padding: 0.875rem 1rem;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin-bottom: 1.5rem;
+    }
+    
+    .login-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    }
+    
+    .login-btn:active {
+        transform: translateY(0);
+    }
+    
+    .error-message {
+        background: #fee2e2;
+        color: #dc2626;
+        padding: 0.75rem;
+        border-radius: 6px;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid #dc2626;
+    }
+    
+    .links-section {
+        text-align: center;
+        border-top: 1px solid #e5e7eb;
+        padding-top: 1.5rem;
+    }
+    
+    .auth-link {
+        color: #4CAF50;
+        text-decoration: none;
+        font-weight: 500;
+        display: inline-block;
+        margin: 0.25rem 0;
+        transition: color 0.2s ease;
+    }
+    
+    .auth-link:hover {
+        color: #2E7D32;
+        text-decoration: underline;
+    }
+    
+    .divider {
+        margin: 0 0.5rem;
+        color: #9ca3af;
+    }
+    
+    @media (max-width: 480px) {
+        .login-card {
+            padding: 2rem 1.5rem;
+            margin: 1rem;
+        }
+    }
+</style>
+
+<div class="login-wrapper">
+    <div class="login-card">
+        <div class="login-header">
+            <div class="logo">
+                <i class="fas fa-recycle"></i>
+            </div>
+            <h1 class="login-title">Welcome Back</h1>
+            <p class="login-subtitle">Sign in to your Waste Sorter account</p>
+        </div>
+        
+        <form method="post" id="loginForm">
+            {% csrf_token %}
+            
+            {% if form.errors %}
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Your username and password didn't match. Please try again.
+                </div>
+            {% endif %}
+            
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" 
+                       name="username" 
+                       id="username" 
+                       class="form-input" 
+                       placeholder="Enter your username"
+                       required 
+                       autofocus>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" 
+                       name="password" 
+                       id="password" 
+                       class="form-input" 
+                       placeholder="Enter your password"
+                       required>
+            </div>
+            
+            <button type="submit" class="login-btn">
+                Sign In
+            </button>
+        </form>
+        
+        <div class="links-section">
+            <a href="{% url 'register' %}" class="auth-link">Create Account</a>
+            <span class="divider">•</span>
+            <a href="{% url 'password_reset' %}" class="auth-link">Forgot Password?</a>
+        </div>
+    </div>
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+    // Add loading state to form submission
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalContent = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+        submitBtn.disabled = true;
+        
+        // Re-enable button after 3 seconds in case of error
+        setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+        }, 3000);
+    });
+</script>
+{% endblock %}
