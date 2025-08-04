@@ -1,6 +1,6 @@
 <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
     <h2 class="font-heading text-lg font-semibold text-gray-900 mb-4">Quick Waste Log</h2>
-    <form method="post" action="{% url 'waste_report' %}" class="space-y-4">
+    <form method="post" action="{% url 'waste_logs:waste_report' %}" class="space-y-4">
         {% csrf_token %}
         <div>
             <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>

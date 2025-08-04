@@ -3,6 +3,10 @@ from .models import (
     WasteCategory, WasteSubcategory, WasteLog, 
     WasteEntry, WasteAttachment, WasteGoal
 )
+from .facilitator_models import (
+    RecyclingFacilitator, RecyclingProcess,
+    FacilitatorCollection, RecyclingImpactMetric
+)
 
 class WasteSubcategoryInline(admin.TabularInline):
     model = WasteSubcategory
@@ -79,5 +83,34 @@ class WasteGoalAdmin(admin.ModelAdmin):
         }),
         ('Timeline', {
             'fields': ('start_date', 'end_date', 'is_completed')
-        }),
+        })
     )
+
+@admin.register(RecyclingFacilitator)
+class RecyclingFacilitatorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'website', 'phone', 'date_joined', 'is_active')
+    search_fields = ('name', 'description', 'email')
+    list_filter = ('is_active', 'date_joined')
+
+class RecyclingProcessInline(admin.TabularInline):
+    model = RecyclingProcess
+    extra = 1
+
+@admin.register(RecyclingProcess)
+class RecyclingProcessAdmin(admin.ModelAdmin):
+    list_display = ('title', 'facilitator', 'waste_category')
+    search_fields = ('title', 'description', 'facilitator__name')
+    list_filter = ('waste_category', 'facilitator')
+
+@admin.register(FacilitatorCollection)
+class FacilitatorCollectionAdmin(admin.ModelAdmin):
+    list_display = ('facilitator', 'waste_category', 'quantity_kg', 'collection_date')
+    search_fields = ('facilitator__name', 'notes', 'source_location')
+    list_filter = ('waste_category', 'collection_date', 'facilitator')
+    date_hierarchy = 'collection_date'
+
+@admin.register(RecyclingImpactMetric)
+class RecyclingImpactMetricAdmin(admin.ModelAdmin):
+    list_display = ('facilitator', 'metric_name', 'metric_value', 'unit', 'metric_type', 'date_recorded')
+    search_fields = ('metric_name', 'description', 'facilitator__name')
+    list_filter = ('metric_type', 'date_recorded', 'facilitator')

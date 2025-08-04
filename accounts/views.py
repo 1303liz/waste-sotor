@@ -401,7 +401,7 @@ class CustomLoginView(LoginView):
             return next_url
             
         # Default to dashboard if no redirect URL is found
-        return '/'
+        return '/dashboard/'
 
 def custom_logout(request):
     """

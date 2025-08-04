@@ -32,12 +32,24 @@ def dashboard_view(request):
     # Total number of logs
     total_logs = user_waste_logs.count()
     
+    # Try to get recycling facilitators, but handle if the table doesn't exist yet
+    recycling_facilitators = []
+    try:
+        from waste_logs.facilitator_models import RecyclingFacilitator
+        recycling_facilitators = RecyclingFacilitator.objects.filter(is_active=True).prefetch_related(
+            'processes', 'impact_metrics'
+        )[:3]
+    except Exception:
+        # Table doesn't exist yet, use empty list
+        pass
+    
     context = {
         'recent_logs': recent_logs,
         'waste_by_category': waste_by_category,
         'recent_tips': recent_tips,
         'total_waste_logged': total_waste_logged,
         'total_logs': total_logs,
+        'recycling_facilitators': recycling_facilitators,
     }
     
     return render(request, 'dashboard/dashboard.html', context)

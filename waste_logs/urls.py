@@ -2,9 +2,12 @@ from django.urls import path
 from . import views
 from debug_view import debug_subcategories
 
+app_name = 'waste_logs'
+
 urlpatterns = [
     path('', views.index, name='waste_logs_home'),
     path('report/', views.report, name='waste_report'),
+    path('create/', views.report, name='create_log'),  # Alias for creating logs
     path('analytics/', views.analytics, name='waste_analytics'),
     path('goals/', views.goals, name='waste_goals'),
     path('export/', views.export_data, name='waste_export'),

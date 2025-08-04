@@ -11,6 +11,28 @@
         </li>
         {% endfor %}
     </ul>
+    
+    <h2 class="font-heading text-lg font-semibold text-gray-900 mb-4">Recycling Facilitators</h2>
+    <div class="space-y-3 mb-8">
+        {% if recycling_facilitators %}
+            {% for facilitator in recycling_facilitators %}
+                <div class="flex items-start p-3 bg-gray-50 rounded-lg hover:bg-green-50 transition duration-150">
+                    <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 mr-3 flex-shrink-0">
+                        <i class="fas fa-recycle text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-medium text-gray-800">{{ facilitator.name }}</h4>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">{{ facilitator.description|truncatewords:10|default:"Recycling partner" }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="text-center mt-4">
+                <a href="#" class="text-sm text-green-600 hover:text-green-700 font-medium">View All Partners</a>
+            </div>
+        {% else %}
+            <p class="text-sm text-gray-500 italic">Our recycling partners information will be available soon.</p>
+        {% endif %}
+    </div>
     <h2 class="font-heading text-lg font-semibold text-gray-900 mb-4">Recycling Tips</h2>
     <div class="space-y-4">
         {% for tip in recycle_tips %}

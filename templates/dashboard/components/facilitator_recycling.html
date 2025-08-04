@@ -1,0 +1,122 @@
+<!-- Facilitator Recycling Process Section -->
+<div class="bg-white rounded-xl shadow-lg p-6 mb-8 border border-gray-100">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+        <i class="fas fa-recycle text-green-600 mr-3"></i> How Our Facilitators Recycle
+    </h2>
+    
+    <div class="space-y-6">
+        {% if recycling_facilitators %}
+            {% for facilitator in recycling_facilitators %}
+                <div class="bg-gray-50 rounded-lg p-5">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
+                        <div class="flex items-center mb-3 md:mb-0">
+                            {% if facilitator.logo %}
+                                <img src="{{ facilitator.logo.url }}" alt="{{ facilitator.name }}" class="w-12 h-12 rounded-full object-cover mr-3">
+                            {% else %}
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 mr-3">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                            {% endif %}
+                            <h3 class="text-lg font-bold text-gray-800">{{ facilitator.name }}</h3>
+                        </div>
+                        {% if facilitator.website %}
+                            <a href="{{ facilitator.website }}" target="_blank" class="text-green-600 hover:text-green-700 flex items-center text-sm font-medium">
+                                <i class="fas fa-external-link-alt mr-1"></i> Visit Website
+                            </a>
+                        {% endif %}
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4">{{ facilitator.description|default:"" }}</p>
+                    
+                    <div class="border-t border-gray-200 pt-4 mt-4">
+                        <h4 class="font-semibold text-gray-800 mb-3">Recycling Processes:</h4>
+                        
+                        {% if facilitator.processes.all %}
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {% for process in facilitator.processes.all|slice:":4" %}
+                                    <div class="flex items-start bg-white p-4 rounded border border-gray-100 hover:shadow-md transition">
+                                        <div class="flex-shrink-0 w-10 h-10 bg-{{ process.waste_category.color|default:'green' }}-100 rounded-full flex items-center justify-center text-{{ process.waste_category.color|default:'green' }}-600 mr-3">
+                                            <i class="fas fa-{{ process.waste_category.icon|default:'recycle' }}"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium">{{ process.title }}</h5>
+                                            <p class="text-sm text-gray-600 mt-1">
+                                                {{ process.description|truncatewords:20 }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <p class="text-gray-500 italic">No specific recycling processes available for this facilitator.</p>
+                        {% endif %}
+                    </div>
+                    
+                    {% if facilitator.impact_metrics.all %}
+                        <div class="border-t border-gray-200 pt-4 mt-4">
+                            <h4 class="font-semibold text-gray-800 mb-3">Environmental Impact:</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                                {% for metric in facilitator.impact_metrics.all|slice:":4" %}
+                                    <div class="bg-white p-3 rounded-lg border border-gray-100 text-center">
+                                        <div class="text-2xl font-bold text-green-600">{{ metric.metric_value }} {{ metric.unit }}</div>
+                                        <div class="text-xs text-gray-500 mt-1">{{ metric.get_metric_type_display }}</div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            
+            <div class="mt-6 text-center">
+                <a href="#" class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium px-5 py-2 rounded-lg transition">
+                    Learn More About Our Recycling Partners
+                </a>
+            </div>
+        {% else %}
+            <div class="bg-gray-50 rounded-lg p-5 text-center">
+                <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center text-gray-400 mx-auto mb-4">
+                    <i class="fas fa-recycle text-2xl"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-800 mb-2">No Recycling Facilitators</h3>
+                <p class="text-gray-600">Information about our recycling partners will be available soon.</p>
+            </div>
+            
+            <!-- Placeholder content when no facilitators are available -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <div class="bg-green-50 p-5 rounded-lg">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white text-xl mb-4">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-2">Collection</h3>
+                    <p class="text-gray-600">
+                        Our facilitators collect sorted waste from designated collection points. 
+                        Proper sorting at this stage is critical for efficient recycling.
+                    </p>
+                </div>
+                
+                <div class="bg-blue-50 p-5 rounded-lg">
+                    <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl mb-4">
+                        <i class="fas fa-sort-amount-down"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-2">Processing</h3>
+                    <p class="text-gray-600">
+                        At recycling centers, waste is further sorted by material type and 
+                        processed into raw materials that can be used in manufacturing.
+                    </p>
+                </div>
+                
+                <div class="bg-purple-50 p-5 rounded-lg">
+                    <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white text-xl mb-4">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 text-lg mb-2">Manufacturing</h3>
+                    <p class="text-gray-600">
+                        Processed materials are transformed into new products, reducing the need for 
+                        virgin materials and minimizing environmental impact.
+                    </p>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

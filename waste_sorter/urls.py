@@ -18,13 +18,19 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import RedirectView
+from django.contrib.staticfiles.storage import staticfiles_storage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recycle/', include('recycle_tips.urls')),
-    path('waste/', include('waste_logs.urls')),
+    path('recycle/', include('recycle_tips.urls', namespace='recycle_tips')),
+    path('waste/', include('waste_logs.urls', namespace='waste_logs')),
     path('accounts/', include('accounts.urls')),
     path('', include('dashboard.urls')),  # Dashboard app is now the homepage
+    # Add a direct path to the dashboard
+    path('dashboard/', include('dashboard.urls')),
+    # Handle favicon.ico requests to prevent 404 errors after login
+    path('favicon.ico', RedirectView.as_view(url='/dashboard/')),
 ]
 
 # Serve media files during development
