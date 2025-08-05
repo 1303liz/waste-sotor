@@ -8862,3 +8862,368 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
 ERROR 2025-08-04 11:22:13,411 basehttp "GET /dashboard/ HTTP/1.1" 500 162943
+INFO 2025-08-05 23:40:56,883 autoreload Watching for file changes with StatReloader
+INFO 2025-08-05 23:45:19,787 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-08-05 23:45:20,193 basehttp "GET / HTTP/1.1" 302 0
+INFO 2025-08-05 23:45:23,316 basehttp "GET /accounts/login/ HTTP/1.1" 200 23733
+INFO 2025-08-05 23:45:23,971 basehttp "GET /accounts/login/ HTTP/1.1" 200 23733
+INFO 2025-08-05 23:45:33,683 basehttp "GET /favicon.ico HTTP/1.1" 302 0
+INFO 2025-08-05 23:45:35,916 basehttp "GET /accounts/login/ HTTP/1.1" 200 23733
+INFO 2025-08-05 23:46:05,655 basehttp "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-08-05 23:46:05,786 basehttp "GET /favicon.ico HTTP/1.1" 302 0
+ERROR 2025-08-05 23:46:09,231 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\dashboard\views.py", line 55, in dashboard_view
+    return render(request, 'dashboard/dashboard.html', context)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
+ERROR 2025-08-05 23:46:11,300 basehttp "GET /dashboard/ HTTP/1.1" 500 168011
+INFO 2025-08-05 23:46:12,517 basehttp "GET /favicon.ico HTTP/1.1" 302 0
+ERROR 2025-08-05 23:46:13,150 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\dashboard\views.py", line 55, in dashboard_view
+    return render(request, 'dashboard/dashboard.html', context)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
+ERROR 2025-08-05 23:46:14,178 basehttp "GET /dashboard/ HTTP/1.1" 500 167522
+ERROR 2025-08-05 23:46:34,962 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 60, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
+ERROR 2025-08-05 23:46:35,784 basehttp "GET /recycle/ HTTP/1.1" 500 173720
+INFO 2025-08-05 23:46:36,309 basehttp "GET /favicon.ico HTTP/1.1" 302 0
+ERROR 2025-08-05 23:46:38,138 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\dashboard\views.py", line 55, in dashboard_view
+    return render(request, 'dashboard/dashboard.html', context)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
+ERROR 2025-08-05 23:46:38,918 basehttp "GET /dashboard/ HTTP/1.1" 500 167520
+ERROR 2025-08-05 23:46:53,908 log Internal Server Error: /recycle/
+Traceback (most recent call last):
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\recycle_tips\views.py", line 60, in tips_home
+    return render(request, 'recycle_tips/tips_home.html', context)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
+ERROR 2025-08-05 23:46:56,998 basehttp "GET /recycle/ HTTP/1.1" 500 173720
+INFO 2025-08-05 23:46:58,271 basehttp "GET /favicon.ico HTTP/1.1" 302 0
+ERROR 2025-08-05 23:46:58,918 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\dashboard\views.py", line 55, in dashboard_view
+    return render(request, 'dashboard/dashboard.html', context)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
+ERROR 2025-08-05 23:47:00,829 basehttp "GET /dashboard/ HTTP/1.1" 500 167520
+INFO 2025-08-05 23:47:03,693 basehttp "GET /favicon.ico HTTP/1.1" 302 0
+ERROR 2025-08-05 23:47:04,095 log Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\angam\Downloads\waste-sotor\dashboard\views.py", line 55, in dashboard_view
+    return render(request, 'dashboard/dashboard.html', context)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\angam\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'tips_home' not found. 'tips_home' is not a valid view function or pattern name.
+ERROR 2025-08-05 23:47:04,777 basehttp "GET /dashboard/ HTTP/1.1" 500 167525
+INFO 2025-08-05 23:50:21,037 autoreload C:\Users\angam\Downloads\waste-sotor\waste_sorter\urls.py changed, reloading.
+INFO 2025-08-05 23:50:43,796 autoreload Watching for file changes with StatReloader
